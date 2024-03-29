@@ -57,6 +57,12 @@
 						//NOTE: design variant:
 						font-size: $text1x-12; //18px;
 					}
+
+					.tt-circle:hover ::after {
+						//NOTE: design variant: tool-tip info for Natours Project Details copy.
+						content: "I needed to understand by trying to build for myself a basic application that could carry out typical backend tasks while also providing a platform to learn and make use of APIs – (Application Programming Interfaces). \a Since, up until that point I only had a very broad, elementary sense of the terms and concepts associated with it. Jonas’s course was a brilliant solution to this.";
+						
+					} //end tt-circle:hover
 			}//end- Project Details = client details 
         }//end atf-1
 
@@ -79,7 +85,7 @@
 							//NOTE: design variant:
 						} //end cs-project-sum__text__body
 					} //end cs-project-sum__text-1
-					//NOTE: Design variant: Relative positioning already declared so just giving adjustments in arrangment oftesxt here.
+					//NOTE: Design variant: Relative positioning already declared so just giving adjustments in arrangment here.
 					top: -15px;
 					margin-left: auto;
 					margin-right: auto;
@@ -88,6 +94,14 @@
 				margin-right: auto;
 			} //end btf-2__project-container-box
 		} //end btf-2
+
+		.btl-content-block-1, .btl-content-block-2{
+			.btl-content-block__sub {
+				//NOTE: design variant
+				font-size: $text2x-6; //25px;
+			} //end btl-content-block__sub
+
+		}//end of btl
 
     }//end body
 }//end media-query 1920px 

@@ -1,0 +1,21 @@
+@import "../../../partials/blog-article-templates/blog-articles-Desktop-Large-template";
+
+@media (min-width: 1920px) {
+//1: article-bg-reveal
+    body{
+
+        @keyframes article-bg-reveal {
+            @include basicReveal;
+            0%{
+
+                background-image: url("/img/img-desktop-l/desktop-about-bg-alt2.png");
+            } 
+            100%{
+                background-image: url("/img/img-desktop-l/desktop-about-bg-alt2.png");
+                
+            }
+
+        }//end article-bg-reveal
+    }//end body
+
+}// end media query

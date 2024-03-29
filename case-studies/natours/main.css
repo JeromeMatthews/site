@@ -1958,7 +1958,7 @@ body .mobile-cta-footer .mobile-cta-footer__sm-links {
   body .btl {
     height: 400px;
     position: relative;
-    top: -81px;
+    margin-top: -83px;
     text-align: center;
   }
   body .btl .btl__title-container {
@@ -1994,9 +1994,6 @@ body .mobile-cta-footer .mobile-cta-footer__sm-links {
     top: 0px;
     right: 0px;
     font-size: 3.12rem;
-  }
-  body .btl-content-block-1 {
-    margin-top: -82px;
   }
   body .btl-content-block-1 .btl-content-block__time {
     font-size: 4.375rem;
@@ -2354,6 +2351,9 @@ body .mobile-cta-footer .mobile-cta-footer__sm-links {
   body .atf-1 .cs-client-details .cs-client-details__text {
     font-size: 1.12rem;
   }
+  body .atf-1 .cs-client-details .tt-circle:hover ::after {
+    content: "I needed to understand by trying to build for myself a basic application that could carry out typical backend tasks while also providing a platform to learn and make use of APIs – (Application Programming Interfaces). \aSince, up until that point I only had a very broad, elementary sense of the terms and concepts associated with it. Jonas’s course was a brilliant solution to this.";
+  }
   body .btf-2 .btf-2__project-container-box {
     position: relative;
     width: 774px;
@@ -2368,5 +2368,8 @@ body .mobile-cta-footer .mobile-cta-footer__sm-links {
     top: -15px;
     margin-left: auto;
     margin-right: auto;
+  }
+  body .btl-content-block-1 .btl-content-block__sub, body .btl-content-block-2 .btl-content-block__sub {
+    font-size: 2.06rem;
   }
 }/*# sourceMappingURL=main.css.map */

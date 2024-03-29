@@ -1959,7 +1959,7 @@ body .mobile-cta-footer .mobile-cta-footer__sm-links {
   body .btl {
     height: 400px;
     position: relative;
-    top: -81px;
+    margin-top: -83px;
     text-align: center;
   }
   body .btl .btl__title-container {
@@ -1995,9 +1995,6 @@ body .mobile-cta-footer .mobile-cta-footer__sm-links {
     top: 0px;
     right: 0px;
     font-size: 3.12rem;
-  }
-  body .btl-content-block-1 {
-    margin-top: -82px;
   }
   body .btl-content-block-1 .btl-content-block__time {
     font-size: 4.375rem;

@@ -1958,7 +1958,7 @@ body .mobile-cta-footer .mobile-cta-footer__sm-links {
   body .btl {
     height: 400px;
     position: relative;
-    top: -81px;
+    margin-top: -83px;
     text-align: center;
   }
   body .btl .btl__title-container {
@@ -1994,9 +1994,6 @@ body .mobile-cta-footer .mobile-cta-footer__sm-links {
     top: 0px;
     right: 0px;
     font-size: 3.12rem;
-  }
-  body .btl-content-block-1 {
-    margin-top: -82px;
   }
   body .btl-content-block-1 .btl-content-block__time {
     font-size: 4.375rem;
@@ -2335,5 +2332,18 @@ body .mobile-cta-footer .mobile-cta-footer__sm-links {
 @media (min-width: 1920px) {
   body .atf-1 {
     background-image: url("/img/img-desktop-l/desktop-l-beam-bg.png");
+  }
+  body .atf-1 .cs-client-details .tt-circle:hover ::after {
+    content: "Ms. Browne had long set the goal of creating one of the first full-service performance arts and professional dance companies in Jamaica. In 2014 She had the opportunity to begin this venture and required an accompanying web presence to match the launch of the company. \a\anomad got shortlisted among some possible options of local web developers as Ms. Browne had the experience of working with nomad prior; with multiple projects, primarily in print and digital graphic art.";
+    height: 170px;
+  }
+  body .btf-2 .btf-2__project-container-box .cs-project-desc .tt-circle {
+    display: none;
+  }
+  body .btf-2 .btf-2__project-container-box .cs-project-desc .tt-circle .tt-circle__icon {
+    display: none;
+  }
+  body .btf-2 .btf-2__project-container-box .cs-project-desc .tt-circle:hover ::after {
+    display: none;
   }
 }/*# sourceMappingURL=main.css.map */
