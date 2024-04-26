@@ -27,7 +27,7 @@
 		animation: bg-reveal 0.5s ease-in forwards;
 
 		.page-container {
-			background: url("/img/img-desktop-l/desktop-ps-bg-alt1.png");
+			background: url("/img/img-desktop-cm-1440/desktop-cm-ps-bg.PNG");
 			/*Using the  !important flag to overide the assignment of the background images for the diffrent veiwport variants of the design.*/
 			@include pageContainer;
 
@@ -42,8 +42,10 @@
 
 
 		.mainnav__links {
-			top: 26px;
-			left: 698px;
+			top: 32px;
+			left: 522px;
+			// top: 26px;
+			// left: 698px;
 
 			a {
 				margin-top: 0px;
@@ -61,10 +63,18 @@
 
 			.mainnav__links-link-container {
 				@include mainnav__links-link-container;
+				height: 45px; // - reduced by 10% of 1920px variant
 				//NOTE: Top Nav links  UI/UX additions:
 				/*Hover state changes */
 				.mainnav__links-link__href {
 					@include mainnav__links-link__href;
+					/*Some asthetic adjustments to have the link fill the same area as in the original desgin draft. */
+
+					/*Using the padding section of the content box and not margin. This is so the puesdo element doesn't take that into account for the overall distance to travel across the link and ends up looking werid.*/
+
+					margin-left: 0px;
+					margin-right: 0px;
+					padding: 15px 15px; //-reduced by 60% of 1920px variant space added to anchor so they look nicer and have larger surface area to click on by users.
 				} //end mainnav__links-link__href
 
 
@@ -104,7 +114,7 @@
 		} //end mainnav__links
 
 
-
+		.main-container{
         
                     .show-box {
                         .show-box__title {
@@ -133,7 +143,7 @@
         
                     #show-box-1 {
                         //NOTE: design variant
-                        background-image: url("/img/img-desktop-l/desktop-ps-natours-bg.png");
+                        background-image: url("/img/img-desktop-cm-1440/desktop-cm-ps-Natours.png");
         
                         //NOTE: Added the overlay to help strengthen the contrast of the text against the background image
                         .show-box__overlay {
@@ -166,7 +176,7 @@
         
                     #show-box-3 {
                         //NOTE: design variant
-                        background-image: url("/img/img-desktop-l/desktop-ps-beam-bg.png");
+                        background-image: url("/img/img-desktop-cm-1440/desktop-cm-ps-BEAM.png");
                         .show-box__overlay {
                             @include showBoxOverlay;
                             //NOTE: design variant
@@ -182,18 +192,24 @@
         
                     //specific placement for lower nav elements:
                     .lower-nav-container {
-                        display: block !important;
-        
-                        bottom: 40px;
-                        width: 100%;
+                        display: flex !important;
+							//NOTE: design variant: positioned rom the right so needed the adjustment. Or will seem like display is still set to none.
+                        bottom: 41px;
+						right: 569px;  //NOTE Design variant : Adjustment building up from Desktop Small.
+
+						width: 300px; //NOTE: prevents the horizontal scroll bars issue from before. Define an area which the conatiner should occupy on the page. 
                         position: fixed;
+						
+
                         //NOTE: Design variant: Used the container for positioning the elements of the lower nav. With it being absolutely placed, we can use relative positioning for the child elements (chevrons and the social icons)
-                        // left: 50vw;
+                       
         
                         .nav-chevrons {
+							display: flex !important; //NOTE: design variant: Turns on the nav chevrons for this variant, turned off by default from mobile.
                             position: relative; // NOTE: Relative to the parent lower-nav-container div.
                             top: -18px;
-                            right: 16px;
+                            right: 1px; //NOTE: Design variant:
+							
                             .left-chev {
 
                                 .dtlink.low-nav-a-left{
@@ -235,9 +251,8 @@
                                 list-style: none;
                                 text-decoration: none;
                                 justify-content: center;
-                                //NOTE: Design vaieant: The outer container creates an offset, so this corrects for it. Centering the social media icons.
-                                position: relative;
-                                right: 49.8vw;
+								left: 3px; //NOTE: design variant
+                             
         
                                 li {
                                     margin-right: 10px;
@@ -317,13 +332,117 @@
                         } //end main-footer
                     } // end lower-nav-elements
 
+					.tt-circle {
+						position: absolute;
+						top: 857px; //NOTE: Design variant
+						left: 40px;
+						width: 20px;
+						height: 20px;
+						background-color: #8a8a8a98;
+						border: 1px solid #ffff;
+						border-radius: 55%;
+						box-shadow: 0.1px 0.7px #000;
+						.tt-circle__icon {
+							margin: 0 auto;
+							position: absolute;
+							left: 7px;
+							top: -8px;
+							text-align: center;
+							font: $text1x-43 $font-list-b;
+							color: #fff;
+							cursor: pointer;
+						} //end tt-circle__icon
+			
+						opacity: 0; //initializing the opacity of the tooltip.
+						pointer-events: none;
+						cursor: pointer;
+						animation: info-tool-tip 1s ease-in 2.5s forwards;
+					} //end tt-circle
+			
+					// .tt-circle:hover  ::before{
+					// 	content: "click and hold for info:";
+					// 	position:absolute;
+					// 	width: 210px;
+					// 	left: -225px;
+			
+					// }//end tt-circle::before
+			
+					.tt-circle:hover ::after {
+						content: " Title: gold-and-red-crown-on-brown-wooden-table";
+						// white-space: pre-wrap; // to allow for inserting line breaks into the content propety
+						position: absolute;
+						transition: 1s all ease;
+						top: 7px;
+						left: -35px;
+						width: 430px;
+						height: 20px;
+						// background-color: #77767255;
+						// border: 1px solid #ffffff;
+						// border-radius: 3px;
+						// box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+						color: #fff;
+						font-size: $textBase;
+			
+						//NOTE: Tooltip animation:
+						animation: tooltip-animate 0.3s ease forwards;
+					} //end tt-circle:hover
+			
+					// .tt-circle-pulse {
+					// 	position: relative;
+					// 	z-index: -10; //brings the pulse effect forwards to make it look like its coming from the info button.
+					// 	top: 32px; // adjustment po vertical placement so the pulse effect fits correctly over the info button.
+					// 	left: 7px;
+					// 	width: 20px;
+					// 	height: 20px;
+					// 	background-color: transparent;
+					// 	border: 1px solid #ffff;
+					// 	border-radius: 55%;
+					// 	opacity: 0; //initializing the opacity for the animation.
+					// 	animation: info-tt-pulse 1.5s ease-in 26.5s 25;
+					// } //end tt-circle-pulse
+			
+				
+					.author-info {
+						opacity: 0;
+						// display: block !important; //NOTE: overiding the defualt setting in the HTML so the code block won't show in the mobile and tablet variants.
+						font: $textSmall-75 $font-list-b;
+						color: #ffffff;
+						p {
+							.author-info__name {
+								text-decoration: none;
+								color: $brandColor;
+							} //end author-info__name
+			
+							.author-info__name:hover {
+								color: #fdd14c;
+							} //end author-info-hover
+			
+							.author-info__url {
+								text-decoration: none;
+								color: $brandColor;
+							} //end author-info__name
+			
+							.author-info__url:hover {
+								text-decoration: none;
+								color: #fdd14c;
+							} //end author-info__name
+						} //end p
+			
+						position: absolute;
+						//NOTE: design variant.
+						right: 1106px;
+						bottom: -1px;
+			
+						animation: info-tool-tip 1s ease-in 2.5s forwards;
+					} //end-author-info
+
                     // //NOTE: BACKGROOUND IMAGE TOOLTIP
-		// //----------------------------------------------------------------
+					// //----------------------------------------------------------------
 
 		.tt-bgimg-circle {
 			position: fixed;
 			top: 96px;
-			left: 936px;
+			left: 710px;
 			width: 20px;
 			height: 20px;
 			background-color: $brandColor;
@@ -377,7 +496,7 @@
 			z-index: -10; //brings the pulse effect forwards to make it look like its coming from the info button.
 
 			top: 96px;
-			left: 936px;
+			left: 710px;
 			width: 20px;
 			height: 20px;
 			background-color: transparent;
@@ -388,7 +507,7 @@
 		} //end tt-circle-pulse
 
        
-        
+     }//end main-container
 
 
         /*SECTION  ANIMATIONS & TRANSITIONS 

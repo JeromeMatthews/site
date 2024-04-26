@@ -1,8 +1,7 @@
 @import "..//partials/navs/_nav-base-desktops";
 /*SECTION ABOVE MOBILE PHONES - TABLET  - LANDSCAPE -  >1920px */
 @media (min-width: 1920px) {
-	.projects-overlay {
-	} //end projects-overlay
+
 
 	//NOTE: Design variant: For Projects page. Needed to bring the logo link more forward so it could be clicked on to trigger the page transition animation and hyper linking.
 	#logo.dtlink {
@@ -197,6 +196,7 @@
 			//specific placement for lower nav elements:
 			.lower-nav-container{
 				display: flex !important;
+				//NOTE: design variant: positioned from the right so needed the adjustment. Or will seem like display is still set to none.
 				right: 806px;
 				bottom: 40px;
 				width: 300px; //NOTE: prevents the horizontal scroll bars issue from before. Define an area which the conatiner should occupy on the page. 
@@ -207,6 +207,7 @@
 				z-index: 13;
 
 				.nav-chevrons {
+					display: flex !important; //NOTE: design variant: Turns on the nav chevrons for this variant, turned off by default from mobile.
                     position: relative; // NOTE: Relative to the parent lower-nav-container div.
                     top: -18px;
                     right: 5px;

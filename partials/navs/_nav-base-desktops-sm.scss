@@ -16,7 +16,11 @@
         height: 53px;
         top: 10px;
         left: 166px;
-        
+        // //NOTE: Remove pointer-events: for the link so only the javascript trigger for the animation is executed; 
+		// pointer-events: none;
+        pointer-events: none;
+        //NOTE: Bring the logo img forward over the link area so that it still looks as though its the img being clicked, when it's actually the link.
+        z-index: 7;
     }
 
     .sitenav__contactNum {

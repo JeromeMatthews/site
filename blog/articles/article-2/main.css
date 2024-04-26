@@ -376,6 +376,8 @@ body .main-container .article-container .article-sm-bottom .article-sm-bottom-li
     height: 53px;
     top: 10px;
     left: 166px;
+    pointer-events: none;
+    z-index: 7;
   }
   .sitenav__contactNum {
     top: 53px;
@@ -489,6 +491,7 @@ body .main-container .article-container .article-sm-bottom .article-sm-bottom-li
     height: 77px;
     top: 3px;
     left: -1px;
+    pointer-events: none;
   }
   .sitenav__contactNum {
     top: 75px;

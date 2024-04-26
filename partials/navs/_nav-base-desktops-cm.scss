@@ -26,6 +26,9 @@
         height: 77px;
         top: 3px;
         left: -1px;
+        //NOTE: Remove pointer-events: for the link so only the javascript trigger for the animation is executed; 
+		pointer-events: none;
+    
     }
 
     .sitenav__contactNum {
