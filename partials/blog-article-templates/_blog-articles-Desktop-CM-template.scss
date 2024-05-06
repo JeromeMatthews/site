@@ -2,52 +2,196 @@
 @import "../../partials/navs/_nav-base-desktops-cm";
 @media(min-width: 1440px){
     body {
-		background-image: url("/img/img-desktop-cm-1440/desktop-cm-blog-article-bg.png");
+            background-image: url("/img/img-desktop-cm-1440/desktop-cm-blog-article-bg.png");
+
+          //NOTE: ANIMATIONS AND TRANSITIONS: Background reveal:
+          background-image: none;
+          opacity: 0;
+          background-color: #000;
+          
+          animation: article-bg-reveal 0.5s linear 0.5s forwards;
+            .page-container {
+
+          @include pageContainer;
+
+          .page__surface{
+          
+            @include pageSurface;
+
+          }//end page__surface
+
+        }//end page-continer 
+
+
+        .page-flipped{
+          transform: translateX(0.5%) rotateY(90deg);
+            }
+
+
+    .mainnav__links{
+			top: 26px;
+			left: 698px;
+
+
+
+			
+
+			//NOTE: MN-TOP-NAV-LINK - UI/UX: HOVER STATE
+			//===================================
+
+			.mainnav__links-link-container {
+			
+				@include mainnav__links-link-container;
+				//NOTE: Top Nav links  UI/UX additions:
+				/*Hover state changes */
+				.mainnav__links-link__href {
+					@include mainnav__links-link__href;
+				} //end mainnav__links-link__href
+
+
+				.mainnav__links-link__href:after {
+					@include mainnav__links-link__href-after;
+				} //end mainnav__links-link__href:after
+
+				.mainnav__links-link__href:hover {
+					@include mainnav__links-link__href-hover;
+				} //end mainnav__links-link__href:hover
+
+				
+
+				.mainnav__links-link__href:hover:after {
+					@include mainnav__links-link__href-hover-after;
+				} //end mainnav__links-link__href
+
+				.mainnav__links-link__text {
+					@include mainnav__links-link__text;
+				} //end mainnav__links-link__text
+
+				
+			} //end mainnav__links-link-container
+
+		}//end mainnav__links 
+
 
     .main-container {
       top:0px;//resetting the distance from the top back to default for this variant. Already has position set to relative in previous stylesheet.
       
-.article-container {
-  //NOTE: design variant
-           margin-left: 100px;
-          margin-right: 100px; 
+      .article-container {
+          //NOTE: design variant
+                  margin-left: 100px;
+                  margin-right: 100px; 
 
-  .article__title {
-    //NOTE: design variant
-    font-size: $text3x-75; //60px - 25% of the dimensions of the 1920px variant. ;
-  } //end article__title
+          .article__title {
+            //NOTE: design variant
+            font-size: $text3x-75; //60px - 25% of the dimensions of the 1920px variant. ;
 
-  .article__sub_title {
-    //NOTE: design variant
-              font-size: $text1x-87;//30px - 25% of the dimensions of the 1920px variant. 
-  } // end article__sub_title
+            //NOTE: UI/UX: ANIMATION & TRANSITIONS: 2 - Article title reveal
+					  opacity: 0;// set the inital state of the text visibility - for animation
+					  animation: article-title-reveal 1s linear 1s forwards;
 
-  .article-sm-top {
-    //NOTE: design variant
-  } //end article-sm-top
+          } //end article__title
 
-  .article__content {
-    //NOTE: design variant
-    margin: 0px 140px;
+          .article__sub_title {
+            //NOTE: design variant
+                      font-size: $text1x-87;//30px - 25% of the dimensions of the 1920px variant. 
 
-    .support-topic {
-                  //NOTE: design variant
-                  .support-topic__head{
-                      font-size:$text2x-56;//41.25 - 41px - 25% of the dimensions of the 1920px variant.;
+                      //NOTE: UI/UX: ANIMATION & TRANSITIONS: 3 - Article subtitle reveal
 
-                  }//end .support-topic__head
-      .support-topic__body {
-        //NOTE: design variant
-                      font-size: $text1x-18;//18.75px - 19px - 18px used textbase for desktop viewports;
+					            opacity: 0;// set the inital state of the text visibility - for animation
+					            animation: article-sub-reveal 1s linear 2s forwards;
 
-      } //end support-topic-body
-    } //end support-topic
-  } //end article__content
 
-  .mobile-cta-footer {
-              @include flexMix-col;
-    align-items: center;
-  } //end mobile-cta-footer
+          } // end article__sub_title
+
+          .article-sm-top {
+            //NOTE: design variant
+
+            .article-sm-top-link{
+
+              #smi-m,
+              #smi-t,
+              #smi-lk {
+  
+                position: relative;
+              }// end img
+  
+              #smi-m:hover {
+                @include alt-lowerNav-hoverstate-gray;
+              }//end smi-m:hover
+  
+              #smi-t:hover {
+                @include alt-lowerNav-hoverstate-gray;
+              }//end smi-m:hover
+  
+              #smi-lk:hover {
+                @include alt-lowerNav-hoverstate-gray;
+              }//end smi-m:hover
+  
+              
+              #smi-m{
+                //NOTE: UI/UX: ANIMATION & TRANSITIONS: 3 - Top nav social icons reveal
+  
+            opacity: 0;// set the inital state of the text visibility - for animation
+            animation: top-nav-social-reveal 1s linear 3s forwards;
+  
+              }//end smi-m
+              #smi-t{
+                //NOTE: UI/UX: ANIMATION & TRANSITIONS: 3 - Top nav social icons reveal
+  
+            opacity: 0;// set the inital state of the text visibility - for animation
+            animation: top-nav-social-reveal 1s linear 3.4s forwards;	
+  
+              }//end smi-t
+              #smi-lk{
+                //NOTE: UI/UX: ANIMATION & TRANSITIONS: 3 - Top nav social icons reveal
+  
+            opacity: 0;// set the inital state of the text visibility - for animation
+            animation: top-nav-social-reveal 1s linear 3.5s forwards;		
+  
+              }//end smi-lk
+  
+  
+            }//end article-sm-top-link
+
+          } //end article-sm-top
+
+
+          #top-divider{
+
+						//NOTE: UI/UX: ANIMATION & TRANSITIONS: 4 - Header section divider reveal
+
+						opacity: 0;// set the inital state of the text visibility - for animation
+						animation: title-divider 0.3s linear 4s forwards;
+
+				}//end top-divider
+
+          .article__content {
+            //NOTE: design variant
+            margin: 0px 140px;
+
+            .support-topic {
+                          //NOTE: design variant
+                          .support-topic__head{
+                              font-size:$text2x-56;//41.25 - 41px - 25% of the dimensions of the 1920px variant.;
+
+                          }//end .support-topic__head
+              .support-topic__body {
+                //NOTE: design variant
+                              font-size: $text1x-18;//18.75px - 19px - 18px used textbase for desktop viewports;
+
+              } //end support-topic-body
+            } //end support-topic
+
+            //NOTE: UI/UX: ANIMATION & TRANSITIONS: 4 - Body section  reveal
+
+            opacity: 0;// set the inital state of the text visibility - for animation
+            animation: body-content 1s linear 4.5s forwards;
+          } //end article__content
+
+          .mobile-cta-footer {
+                   @include flexMix-col;
+                   align-items: center;
+               } //end mobile-cta-footer
 
           .mobile-cta-footer-branding{
               //NOTE: design variant
@@ -87,6 +231,16 @@
               top: -115px;
           }//end .mobile-cta-footer__button
 
+          .mobile-cta-footer__button:hover {
+            background: #ffcf15 no-repeat padding-box;
+            
+            text-shadow: 0px 2px .5px #4a45459e;
+  
+            .hero-text{
+              color: #f8f2f2
+            }//end hero-text
+          } //end .mobile-cta-footer__button:hover state
+
           .footer-divide {
               width:900px;
               top: -105px;
@@ -99,14 +253,101 @@
 
               .article-sm-bottom-link{
               
-
+                #smi-m,
+                #smi-t,
+                #smi-lk {
+    
+                  position: relative;
+                }// end img
+    
+                #smi-m:hover {
+                  @include alt-lowerNav-hoverstate-gray;
+                }//end smi-m:hover
+    
+                #smi-t:hover {
+                  @include alt-lowerNav-hoverstate-gray;
+                }//end smi-m:hover
+    
+                #smi-lk:hover {
+                  @include alt-lowerNav-hoverstate-gray;
+                }//end smi-m:hover
               }//end article-sm-bottom-link
           }//end article-sm-bottom
 
-} // end article-container
-} //end main-container
+    } // end article-container
+  } //end main-container
 
-        }//end body
+        /*SECTION  ANIMATIONS & TRANSITIONS 
+        ABOVE MOBILE PHONES - TABLET RANGE  - LANDSCAPE -   >1920px */
+        /*ANIMATIONS: */
+        //==========================
+          //Playback Master sequence:
+          //1 - article-bg-reveal
+          //2 - Atricle title
+          //3 - Atricle subtitle
+          //4 - top-nav social icons
+          //5 - title-divier
+          //6 - body content 
+
+
+        //==========================
+
+        //1: article-bg-reveal
+        @keyframes article-bg-reveal {
+          @include basicReveal;
+          0%{
+
+            background-image: url("/img/img-desktop-l/desktop-blog-article-bg.png");
+          } 
+          100%{
+            background-image: url("/img/img-desktop-l/desktop-blog-article-bg.png");
+            
+          }
+        
+        }//end article-bg-reveal
+
+        //2 - Atricle title
+          @keyframes article-title-reveal {
+            @include basicReveal;
+            from{opacity: 0} to{opacity: 1;}
+          }//end article-title-reveal 
+
+
+        //3 - Atricle subtitle
+        @keyframes article-sub-reveal {
+          @include basicReveal;
+          from{opacity: 0} to{opacity: 1;}
+        }//end  article-sub-reveal
+
+        //4 - top-nav social icons
+        @keyframes top-nav-social-reveal {
+          @include basicReveal;
+          from{opacity: 0} to{opacity: 1;}
+        }//end top-nav-social-reveal 
+
+
+        //5 - title-divier
+        @keyframes title-divider {
+          @include basicReveal;
+          from{opacity: 0; width:0%} to{opacity: 1;  width:100%}
+        }//end title-divider 
+
+
+        //6 - body content 
+        @keyframes  body-content{
+          @include basicReveal;
+          from{opacity: 0} to{opacity: 1;}
+        }//end body-content 
+          
+        
+
+        /*END ANIMATIONS*/
+        /*!SECTION END ANIMATIONS & TRANSITIONS 
+        ABOVE MOBILE PHONES - TABLET RANGE  - LANDSCAPE -   >1920px */
+
+    }//end body
+
+
 }//end media query
 /*!SECTION ABOVE MOBILE PHONES - TABLET RANGE  - COMMON MACBOOK -   >1440px */
 /*!SECTION: END - [RESPONSIVE DESIGN] */

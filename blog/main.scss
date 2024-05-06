@@ -6,14 +6,52 @@
 
 //!SECTION UNIVERSAL VARIABLES, LISTS & MIXINS - END
 body {
-	background-image: url("/img/img-mobile-p/mobile-blog-bg.png");
-	background-repeat: no-repeat;
-	background-attachment: scroll;
+	// background-image: url("/img/img-mobile-p/mobile-blog-bg.png");
+	// background-repeat: no-repeat;
+	// background-attachment: scroll;
+
+	//NOTE: UI/UX: ANIMATION & TRANSITIONS: 1 - Page Background Image - Reveal effect
+	background-image: none; // set the inital state of the property 	- for animation
+	opacity: 0; // set the inital state of the property - for animation
+	background-color: #000000;
+	animation: bg-reveal 0.5s ease-in forwards;
+
+	.page-container {
+		background-image: url("/img/img-tablet-p/tablet-blog-bg.png");
+		@include pageContainer;
+
+		.page__surface{
+		
+			@include pageSurface;
+
+		}//end page__surface
+
+	}//end page-continer 
+
 
 	.main-container {
 	
 
 		.blog-box-group {
+
+			
+				//NOTE: UI/UX ANIMATION & TRANSITIONS: 4 - Blog box reveals 
+
+				#blog-box-1{
+					opacity: 0;// set the inital state of the text visibility - for animation
+					animation: blog-card-reveal 0.3s linear 2.5s forwards;
+				}//end blog-box-1
+	
+				#blog-box-2{
+					opacity: 0;// set the inital state of the text visibility - for animation
+					animation: blog-card-reveal 0.3s linear 2.8s forwards;
+				}//end blog-box-2
+	
+				#blog-box-3{
+					opacity: 0;// set the inital state of the text visibility - for animation
+					animation: blog-card-reveal 0.3s linear 3s forwards;
+				}//end blog-box-3
+				
 			position: relative;
 			top: 40px;
 			@include flexMix-col;
@@ -70,8 +108,63 @@ body {
 					line-height: 85%; // spacing between the lines of text.
 				} //end blog-box__text
 			} //end blog-box
+
+			.blog-box__text-container{
+				//NOTE: design variant:
+					//creation of container for colllectively moving the text within the article previews around. Off by default for viewports smaller than 1024px & 768px (tablets);
+				display: block !important;
+			}//end blog-box__text-container
 		} //end blog-box__link
 	} //end main-container
+/*SECTION  ANIMATIONS & TRANSITIONS 
+		ABOVE MOBILE PHONES - TABLET RANGE  - LANDSCAPE -   >1920px */
+		/*ANIMATIONS: */
+		//==========================
+		//Playback Master sequence:
+		//1 - page bg-image:
+		//2 - Blog-title-reveal:
+		//3 - top-section-divider-reveal:
+		//4 - blog-card-reveal:
+		//==========================
+
+		//1 - page bg-image:
+
+		@keyframes bg-reveal {
+			@include basicReveal;
+		} //end bg-reveal
+
+		//--------------------------
+
+		//2 - blog-title-reveal:
+
+		@keyframes blog-title-reveal {
+			@include basicReveal;
+		} //end blog-title-reveal
+
+
+		//--------------------------
+
+		//3 - top-section-divider-reveal:
+
+		@keyframes top-divider-reveal {
+			@include basicReveal;
+		} //end top-divider-reveal
+
+
+		//--------------------------
+	
+		//4 - blog-card-reveal:
+
+		@keyframes blog-card-reveal{
+			@include basicReveal;
+			from{transform: translateY(-10px)} to{transform: translateY(inital)}
+		}//end blog-card-reveal
+
+
+		//--------------------------
+		/*END ANIMATIONS*/
+		/*!SECTION END ANIMATIONS & TRANSITIONS */	
+
 } //end body
 @import "..//blog/_blogTabletP";
 @import "../blog/_blogTabletL";

@@ -135,7 +135,7 @@
 					height: 137px;
 					opacity: 0; //set inital state for animation
 					animation: logo-reveal 1 ease-in 1s 5s forwards;
-				}
+				} //end contactheroimg
 			} //end of contact-container
 
 			.contact-form {
@@ -209,7 +209,7 @@
 					border-radius: 8px;
 					font-family: $font-list-b;
 					font-size: $text1x-56; //25px
-				}
+				}//end textarea
 			} //end contact-form
 			//specific placement for lower nav elements:
 

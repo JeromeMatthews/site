@@ -129,17 +129,17 @@
 				#blog-box-1{
 					opacity: 0;// set the inital state of the text visibility - for animation
 					animation: blog-card-reveal 0.3s linear 2.5s forwards;
-				}
+				}//end blog-box-1
 
 				#blog-box-2{
 					opacity: 0;// set the inital state of the text visibility - for animation
 					animation: blog-card-reveal 0.3s linear 2.8s forwards;
-				}
+				}//end blog-box-2
 
 				#blog-box-3{
 					opacity: 0;// set the inital state of the text visibility - for animation
 					animation: blog-card-reveal 0.3s linear 3s forwards;
-				}
+				}//end blog-box-3
 
                 .blog-box {
                     //NOTE: design variant
@@ -179,17 +179,7 @@
 
                     }//end blog-box__text-container
 
-
-					//NOTE: UI/UX ANIMATION & TRANSITIONS: 4 - Blog box reveals 
-
-					
-						
-
-						
-					
-
-					
-                
+				              
                 }//end blog-box
 
             }//end blog-box__link

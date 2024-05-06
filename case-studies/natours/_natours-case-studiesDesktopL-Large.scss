@@ -15,6 +15,53 @@
 
     body{
     
+		//NOTE: UI/UX: ANIMATION & TRANSITIONS: 1 - Page Background Image - Reveal effect
+		background-image: none; // set the inital state of the property 	- for animation
+		opacity: 0; // set the inital state of the property - for animation
+		background-color: #000000;
+		animation: bg-reveal 0.5s ease-in forwards;
+
+		.mainnav__links{
+			top: 26px;
+			left: 698px;
+
+
+
+			//NOTE: MN-TOP-NAV-LINK - UI/UX: HOVER STATE
+			//===================================
+
+			.mainnav__links-link-container {
+			
+				@include mainnav__links-link-container;
+				//NOTE: Top Nav links  UI/UX additions:
+				/*Hover state changes */
+				.mainnav__links-link__href {
+					@include mainnav__links-link__href;
+				} //end mainnav__links-link__href
+
+
+				.mainnav__links-link__href:after {
+					@include mainnav__links-link__href-after;
+				} //end mainnav__links-link__href:after
+
+				.mainnav__links-link__href:hover {
+					@include mainnav__links-link__href-hover;
+				} //end mainnav__links-link__href:hover
+
+				
+
+				.mainnav__links-link__href:hover:after {
+					@include mainnav__links-link__href-hover-after;
+				} //end mainnav__links-link__href
+
+				.mainnav__links-link__text {
+					@include mainnav__links-link__text;
+				} //end mainnav__links-link__text
+
+				
+			} //end mainnav__links-link-container
+
+		}//end mainnav__links
 
         //NOTE: Background image generated specfic to case study instance of the base template for design variant: Desktop-Large-1920px. Platforming off of the template pointer to the main refereence in case-studies sub folder in the paritals folder. 
         .atf-1 {

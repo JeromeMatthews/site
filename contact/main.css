@@ -173,10 +173,34 @@ body {
 }
 
 body {
+  background-image: none;
+  opacity: 0;
+  background-color: #000000;
+  animation: bg-reveal 0.5s ease-in forwards;
+  /*SECTION  ANIMATIONS & TRANSITIONS 
+  		ABOVE MOBILE PHONES - TABLET RANGE  - LANDSCAPE -   >1920px */
+  /*ANIMATIONS: */
+  /*END ANIMATIONS*/
+  /*!SECTION END ANIMATIONS & TRANSITIONS */
+}
+body .page-container {
   background-image: url("/img/img-mobile-p/mobile-contact-bg.png");
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-color: #fff;
+  width: 100vw;
+  height: 100vh;
+  transform-origin: left center;
+  perspective: 2500px;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease-in;
+}
+body .page-container .page__surface {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  transform: translateX(0deg) rotateY(0deg);
+  backface-visibility: hidden;
+}
+body .page-flipped {
+  transform: translateX(0.5%) rotateY(90deg);
 }
 body .main-container .contact-container .contact-heroCopy {
   margin: 0px;
@@ -189,6 +213,36 @@ body .main-container .contact-container .contact-heroCopy {
   color: #fff;
   text-align: center;
 }
+body .main-container .contact-container .contact-heroCopy .tw-fx-1 {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: inherit;
+  width: 0;
+  animation: type1 1.6s steps(21, end) 0.8s forwards, cursor-off 1 linear 0.2s 2.4s forwards;
+  /*name -> 
+   iteration-count-> 
+   timing-function->
+   duration->
+   delay->
+   fill-mode*/
+}
+body .main-container .contact-container .contact-heroCopy .tw-fx-2 {
+  position: relative;
+  top: -30px;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: inherit;
+  width: 0;
+  animation: type2 1.5s steps(20, end) 3s forwards, cursor-off 1 linear 0.2s 4.4s forwards;
+  /*name -> 
+  iteration-count-> 
+  timing-function->
+  duration->
+  delay->
+  fill-mode*/
+}
 body .main-container .contact-container .contactheroimg {
   margin: 0px;
   padding: 0px;
@@ -196,6 +250,8 @@ body .main-container .contact-container .contactheroimg {
   top: 110px;
   left: 88px;
   height: 95px;
+  opacity: 0;
+  animation: logo-reveal 1 ease-in 1s 5s forwards;
 }
 body .main-container .contact-form,
 body .main-container .contact-form__elements,
@@ -206,6 +262,8 @@ body .main-container .contact-form__input {
   padding: 0px;
 }
 body .main-container .contact-form {
+  opacity: 0;
+  animation: contact-form-animate 1 ease-out 1s 6.5s forwards;
   position: relative;
   top: 100px;
 }
@@ -253,16 +311,371 @@ body .main-container .contact-form .contact-form__elements .mobile-cta-footer__b
   font-style: normal;
   font-size: 1.25rem;
   position: relative;
+  cursor: pointer;
+}
+body .main-container .contact-form .contact-form__elements .mobile-cta-footer__button:hover {
+  background: #ffcf15 no-repeat padding-box;
+  color: #f8f2f2;
+  text-shadow: 0px 2px 0.5px rgba(74, 69, 69, 0.6196078431);
+}
+body .main-container .tt-circle {
+  position: absolute;
+  top: 730px;
+  left: 40px;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(138, 138, 138, 0.5960784314);
+  border: 1px solid white;
+  border-radius: 55%;
+  box-shadow: 0.1px 0.7px #000;
+  opacity: 0;
+  pointer-events: none;
+  cursor: pointer;
+  animation: info-tool-tip 1s ease-in 10.5s forwards;
+}
+body .main-container .tt-circle .tt-circle__icon {
+  margin: 0 auto;
+  position: absolute;
+  left: 7px;
+  top: -8px;
+  text-align: center;
+  font: 1.437rem futura-pt, Helvetica, Arial, sans-serif;
+  color: #fff;
+  cursor: pointer;
+}
+body .main-container .tt-circle:hover ::after {
+  content: " Title: person-standing-beside-tent";
+  position: absolute;
+  transition: 1s all ease;
+  top: 7px;
+  left: -92px;
+  width: 430px;
+  height: 20px;
+  color: #fff;
+  font-size: 1rem;
+  animation: tooltip-animate 0.3s ease forwards;
+}
+body .main-container .author-info {
+  opacity: 0;
+  font: 0.75rem futura-pt, Helvetica, Arial, sans-serif;
+  color: #ffffff;
+  position: absolute;
+  right: 1574px;
+  top: 736px;
+  animation: info-tool-tip 1s ease-in 11.5s forwards;
+}
+body .main-container .author-info p .author-info__name {
+  text-decoration: none;
+  color: #ffbf00;
+}
+body .main-container .author-info p .author-info__name:hover {
+  color: #fdd14c;
+}
+body .main-container .author-info p .author-info__url {
+  text-decoration: none;
+  color: #ffbf00;
+}
+body .main-container .author-info p .author-info__url:hover {
+  text-decoration: none;
+  color: #fdd14c;
+}
+body .main-container .tt-bgimg-circle {
+  position: fixed;
+  top: 664px;
+  left: 593px;
+  width: 20px;
+  height: 20px;
+  background-color: #ffbf00;
+  border: 1px solid white;
+  border-radius: 55%;
+  box-shadow: 0.1px 0.7px #000;
+  z-index: 19;
+  opacity: 0;
+  pointer-events: none;
+  cursor: pointer;
+  animation: info-tool-tip 1s linear 8.5s forwards;
+}
+body .main-container .tt-bgimg-circle .tt-bgimg-circle__icon {
+  margin: 0 auto;
+  position: absolute;
+  left: 5px;
+  top: 0px;
+  text-align: center;
+  font: 1rem arial;
+  color: #fff;
+  cursor: pointer;
+}
+body .main-container .tt-bgimg-circle:hover ::after {
+  content: "Message in a bottle... \aJust as this Mongolian youth stares into the night sky with intrepidness and wonder, so too do we have an interest in what stories could be told out there. \aWe can’t wait. Let’s go, Let’s tell your story…  \a";
+  white-space: pre-line;
+  position: absolute;
+  transition: 1s all ease;
+  top: -125px;
+  left: -581px;
+  width: 580px;
+  height: 80px;
+  background-color: rgba(0, 0, 0, 0.3411764706);
+  border: 1px solid rgba(255, 255, 255, 0.3294117647);
+  border-radius: 1px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1.5px 0px rgba(0, 0, 0, 0.3490196078);
+  font: 1rem 700 futura-pt, Helvetica, Arial, sans-serif;
+  color: #fff;
+  opacity: 1;
+  animation: tooltip-animate 0.3s ease forwards;
+}
+body .main-container .tt-bgimg-circle-pulse {
+  position: absolute;
+  z-index: -10;
+  top: 554px;
+  left: 593px;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 55%;
+  opacity: 0;
+  animation: info-tt-pulse 1.5s linear 9.5s 25;
+}
+body .main-container .lower-nav-container {
+  display: block !important;
+  position: fixed;
+  bottom: 40px;
+  left: 50vw;
+}
+body .main-container .lower-nav-container .nav-chevrons {
+  display: none;
+}
+body .main-container .lower-nav-container .main-footer .main-footer__social-icons {
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  text-decoration: none;
+  justify-content: center;
+  position: relative;
+  right: 5.2vw;
+}
+body .main-container .lower-nav-container .main-footer .main-footer__social-icons li {
+  margin-right: 10px;
+}
+body .main-container .lower-nav-container .main-footer .main-footer__social-icons li {
+  position: relative;
+  margin-right: 10px;
+  cursor: pointer;
+}
+body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-yt,
+body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-b,
+body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-fb,
+body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-ig,
+body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-lk {
+  position: relative;
+}
+body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-yt:hover {
+  transform: translateY(-2px);
+  filter: drop-shadow(0px 4px rgb(0, 0, 0));
+}
+body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-b:hover {
+  transform: translateY(-2px);
+  filter: drop-shadow(0px 4px rgb(0, 0, 0));
+}
+body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-fb:hover {
+  transform: translateY(-2px);
+  filter: drop-shadow(0px 4px rgb(0, 0, 0));
+}
+body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-ig:hover {
+  transform: translateY(-2px);
+  filter: drop-shadow(0px 4px rgb(0, 0, 0));
+}
+body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-lk:hover {
+  transform: translateY(-2px);
+  filter: drop-shadow(0px 4px rgb(0, 0, 0));
+}
+@keyframes bg-reveal {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+@keyframes type1 {
+  0% {
+    width: 0;
+    border-right: 0em;
+  }
+  15% {
+    width: 15%;
+    border-right: 0.15em solid #fff;
+  }
+  100% {
+    width: 100%;
+    border-right: 0.15em solid #fff;
+  }
+}
+@keyframes type2 {
+  0% {
+    width: 0;
+    border-right: 0em;
+  }
+  15% {
+    width: 15%;
+    border-right: 0.15em solid #fff;
+  }
+  100% {
+    width: 73%;
+    border-right: 0.15em solid #fff;
+  }
+}
+@keyframes blink {
+  from {
+    border-color: transparent;
+  }
+  to {
+    border-color: #fff;
+  }
+}
+@keyframes cursor-off {
+  from {
+    border-color: #fff;
+  }
+  to {
+    border-color: transparent;
+  }
+}
+@keyframes support-reveal {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+@keyframes social-icons-animate {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+  0% {
+    top: 0px;
+  }
+  50% {
+    top: -4px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+@keyframes logo-reveal {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+@keyframes contact-form-animate {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+  0% {
+    top: -125px;
+  }
+  50% {
+    top: -110px;
+  }
+  100% {
+    top: -105px;
+  }
+}
+@keyframes info-tool-tip {
+  0% {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 0.5;
+    pointer-events: none;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    pointer-events: all;
+    transform: scale(1);
+  }
+}
+@keyframes info-tt-pulse {
+  0% {
+    opacity: 1;
+    pointer-events: none;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    pointer-events: none;
+    transform: scale(1.5);
+  }
+  100% {
+    opacity: 0;
+    pointer-events: all;
+    transform: scale(2);
+  }
+}
+@keyframes tooltip-animate {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+    pointer-events: none;
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: all;
+  }
 }
 
 /*SECTION ABOVE MOBILE PHONES - TABLET RANGE  - PORTRAIT -   >800px */
 /*SECTION: END - [RESPONSIVE DESIGN] */
 @media (min-width: 768px) {
   body {
+    background-image: none;
+    opacity: 0;
+    background-color: #000000;
+    animation: bg-reveal 0.5s ease-in forwards;
+    /*SECTION  ANIMATIONS & TRANSITIONS 
+    		ABOVE MOBILE PHONES - TABLET RANGE  - LANDSCAPE -   >1920px */
+    /*ANIMATIONS: */
+    /*END ANIMATIONS*/
+    /*!SECTION END ANIMATIONS & TRANSITIONS */
+  }
+  body .page-container {
     background-image: url("/img/img-tablet-p/tablet-contact-bg.png");
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-color: #fff;
+    width: 100vw;
+    height: 100vh;
+    transform-origin: left center;
+    perspective: 2500px;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease-in;
+  }
+  body .page-container .page__surface {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    transform: translateX(0deg) rotateY(0deg);
+    backface-visibility: hidden;
+  }
+  body .page-flipped {
+    transform: translateX(0.5%) rotateY(90deg);
   }
   body .main-container {
     position: relative;
@@ -278,12 +691,48 @@ body .main-container .contact-form .contact-form__elements .mobile-cta-footer__b
   body .main-container .contact-container .contact-heroCopy {
     font-size: 2.18rem;
   }
+  body .main-container .contact-container .contact-heroCopy .tw-fx-1 {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: inherit;
+    width: 0;
+    animation: type1 1.6s steps(21, end) 0.8s forwards, cursor-off 1 linear 0.2s 2.4s forwards;
+    /*name -> 
+     iteration-count-> 
+     timing-function->
+     duration->
+     delay->
+     fill-mode*/
+  }
+  body .main-container .contact-container .contact-heroCopy .tw-fx-2 {
+    position: relative;
+    top: -30px;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: inherit;
+    width: 0;
+    animation: type2 1.5s steps(20, end) 3s forwards, cursor-off 1 linear 0.2s 4.4s forwards;
+    /*name -> 
+    iteration-count-> 
+    timing-function->
+    duration->
+    delay->
+    fill-mode*/
+  }
   body .main-container .contact-container .contactheroimg {
     margin: 25px auto;
     padding: 0px;
     left: 0px;
     width: 150px;
     height: 80px;
+    opacity: 0;
+    animation: logo-reveal 1 ease-in 1s 5s forwards;
+  }
+  body .main-container .contact-form {
+    opacity: 0;
+    animation: contact-form-animate 1 ease-out 1s 6.5s forwards;
   }
   body .main-container .contact-form .contact-form__elements .contact-form__element input {
     width: 299px;
@@ -308,6 +757,355 @@ body .main-container .contact-form .contact-form__elements .mobile-cta-footer__b
     height: 34px;
     font-size: 0.93rem;
     right: -100px;
+    cursor: pointer;
+  }
+  body .main-container .contact-form .contact-form__elements .mobile-cta-footer__button:hover {
+    background: #ffcf15 no-repeat padding-box;
+    color: #f8f2f2;
+    text-shadow: 0px 2px 0.5px rgba(74, 69, 69, 0.6196078431);
+  }
+  body .main-container .tt-circle {
+    position: absolute;
+    top: 730px;
+    left: 40px;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(138, 138, 138, 0.5960784314);
+    border: 1px solid white;
+    border-radius: 55%;
+    box-shadow: 0.1px 0.7px #000;
+    opacity: 0;
+    pointer-events: none;
+    cursor: pointer;
+    animation: info-tool-tip 1s ease-in 10.5s forwards;
+  }
+  body .main-container .tt-circle .tt-circle__icon {
+    margin: 0 auto;
+    position: absolute;
+    left: 7px;
+    top: -8px;
+    text-align: center;
+    font: 1.437rem futura-pt, Helvetica, Arial, sans-serif;
+    color: #fff;
+    cursor: pointer;
+  }
+  body .main-container .tt-circle:hover ::after {
+    content: " Title: person-standing-beside-tent";
+    position: absolute;
+    transition: 1s all ease;
+    top: 7px;
+    left: -92px;
+    width: 430px;
+    height: 20px;
+    color: #fff;
+    font-size: 1rem;
+    animation: tooltip-animate 0.3s ease forwards;
+  }
+  body .main-container .author-info {
+    opacity: 0;
+    font: 0.75rem futura-pt, Helvetica, Arial, sans-serif;
+    color: #ffffff;
+    position: absolute;
+    right: 1574px;
+    top: 736px;
+    animation: info-tool-tip 1s ease-in 11.5s forwards;
+  }
+  body .main-container .author-info p .author-info__name {
+    text-decoration: none;
+    color: #ffbf00;
+  }
+  body .main-container .author-info p .author-info__name:hover {
+    color: #fdd14c;
+  }
+  body .main-container .author-info p .author-info__url {
+    text-decoration: none;
+    color: #ffbf00;
+  }
+  body .main-container .author-info p .author-info__url:hover {
+    text-decoration: none;
+    color: #fdd14c;
+  }
+  body .main-container .tt-bgimg-circle {
+    position: fixed;
+    top: 664px;
+    left: 593px;
+    width: 20px;
+    height: 20px;
+    background-color: #ffbf00;
+    border: 1px solid white;
+    border-radius: 55%;
+    box-shadow: 0.1px 0.7px #000;
+    z-index: 19;
+    opacity: 0;
+    pointer-events: none;
+    cursor: pointer;
+    animation: info-tool-tip 1s linear 8.5s forwards;
+  }
+  body .main-container .tt-bgimg-circle .tt-bgimg-circle__icon {
+    margin: 0 auto;
+    position: absolute;
+    left: 5px;
+    top: 0px;
+    text-align: center;
+    font: 1rem arial;
+    color: #fff;
+    cursor: pointer;
+  }
+  body .main-container .tt-bgimg-circle:hover ::after {
+    content: "Message in a bottle... \aJust as this Mongolian youth stares into the night sky with intrepidness and wonder, so too do we have an interest in what stories could be told out there. \aWe can’t wait. Let’s go, Let’s tell your story…  \a";
+    white-space: pre-line;
+    position: absolute;
+    transition: 1s all ease;
+    top: -125px;
+    left: -581px;
+    width: 580px;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.3411764706);
+    border: 1px solid rgba(255, 255, 255, 0.3294117647);
+    border-radius: 1px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 1.5px 0px rgba(0, 0, 0, 0.3490196078);
+    font: 1rem 700 futura-pt, Helvetica, Arial, sans-serif;
+    color: #fff;
+    opacity: 1;
+    animation: tooltip-animate 0.3s ease forwards;
+  }
+  body .main-container .tt-bgimg-circle-pulse {
+    position: absolute;
+    z-index: -10;
+    top: 554px;
+    left: 593px;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 55%;
+    opacity: 0;
+    animation: info-tt-pulse 1.5s linear 9.5s 25;
+  }
+  body .main-container .lower-nav-container {
+    display: block !important;
+    position: fixed;
+    bottom: 40px;
+    left: 50vw;
+  }
+  body .main-container .lower-nav-container .nav-chevrons {
+    position: relative;
+    top: -18px;
+    right: 16px;
+  }
+  body .main-container .lower-nav-container .nav-chevrons .left-chev {
+    position: inherit;
+    left: -21px;
+    cursor: pointer;
+  }
+  body .main-container .lower-nav-container .nav-chevrons .left-chev .dtlink.low-nav-a-left img {
+    pointer-events: none;
+  }
+  body .main-container .lower-nav-container .nav-chevrons .right-chev {
+    position: inherit;
+    right: -21px;
+    cursor: pointer;
+  }
+  body .main-container .lower-nav-container .nav-chevrons .right-chev .dtlink.low-nav-a-right img {
+    pointer-events: none;
+  }
+  body .main-container .lower-nav-container .main-footer .main-footer__social-icons {
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    text-decoration: none;
+    justify-content: center;
+    position: relative;
+    right: 5.2vw;
+  }
+  body .main-container .lower-nav-container .main-footer .main-footer__social-icons li {
+    margin-right: 10px;
+  }
+  body .main-container .lower-nav-container .main-footer .main-footer__social-icons li {
+    position: relative;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-yt,
+  body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-b,
+  body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-fb,
+  body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-ig,
+  body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-lk {
+    position: relative;
+  }
+  body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-yt:hover {
+    transform: translateY(-2px);
+    filter: drop-shadow(0px 4px rgb(0, 0, 0));
+  }
+  body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-b:hover {
+    transform: translateY(-2px);
+    filter: drop-shadow(0px 4px rgb(0, 0, 0));
+  }
+  body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-fb:hover {
+    transform: translateY(-2px);
+    filter: drop-shadow(0px 4px rgb(0, 0, 0));
+  }
+  body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-ig:hover {
+    transform: translateY(-2px);
+    filter: drop-shadow(0px 4px rgb(0, 0, 0));
+  }
+  body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-lk:hover {
+    transform: translateY(-2px);
+    filter: drop-shadow(0px 4px rgb(0, 0, 0));
+  }
+  @keyframes bg-reveal {
+    0% {
+      opacity: 0%;
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
+  @keyframes type1 {
+    0% {
+      width: 0;
+      border-right: 0em;
+    }
+    15% {
+      width: 15%;
+      border-right: 0.15em solid #fff;
+    }
+    100% {
+      width: 100%;
+      border-right: 0.15em solid #fff;
+    }
+  }
+  @keyframes type2 {
+    0% {
+      width: 0;
+      border-right: 0em;
+    }
+    15% {
+      width: 15%;
+      border-right: 0.15em solid #fff;
+    }
+    100% {
+      width: 73%;
+      border-right: 0.15em solid #fff;
+    }
+  }
+  @keyframes blink {
+    from {
+      border-color: transparent;
+    }
+    to {
+      border-color: #fff;
+    }
+  }
+  @keyframes cursor-off {
+    from {
+      border-color: #fff;
+    }
+    to {
+      border-color: transparent;
+    }
+  }
+  @keyframes support-reveal {
+    0% {
+      opacity: 0%;
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
+  @keyframes social-icons-animate {
+    0% {
+      opacity: 0%;
+    }
+    100% {
+      opacity: 100%;
+    }
+    0% {
+      top: 0px;
+    }
+    50% {
+      top: -4px;
+    }
+    100% {
+      top: 0px;
+    }
+  }
+  @keyframes logo-reveal {
+    0% {
+      opacity: 0%;
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
+  @keyframes contact-form-animate {
+    0% {
+      opacity: 0%;
+    }
+    100% {
+      opacity: 100%;
+    }
+    0% {
+      top: -125px;
+    }
+    50% {
+      top: -110px;
+    }
+    100% {
+      top: -105px;
+    }
+  }
+  @keyframes info-tool-tip {
+    0% {
+      opacity: 0;
+      pointer-events: none;
+      transform: scale(0);
+    }
+    50% {
+      opacity: 0.5;
+      pointer-events: none;
+      transform: scale(0.5);
+    }
+    100% {
+      opacity: 1;
+      pointer-events: all;
+      transform: scale(1);
+    }
+  }
+  @keyframes info-tt-pulse {
+    0% {
+      opacity: 1;
+      pointer-events: none;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.5;
+      pointer-events: none;
+      transform: scale(1.5);
+    }
+    100% {
+      opacity: 0;
+      pointer-events: all;
+      transform: scale(2);
+    }
+  }
+  @keyframes tooltip-animate {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+      pointer-events: none;
+    }
+    50% {
+      opacity: 0.5;
+      transform: scale(0.5);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+      pointer-events: all;
+    }
   }
 }
 /*!SECTION ABOVE MOBILE PHONES - TABLET RANGE  - PORTRAIT -   >800px */
@@ -315,7 +1113,34 @@ body .main-container .contact-form .contact-form__elements .mobile-cta-footer__b
 /*SECTION ABOVE MOBILE PHONES - TABLET RANGE  - LANDSCAPE -   >1024px */
 @media (min-width: 1024px) {
   body {
+    background-image: none;
+    opacity: 0;
+    background-color: #000000;
+    animation: bg-reveal 0.5s ease-in forwards;
+    /*SECTION  ANIMATIONS & TRANSITIONS 
+    ABOVE MOBILE PHONES - TABLET RANGE  - LANDSCAPE -   >1920px */
+    /*ANIMATIONS: */
+    /*END ANIMATIONS*/
+    /*!SECTION END ANIMATIONS & TRANSITIONS */
+  }
+  body .page-container {
     background-image: url("/img/img-tablet-l/tablet-landscape-contact-bg.png");
+    width: 100vw;
+    height: 100vh;
+    transform-origin: left center;
+    perspective: 2500px;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease-in;
+  }
+  body .page-container .page__surface {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    transform: translateX(0deg) rotateY(0deg);
+    backface-visibility: hidden;
+  }
+  body .page-flipped {
+    transform: translateX(0.5%) rotateY(90deg);
   }
   body .main-container .contact-container {
     position: absolute;
@@ -326,6 +1151,36 @@ body .main-container .contact-form .contact-form__elements .mobile-cta-footer__b
     font-size: 1.74rem;
     text-align: left;
   }
+  body .main-container .contact-container .contact-heroCopy .tw-fx-1 {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: inherit;
+    width: 0;
+    animation: type1 1.6s steps(21, end) 0.8s forwards, cursor-off 1 linear 0.2s 2.4s forwards;
+    /*name -> 
+     iteration-count-> 
+     timing-function->
+     duration->
+     delay->
+     fill-mode*/
+  }
+  body .main-container .contact-container .contact-heroCopy .tw-fx-2 {
+    position: relative;
+    top: -30px;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: inherit;
+    width: 0;
+    animation: type2 1.5s steps(20, end) 3s forwards, cursor-off 1 linear 0.2s 4.4s forwards;
+    /*name -> 
+    iteration-count-> 
+    timing-function->
+    duration->
+    delay->
+    fill-mode*/
+  }
   body .main-container .contact-container .contactheroimg {
     margin: 25px auto;
     padding: 0px;
@@ -334,9 +1189,13 @@ body .main-container .contact-form .contact-form__elements .mobile-cta-footer__b
     left: 86px;
     width: 137px;
     height: 70px;
+    opacity: 0;
+    animation: logo-reveal 1 ease-in 1s 5s forwards;
   }
   body .main-container .contact-form {
     top: 40px;
+    opacity: 0;
+    animation: contact-form-animate 1 ease-out 1s 6.5s forwards;
   }
   body .main-container .contact-form .contact-form__elements .contact-form__element input {
     width: 299px;
@@ -359,6 +1218,355 @@ body .main-container .contact-form .contact-form__elements .mobile-cta-footer__b
   body .main-container .contact-form .contact-form__elements .mobile-cta-footer__button {
     position: relative;
     right: -100px;
+    cursor: pointer;
+  }
+  body .main-container .contact-form .contact-form__elements .mobile-cta-footer__button:hover {
+    background: #ffcf15 no-repeat padding-box;
+    color: #f8f2f2;
+    text-shadow: 0px 2px 0.5px rgba(74, 69, 69, 0.6196078431);
+  }
+  body .main-container .tt-circle {
+    position: absolute;
+    top: 730px;
+    left: 40px;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(138, 138, 138, 0.5960784314);
+    border: 1px solid white;
+    border-radius: 55%;
+    box-shadow: 0.1px 0.7px #000;
+    opacity: 0;
+    pointer-events: none;
+    cursor: pointer;
+    animation: info-tool-tip 1s ease-in 10.5s forwards;
+  }
+  body .main-container .tt-circle .tt-circle__icon {
+    margin: 0 auto;
+    position: absolute;
+    left: 7px;
+    top: -8px;
+    text-align: center;
+    font: 1.437rem futura-pt, Helvetica, Arial, sans-serif;
+    color: #fff;
+    cursor: pointer;
+  }
+  body .main-container .tt-circle:hover ::after {
+    content: " Title: person-standing-beside-tent";
+    position: absolute;
+    transition: 1s all ease;
+    top: 7px;
+    left: -92px;
+    width: 430px;
+    height: 20px;
+    color: #fff;
+    font-size: 1rem;
+    animation: tooltip-animate 0.3s ease forwards;
+  }
+  body .main-container .author-info {
+    opacity: 0;
+    font: 0.75rem futura-pt, Helvetica, Arial, sans-serif;
+    color: #ffffff;
+    position: absolute;
+    right: 1574px;
+    top: 736px;
+    animation: info-tool-tip 1s ease-in 11.5s forwards;
+  }
+  body .main-container .author-info p .author-info__name {
+    text-decoration: none;
+    color: #ffbf00;
+  }
+  body .main-container .author-info p .author-info__name:hover {
+    color: #fdd14c;
+  }
+  body .main-container .author-info p .author-info__url {
+    text-decoration: none;
+    color: #ffbf00;
+  }
+  body .main-container .author-info p .author-info__url:hover {
+    text-decoration: none;
+    color: #fdd14c;
+  }
+  body .main-container .tt-bgimg-circle {
+    position: fixed;
+    top: 664px;
+    left: 593px;
+    width: 20px;
+    height: 20px;
+    background-color: #ffbf00;
+    border: 1px solid white;
+    border-radius: 55%;
+    box-shadow: 0.1px 0.7px #000;
+    z-index: 19;
+    opacity: 0;
+    pointer-events: none;
+    cursor: pointer;
+    animation: info-tool-tip 1s linear 8.5s forwards;
+  }
+  body .main-container .tt-bgimg-circle .tt-bgimg-circle__icon {
+    margin: 0 auto;
+    position: absolute;
+    left: 5px;
+    top: 0px;
+    text-align: center;
+    font: 1rem arial;
+    color: #fff;
+    cursor: pointer;
+  }
+  body .main-container .tt-bgimg-circle:hover ::after {
+    content: "Message in a bottle... \aJust as this Mongolian youth stares into the night sky with intrepidness and wonder, so too do we have an interest in what stories could be told out there. \aWe can’t wait. Let’s go, Let’s tell your story…  \a";
+    white-space: pre-line;
+    position: absolute;
+    transition: 1s all ease;
+    top: -125px;
+    left: -581px;
+    width: 580px;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.3411764706);
+    border: 1px solid rgba(255, 255, 255, 0.3294117647);
+    border-radius: 1px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 1.5px 0px rgba(0, 0, 0, 0.3490196078);
+    font: 1rem 700 futura-pt, Helvetica, Arial, sans-serif;
+    color: #fff;
+    opacity: 1;
+    animation: tooltip-animate 0.3s ease forwards;
+  }
+  body .main-container .tt-bgimg-circle-pulse {
+    position: absolute;
+    z-index: -10;
+    top: 554px;
+    left: 593px;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 55%;
+    opacity: 0;
+    animation: info-tt-pulse 1.5s linear 9.5s 25;
+  }
+  body .main-container .lower-nav-container {
+    display: block !important;
+    position: fixed;
+    bottom: 40px;
+    left: 50vw;
+  }
+  body .main-container .lower-nav-container .nav-chevrons {
+    position: relative;
+    top: -18px;
+    right: 16px;
+  }
+  body .main-container .lower-nav-container .nav-chevrons .left-chev {
+    position: inherit;
+    left: -21px;
+    cursor: pointer;
+  }
+  body .main-container .lower-nav-container .nav-chevrons .left-chev .dtlink.low-nav-a-left img {
+    pointer-events: none;
+  }
+  body .main-container .lower-nav-container .nav-chevrons .right-chev {
+    position: inherit;
+    right: -21px;
+    cursor: pointer;
+  }
+  body .main-container .lower-nav-container .nav-chevrons .right-chev .dtlink.low-nav-a-right img {
+    pointer-events: none;
+  }
+  body .main-container .lower-nav-container .main-footer .main-footer__social-icons {
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    text-decoration: none;
+    justify-content: center;
+    position: relative;
+    right: 5.2vw;
+  }
+  body .main-container .lower-nav-container .main-footer .main-footer__social-icons li {
+    margin-right: 10px;
+  }
+  body .main-container .lower-nav-container .main-footer .main-footer__social-icons li {
+    position: relative;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-yt,
+  body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-b,
+  body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-fb,
+  body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-ig,
+  body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-lk {
+    position: relative;
+  }
+  body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-yt:hover {
+    transform: translateY(-2px);
+    filter: drop-shadow(0px 4px rgb(0, 0, 0));
+  }
+  body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-b:hover {
+    transform: translateY(-2px);
+    filter: drop-shadow(0px 4px rgb(0, 0, 0));
+  }
+  body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-fb:hover {
+    transform: translateY(-2px);
+    filter: drop-shadow(0px 4px rgb(0, 0, 0));
+  }
+  body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-ig:hover {
+    transform: translateY(-2px);
+    filter: drop-shadow(0px 4px rgb(0, 0, 0));
+  }
+  body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-lk:hover {
+    transform: translateY(-2px);
+    filter: drop-shadow(0px 4px rgb(0, 0, 0));
+  }
+  @keyframes bg-reveal {
+    0% {
+      opacity: 0%;
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
+  @keyframes type1 {
+    0% {
+      width: 0;
+      border-right: 0em;
+    }
+    15% {
+      width: 15%;
+      border-right: 0.15em solid #fff;
+    }
+    100% {
+      width: 100%;
+      border-right: 0.15em solid #fff;
+    }
+  }
+  @keyframes type2 {
+    0% {
+      width: 0;
+      border-right: 0em;
+    }
+    15% {
+      width: 15%;
+      border-right: 0.15em solid #fff;
+    }
+    100% {
+      width: 73%;
+      border-right: 0.15em solid #fff;
+    }
+  }
+  @keyframes blink {
+    from {
+      border-color: transparent;
+    }
+    to {
+      border-color: #fff;
+    }
+  }
+  @keyframes cursor-off {
+    from {
+      border-color: #fff;
+    }
+    to {
+      border-color: transparent;
+    }
+  }
+  @keyframes support-reveal {
+    0% {
+      opacity: 0%;
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
+  @keyframes social-icons-animate {
+    0% {
+      opacity: 0%;
+    }
+    100% {
+      opacity: 100%;
+    }
+    0% {
+      top: 0px;
+    }
+    50% {
+      top: -4px;
+    }
+    100% {
+      top: 0px;
+    }
+  }
+  @keyframes logo-reveal {
+    0% {
+      opacity: 0%;
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
+  @keyframes contact-form-animate {
+    0% {
+      opacity: 0%;
+    }
+    100% {
+      opacity: 100%;
+    }
+    0% {
+      top: -125px;
+    }
+    50% {
+      top: -110px;
+    }
+    100% {
+      top: -105px;
+    }
+  }
+  @keyframes info-tool-tip {
+    0% {
+      opacity: 0;
+      pointer-events: none;
+      transform: scale(0);
+    }
+    50% {
+      opacity: 0.5;
+      pointer-events: none;
+      transform: scale(0.5);
+    }
+    100% {
+      opacity: 1;
+      pointer-events: all;
+      transform: scale(1);
+    }
+  }
+  @keyframes info-tt-pulse {
+    0% {
+      opacity: 1;
+      pointer-events: none;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.5;
+      pointer-events: none;
+      transform: scale(1.5);
+    }
+    100% {
+      opacity: 0;
+      pointer-events: all;
+      transform: scale(2);
+    }
+  }
+  @keyframes tooltip-animate {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+      pointer-events: none;
+    }
+    50% {
+      opacity: 0.5;
+      transform: scale(0.5);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+      pointer-events: all;
+    }
   }
 }
 /*!SECTION ABOVE MOBILE PHONES - TABLET RANGE  - LANDSCAPE -   >1024px */
@@ -404,8 +1612,96 @@ body .main-container .contact-form .contact-form__elements .mobile-cta-footer__b
 }
 @media (min-width: 1280px) {
   body {
+    background-image: none;
+    opacity: 0;
+    background-color: #000000;
+    animation: bg-reveal 0.5s ease-in forwards;
+    /*SECTION  ANIMATIONS & TRANSITIONS 
+    ABOVE MOBILE PHONES - TABLET RANGE  - LANDSCAPE -   >1920px */
+    /*ANIMATIONS: */
+    /*END ANIMATIONS*/
+    /*!SECTION END ANIMATIONS & TRANSITIONS */
+  }
+  body .page-container {
     background-image: url("/img/img-desktop-sm-1280/desktop-sm-contact-bg.png");
-    background-attachment: fixed;
+    width: 100vw;
+    height: 100vh;
+    transform-origin: left center;
+    perspective: 2500px;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease-in;
+  }
+  body .page-container .page__surface {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    transform: translateX(0deg) rotateY(0deg);
+    backface-visibility: hidden;
+  }
+  body .page-flipped {
+    transform: translateX(0.5%) rotateY(90deg);
+  }
+  body .mainnav__links {
+    top: 32px;
+    left: 472px;
+  }
+  body .mainnav__links a {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 0px;
+  }
+  body .mainnav__links .mainnav__links-link-container {
+    overflow: hidden;
+    position: relative;
+    top: -26px;
+    height: 50px;
+    border: 0.5px solid #fff;
+    height: 35px;
+    /*Hover state changes */
+  }
+  body .mainnav__links .mainnav__links-link-container .mainnav__links-link__href {
+    /*Some asthetic adjustments to have the link fill the same area as in the original desgin draft. */
+    /*Using the padding section of the content box and not margin. This is so the puesdo element doesn't take that into account for the overall distance to travel across the link and ends up looking werid.*/
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 25px 25px;
+    /*Using the padding section of the content box and not margin. This is so the puesdo element doesn't take that into account for the overall distance to travel across the link and ends up looking werid.*/
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 10px 10px;
+  }
+  body .mainnav__links .mainnav__links-link-container .mainnav__links-link__href:after {
+    content: " ";
+    background: rgba(255, 255, 255, 0.596);
+    height: 99px;
+    width: 37px;
+    position: absolute;
+    top: -27px;
+    left: -56px;
+    transform: rotate(35deg);
+    z-index: 10;
+    transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  body .mainnav__links .mainnav__links-link-container .mainnav__links-link__href:hover {
+    background-color: #ffbf00;
+    text-shadow: 0px 0.9px 0px #000000; /* offset-x | offset-y | blur-radius | color */
+  }
+  body .mainnav__links .mainnav__links-link-container .mainnav__links-link__href:hover:after {
+    left: 120%;
+    transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  body .mainnav__links .mainnav__links-link-container .mainnav__links-link__text {
+    vertical-align: middle;
+    top: 3px;
+    position: relative;
+    pointer-events: none;
+  }
+  body .mainnav__links .mainnav__links-link-container:hover {
+    position: relative;
+    top: -28px;
+    filter: drop-shadow(0px 2.5px rgba(0, 0, 0, 0.221));
+    /* Two length values and a color */
+    /* drop-shadow( <length> <length> <color> ) */
   }
   body .main-container .contact-container {
     position: absolute;
@@ -418,6 +1714,36 @@ body .main-container .contact-form .contact-form__elements .mobile-cta-footer__b
     position: relative;
     left: -2px;
   }
+  body .main-container .contact-container .contact-heroCopy .tw-fx-1 {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: inherit;
+    width: 0;
+    animation: type1 1.6s steps(21, end) 0.8s forwards, cursor-off 1 linear 0.2s 2.4s forwards;
+    /*name -> 
+     iteration-count-> 
+     timing-function->
+     duration->
+     delay->
+     fill-mode*/
+  }
+  body .main-container .contact-container .contact-heroCopy .tw-fx-2 {
+    position: relative;
+    top: -30px;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: inherit;
+    width: 0;
+    animation: type2 1.5s steps(20, end) 3s forwards, cursor-off 1 linear 0.2s 4.4s forwards;
+    /*name -> 
+    iteration-count-> 
+    timing-function->
+    duration->
+    delay->
+    fill-mode*/
+  }
   body .main-container .contact-container .contactheroimg {
     margin: 25px auto;
     padding: 0px;
@@ -426,6 +1752,12 @@ body .main-container .contact-form .contact-form__elements .mobile-cta-footer__b
     left: 107px;
     width: 163px;
     height: 77px;
+    opacity: 0;
+    animation: logo-reveal 1 ease-in 1s 5s forwards;
+  }
+  body .main-container .contact-form {
+    opacity: 0;
+    animation: contact-form-animate 1 ease-out 1s 6.5s forwards;
   }
   body .main-container .contact-form .contact-form__elements .contact-form__element {
     margin: 0px auto;
@@ -459,12 +1791,137 @@ body .main-container .contact-form .contact-form__elements .mobile-cta-footer__b
     top: 10px;
     right: -130px;
     font-size: 1.12rem;
+    cursor: pointer;
+  }
+  body .main-container .contact-form .contact-form__elements .mobile-cta-footer__button:hover {
+    background: #ffcf15 no-repeat padding-box;
+    color: #f8f2f2;
+    text-shadow: 0px 2px 0.5px rgba(74, 69, 69, 0.6196078431);
   }
   body .main-container .contact-form textarea {
     height: 163px;
     border-radius: 8px;
     font-family: futura-pt, Helvetica, Arial, sans-serif;
     font-size: 1.56rem;
+  }
+  body .main-container .tt-circle {
+    position: absolute;
+    top: 730px;
+    left: 40px;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(138, 138, 138, 0.5960784314);
+    border: 1px solid white;
+    border-radius: 55%;
+    box-shadow: 0.1px 0.7px #000;
+    opacity: 0;
+    pointer-events: none;
+    cursor: pointer;
+    animation: info-tool-tip 1s ease-in 10.5s forwards;
+  }
+  body .main-container .tt-circle .tt-circle__icon {
+    margin: 0 auto;
+    position: absolute;
+    left: 7px;
+    top: -8px;
+    text-align: center;
+    font: 1.437rem futura-pt, Helvetica, Arial, sans-serif;
+    color: #fff;
+    cursor: pointer;
+  }
+  body .main-container .tt-circle:hover ::after {
+    content: " Title: person-standing-beside-tent";
+    position: absolute;
+    transition: 1s all ease;
+    top: 7px;
+    left: -92px;
+    width: 430px;
+    height: 20px;
+    color: #fff;
+    font-size: 1rem;
+    animation: tooltip-animate 0.3s ease forwards;
+  }
+  body .main-container .author-info {
+    opacity: 0;
+    font: 0.75rem futura-pt, Helvetica, Arial, sans-serif;
+    color: #ffffff;
+    position: absolute;
+    right: 1574px;
+    top: 736px;
+    animation: info-tool-tip 1s ease-in 11.5s forwards;
+  }
+  body .main-container .author-info p .author-info__name {
+    text-decoration: none;
+    color: #ffbf00;
+  }
+  body .main-container .author-info p .author-info__name:hover {
+    color: #fdd14c;
+  }
+  body .main-container .author-info p .author-info__url {
+    text-decoration: none;
+    color: #ffbf00;
+  }
+  body .main-container .author-info p .author-info__url:hover {
+    text-decoration: none;
+    color: #fdd14c;
+  }
+  body .main-container .tt-bgimg-circle {
+    position: fixed;
+    top: 664px;
+    left: 593px;
+    width: 20px;
+    height: 20px;
+    background-color: #ffbf00;
+    border: 1px solid white;
+    border-radius: 55%;
+    box-shadow: 0.1px 0.7px #000;
+    z-index: 19;
+    opacity: 0;
+    pointer-events: none;
+    cursor: pointer;
+    animation: info-tool-tip 1s linear 8.5s forwards;
+  }
+  body .main-container .tt-bgimg-circle .tt-bgimg-circle__icon {
+    margin: 0 auto;
+    position: absolute;
+    left: 5px;
+    top: 0px;
+    text-align: center;
+    font: 1rem arial;
+    color: #fff;
+    cursor: pointer;
+  }
+  body .main-container .tt-bgimg-circle:hover ::after {
+    content: "Message in a bottle... \aJust as this Mongolian youth stares into the night sky with intrepidness and wonder, so too do we have an interest in what stories could be told out there. \aWe can’t wait. Let’s go, Let’s tell your story…  \a";
+    white-space: pre-line;
+    position: absolute;
+    transition: 1s all ease;
+    top: -125px;
+    left: -581px;
+    width: 580px;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.3411764706);
+    border: 1px solid rgba(255, 255, 255, 0.3294117647);
+    border-radius: 1px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 1.5px 0px rgba(0, 0, 0, 0.3490196078);
+    font: 1rem 700 futura-pt, Helvetica, Arial, sans-serif;
+    color: #fff;
+    opacity: 1;
+    animation: tooltip-animate 0.3s ease forwards;
+  }
+  body .main-container .tt-bgimg-circle-pulse {
+    position: absolute;
+    z-index: -10;
+    top: 554px;
+    left: 593px;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 55%;
+    opacity: 0;
+    animation: info-tt-pulse 1.5s linear 9.5s 25;
   }
   body .main-container .lower-nav-container {
     display: block !important;
@@ -480,10 +1937,18 @@ body .main-container .contact-form .contact-form__elements .mobile-cta-footer__b
   body .main-container .lower-nav-container .nav-chevrons .left-chev {
     position: inherit;
     left: -21px;
+    cursor: pointer;
+  }
+  body .main-container .lower-nav-container .nav-chevrons .left-chev .dtlink.low-nav-a-left img {
+    pointer-events: none;
   }
   body .main-container .lower-nav-container .nav-chevrons .right-chev {
     position: inherit;
     right: -21px;
+    cursor: pointer;
+  }
+  body .main-container .lower-nav-container .nav-chevrons .right-chev .dtlink.low-nav-a-right img {
+    pointer-events: none;
   }
   body .main-container .lower-nav-container .main-footer .main-footer__social-icons {
     display: flex;
@@ -497,6 +1962,190 @@ body .main-container .contact-form .contact-form__elements .mobile-cta-footer__b
   }
   body .main-container .lower-nav-container .main-footer .main-footer__social-icons li {
     margin-right: 10px;
+  }
+  body .main-container .lower-nav-container .main-footer .main-footer__social-icons li {
+    position: relative;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-yt,
+  body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-b,
+  body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-fb,
+  body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-ig,
+  body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-lk {
+    position: relative;
+  }
+  body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-yt:hover {
+    transform: translateY(-2px);
+    filter: drop-shadow(0px 4px rgb(0, 0, 0));
+  }
+  body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-b:hover {
+    transform: translateY(-2px);
+    filter: drop-shadow(0px 4px rgb(0, 0, 0));
+  }
+  body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-fb:hover {
+    transform: translateY(-2px);
+    filter: drop-shadow(0px 4px rgb(0, 0, 0));
+  }
+  body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-ig:hover {
+    transform: translateY(-2px);
+    filter: drop-shadow(0px 4px rgb(0, 0, 0));
+  }
+  body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-lk:hover {
+    transform: translateY(-2px);
+    filter: drop-shadow(0px 4px rgb(0, 0, 0));
+  }
+  @keyframes bg-reveal {
+    0% {
+      opacity: 0%;
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
+  @keyframes type1 {
+    0% {
+      width: 0;
+      border-right: 0em;
+    }
+    15% {
+      width: 15%;
+      border-right: 0.15em solid #fff;
+    }
+    100% {
+      width: 100%;
+      border-right: 0.15em solid #fff;
+    }
+  }
+  @keyframes type2 {
+    0% {
+      width: 0;
+      border-right: 0em;
+    }
+    15% {
+      width: 15%;
+      border-right: 0.15em solid #fff;
+    }
+    100% {
+      width: 73%;
+      border-right: 0.15em solid #fff;
+    }
+  }
+  @keyframes blink {
+    from {
+      border-color: transparent;
+    }
+    to {
+      border-color: #fff;
+    }
+  }
+  @keyframes cursor-off {
+    from {
+      border-color: #fff;
+    }
+    to {
+      border-color: transparent;
+    }
+  }
+  @keyframes support-reveal {
+    0% {
+      opacity: 0%;
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
+  @keyframes social-icons-animate {
+    0% {
+      opacity: 0%;
+    }
+    100% {
+      opacity: 100%;
+    }
+    0% {
+      top: 0px;
+    }
+    50% {
+      top: -4px;
+    }
+    100% {
+      top: 0px;
+    }
+  }
+  @keyframes logo-reveal {
+    0% {
+      opacity: 0%;
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
+  @keyframes contact-form-animate {
+    0% {
+      opacity: 0%;
+    }
+    100% {
+      opacity: 100%;
+    }
+    0% {
+      top: -125px;
+    }
+    50% {
+      top: -110px;
+    }
+    100% {
+      top: -105px;
+    }
+  }
+  @keyframes info-tool-tip {
+    0% {
+      opacity: 0;
+      pointer-events: none;
+      transform: scale(0);
+    }
+    50% {
+      opacity: 0.5;
+      pointer-events: none;
+      transform: scale(0.5);
+    }
+    100% {
+      opacity: 1;
+      pointer-events: all;
+      transform: scale(1);
+    }
+  }
+  @keyframes info-tt-pulse {
+    0% {
+      opacity: 1;
+      pointer-events: none;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.5;
+      pointer-events: none;
+      transform: scale(1.5);
+    }
+    100% {
+      opacity: 0;
+      pointer-events: all;
+      transform: scale(2);
+    }
+  }
+  @keyframes tooltip-animate {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+      pointer-events: none;
+    }
+    50% {
+      opacity: 0.5;
+      transform: scale(0.5);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+      pointer-events: all;
+    }
   }
 }
 /*!SECTION ABOVE MOBILE PHONES - TABLET RANGE  - DESKTOP-SMALL -   >1280px */
@@ -551,8 +2200,97 @@ body .main-container .contact-form .contact-form__elements .mobile-cta-footer__b
 /*SECTION ABOVE MOBILE PHONES - TABLET RANGE  - COMMON MACBOOK -   >1440px */
 @media (min-width: 1440px) {
   body {
+    background-image: none;
+    opacity: 0;
+    background-color: #000000;
+    animation: bg-reveal 0.5s ease-in forwards;
+    /*SECTION  ANIMATIONS & TRANSITIONS 
+    ABOVE MOBILE PHONES - TABLET RANGE  - LANDSCAPE -   >1920px */
+    /*ANIMATIONS: */
+    /*END ANIMATIONS*/
+    /*!SECTION END ANIMATIONS & TRANSITIONS */
+  }
+  body .page-container {
     background-image: url("/img/img-desktop-cm-1440/desktop-cm-contact-bg.png");
-    background-attachment: fixed;
+    width: 100vw;
+    height: 100vh;
+    transform-origin: left center;
+    perspective: 2500px;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease-in;
+  }
+  body .page-container .page__surface {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    transform: translateX(0deg) rotateY(0deg);
+    backface-visibility: hidden;
+  }
+  body .page-flipped {
+    transform: translateX(0.5%) rotateY(90deg);
+  }
+  body .mainnav__links {
+    top: 32px;
+    left: 522px;
+  }
+  body .mainnav__links a {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 0px;
+  }
+  body .mainnav__links .mainnav__links-link-container {
+    overflow: hidden;
+    position: relative;
+    top: -26px;
+    height: 50px;
+    border: 0.5px solid #fff;
+    height: 45px;
+    /*Hover state changes */
+  }
+  body .mainnav__links .mainnav__links-link-container .mainnav__links-link__href {
+    /*Some asthetic adjustments to have the link fill the same area as in the original desgin draft. */
+    /*Using the padding section of the content box and not margin. This is so the puesdo element doesn't take that into account for the overall distance to travel across the link and ends up looking werid.*/
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 25px 25px;
+    /*Some asthetic adjustments to have the link fill the same area as in the original desgin draft. */
+    /*Using the padding section of the content box and not margin. This is so the puesdo element doesn't take that into account for the overall distance to travel across the link and ends up looking werid.*/
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 15px 15px;
+  }
+  body .mainnav__links .mainnav__links-link-container .mainnav__links-link__href:after {
+    content: " ";
+    background: rgba(255, 255, 255, 0.596);
+    height: 99px;
+    width: 37px;
+    position: absolute;
+    top: -27px;
+    left: -56px;
+    transform: rotate(35deg);
+    z-index: 10;
+    transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  body .mainnav__links .mainnav__links-link-container .mainnav__links-link__href:hover {
+    background-color: #ffbf00;
+    text-shadow: 0px 0.9px 0px #000000; /* offset-x | offset-y | blur-radius | color */
+  }
+  body .mainnav__links .mainnav__links-link-container .mainnav__links-link__href:hover:after {
+    left: 120%;
+    transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  body .mainnav__links .mainnav__links-link-container .mainnav__links-link__text {
+    vertical-align: middle;
+    top: 3px;
+    position: relative;
+    pointer-events: none;
+  }
+  body .mainnav__links .mainnav__links-link-container:hover {
+    position: relative;
+    top: -28px;
+    filter: drop-shadow(0px 2.5px rgba(0, 0, 0, 0.221));
+    /* Two length values and a color */
+    /* drop-shadow( <length> <length> <color> ) */
   }
   body .main-container .contact-container {
     position: absolute;
@@ -565,6 +2303,36 @@ body .main-container .contact-form .contact-form__elements .mobile-cta-footer__b
     position: relative;
     left: -53px;
   }
+  body .main-container .contact-container .contact-heroCopy .tw-fx-1 {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: inherit;
+    width: 0;
+    animation: type1 1.6s steps(21, end) 0.8s forwards, cursor-off 1 linear 0.2s 2.4s forwards;
+    /*name -> 
+     iteration-count-> 
+     timing-function->
+     duration->
+     delay->
+     fill-mode*/
+  }
+  body .main-container .contact-container .contact-heroCopy .tw-fx-2 {
+    position: relative;
+    top: -30px;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: inherit;
+    width: 0;
+    animation: type2 1.5s steps(20, end) 3s forwards, cursor-off 1 linear 0.2s 4.4s forwards;
+    /*name -> 
+    iteration-count-> 
+    timing-function->
+    duration->
+    delay->
+    fill-mode*/
+  }
   body .main-container .contact-container .contactheroimg {
     margin: 25px auto;
     padding: 0px;
@@ -573,11 +2341,15 @@ body .main-container .contact-form .contact-form__elements .mobile-cta-footer__b
     left: 145px;
     width: 218px;
     height: 103px;
+    opacity: 0;
+    animation: logo-reveal 1 ease-in 1s 5s forwards;
   }
   body .main-container .contact-form {
     position: relative;
     top: -5px;
     left: -52px;
+    opacity: 0;
+    animation: contact-form-animate 1 ease-out 1s 6.5s forwards;
   }
   body .main-container .contact-form .contact-form__elements .contact-form__element {
     margin: 0px auto;
@@ -611,12 +2383,137 @@ body .main-container .contact-form .contact-form__elements .mobile-cta-footer__b
     top: 10px;
     right: -107px;
     font-size: 1.37rem;
+    cursor: pointer;
+  }
+  body .main-container .contact-form .contact-form__elements .mobile-cta-footer__button:hover {
+    background: #ffcf15 no-repeat padding-box;
+    color: #f8f2f2;
+    text-shadow: 0px 2px 0.5px rgba(74, 69, 69, 0.6196078431);
   }
   body .main-container .contact-form textarea {
     height: 218px;
     border-radius: 8px;
     font-family: futura-pt, Helvetica, Arial, sans-serif;
     font-size: 1.56rem;
+  }
+  body .main-container .tt-circle {
+    position: absolute;
+    top: 730px;
+    left: 40px;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(138, 138, 138, 0.5960784314);
+    border: 1px solid white;
+    border-radius: 55%;
+    box-shadow: 0.1px 0.7px #000;
+    opacity: 0;
+    pointer-events: none;
+    cursor: pointer;
+    animation: info-tool-tip 1s ease-in 10.5s forwards;
+  }
+  body .main-container .tt-circle .tt-circle__icon {
+    margin: 0 auto;
+    position: absolute;
+    left: 7px;
+    top: -8px;
+    text-align: center;
+    font: 1.437rem futura-pt, Helvetica, Arial, sans-serif;
+    color: #fff;
+    cursor: pointer;
+  }
+  body .main-container .tt-circle:hover ::after {
+    content: " Title: person-standing-beside-tent";
+    position: absolute;
+    transition: 1s all ease;
+    top: 7px;
+    left: -92px;
+    width: 430px;
+    height: 20px;
+    color: #fff;
+    font-size: 1rem;
+    animation: tooltip-animate 0.3s ease forwards;
+  }
+  body .main-container .author-info {
+    opacity: 0;
+    font: 0.75rem futura-pt, Helvetica, Arial, sans-serif;
+    color: #ffffff;
+    position: absolute;
+    right: 1574px;
+    top: 736px;
+    animation: info-tool-tip 1s ease-in 11.5s forwards;
+  }
+  body .main-container .author-info p .author-info__name {
+    text-decoration: none;
+    color: #ffbf00;
+  }
+  body .main-container .author-info p .author-info__name:hover {
+    color: #fdd14c;
+  }
+  body .main-container .author-info p .author-info__url {
+    text-decoration: none;
+    color: #ffbf00;
+  }
+  body .main-container .author-info p .author-info__url:hover {
+    text-decoration: none;
+    color: #fdd14c;
+  }
+  body .main-container .tt-bgimg-circle {
+    position: fixed;
+    top: 664px;
+    left: 593px;
+    width: 20px;
+    height: 20px;
+    background-color: #ffbf00;
+    border: 1px solid white;
+    border-radius: 55%;
+    box-shadow: 0.1px 0.7px #000;
+    z-index: 19;
+    opacity: 0;
+    pointer-events: none;
+    cursor: pointer;
+    animation: info-tool-tip 1s linear 8.5s forwards;
+  }
+  body .main-container .tt-bgimg-circle .tt-bgimg-circle__icon {
+    margin: 0 auto;
+    position: absolute;
+    left: 5px;
+    top: 0px;
+    text-align: center;
+    font: 1rem arial;
+    color: #fff;
+    cursor: pointer;
+  }
+  body .main-container .tt-bgimg-circle:hover ::after {
+    content: "Message in a bottle... \aJust as this Mongolian youth stares into the night sky with intrepidness and wonder, so too do we have an interest in what stories could be told out there. \aWe can’t wait. Let’s go, Let’s tell your story…  \a";
+    white-space: pre-line;
+    position: absolute;
+    transition: 1s all ease;
+    top: -125px;
+    left: -581px;
+    width: 580px;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.3411764706);
+    border: 1px solid rgba(255, 255, 255, 0.3294117647);
+    border-radius: 1px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 1.5px 0px rgba(0, 0, 0, 0.3490196078);
+    font: 1rem 700 futura-pt, Helvetica, Arial, sans-serif;
+    color: #fff;
+    opacity: 1;
+    animation: tooltip-animate 0.3s ease forwards;
+  }
+  body .main-container .tt-bgimg-circle-pulse {
+    position: absolute;
+    z-index: -10;
+    top: 554px;
+    left: 593px;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 55%;
+    opacity: 0;
+    animation: info-tt-pulse 1.5s linear 9.5s 25;
   }
   body .main-container .lower-nav-container {
     display: block !important;
@@ -632,10 +2529,18 @@ body .main-container .contact-form .contact-form__elements .mobile-cta-footer__b
   body .main-container .lower-nav-container .nav-chevrons .left-chev {
     position: inherit;
     left: -21px;
+    cursor: pointer;
+  }
+  body .main-container .lower-nav-container .nav-chevrons .left-chev .dtlink.low-nav-a-left img {
+    pointer-events: none;
   }
   body .main-container .lower-nav-container .nav-chevrons .right-chev {
     position: inherit;
     right: -21px;
+    cursor: pointer;
+  }
+  body .main-container .lower-nav-container .nav-chevrons .right-chev .dtlink.low-nav-a-right img {
+    pointer-events: none;
   }
   body .main-container .lower-nav-container .main-footer .main-footer__social-icons {
     display: flex;
@@ -649,6 +2554,190 @@ body .main-container .contact-form .contact-form__elements .mobile-cta-footer__b
   }
   body .main-container .lower-nav-container .main-footer .main-footer__social-icons li {
     margin-right: 10px;
+  }
+  body .main-container .lower-nav-container .main-footer .main-footer__social-icons li {
+    position: relative;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-yt,
+  body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-b,
+  body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-fb,
+  body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-ig,
+  body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-lk {
+    position: relative;
+  }
+  body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-yt:hover {
+    transform: translateY(-2px);
+    filter: drop-shadow(0px 4px rgb(0, 0, 0));
+  }
+  body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-b:hover {
+    transform: translateY(-2px);
+    filter: drop-shadow(0px 4px rgb(0, 0, 0));
+  }
+  body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-fb:hover {
+    transform: translateY(-2px);
+    filter: drop-shadow(0px 4px rgb(0, 0, 0));
+  }
+  body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-ig:hover {
+    transform: translateY(-2px);
+    filter: drop-shadow(0px 4px rgb(0, 0, 0));
+  }
+  body .main-container .lower-nav-container .main-footer .main-footer__social-icons li #smi-lk:hover {
+    transform: translateY(-2px);
+    filter: drop-shadow(0px 4px rgb(0, 0, 0));
+  }
+  @keyframes bg-reveal {
+    0% {
+      opacity: 0%;
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
+  @keyframes type1 {
+    0% {
+      width: 0;
+      border-right: 0em;
+    }
+    15% {
+      width: 15%;
+      border-right: 0.15em solid #fff;
+    }
+    100% {
+      width: 100%;
+      border-right: 0.15em solid #fff;
+    }
+  }
+  @keyframes type2 {
+    0% {
+      width: 0;
+      border-right: 0em;
+    }
+    15% {
+      width: 15%;
+      border-right: 0.15em solid #fff;
+    }
+    100% {
+      width: 73%;
+      border-right: 0.15em solid #fff;
+    }
+  }
+  @keyframes blink {
+    from {
+      border-color: transparent;
+    }
+    to {
+      border-color: #fff;
+    }
+  }
+  @keyframes cursor-off {
+    from {
+      border-color: #fff;
+    }
+    to {
+      border-color: transparent;
+    }
+  }
+  @keyframes support-reveal {
+    0% {
+      opacity: 0%;
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
+  @keyframes social-icons-animate {
+    0% {
+      opacity: 0%;
+    }
+    100% {
+      opacity: 100%;
+    }
+    0% {
+      top: 0px;
+    }
+    50% {
+      top: -4px;
+    }
+    100% {
+      top: 0px;
+    }
+  }
+  @keyframes logo-reveal {
+    0% {
+      opacity: 0%;
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
+  @keyframes contact-form-animate {
+    0% {
+      opacity: 0%;
+    }
+    100% {
+      opacity: 100%;
+    }
+    0% {
+      top: -125px;
+    }
+    50% {
+      top: -110px;
+    }
+    100% {
+      top: -105px;
+    }
+  }
+  @keyframes info-tool-tip {
+    0% {
+      opacity: 0;
+      pointer-events: none;
+      transform: scale(0);
+    }
+    50% {
+      opacity: 0.5;
+      pointer-events: none;
+      transform: scale(0.5);
+    }
+    100% {
+      opacity: 1;
+      pointer-events: all;
+      transform: scale(1);
+    }
+  }
+  @keyframes info-tt-pulse {
+    0% {
+      opacity: 1;
+      pointer-events: none;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.5;
+      pointer-events: none;
+      transform: scale(1.5);
+    }
+    100% {
+      opacity: 0;
+      pointer-events: all;
+      transform: scale(2);
+    }
+  }
+  @keyframes tooltip-animate {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+      pointer-events: none;
+    }
+    50% {
+      opacity: 0.5;
+      transform: scale(0.5);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+      pointer-events: all;
+    }
   }
 }
 /*!SECTION ABOVE MOBILE PHONES - TABLET RANGE  - COMMON MACBOOK -   >1440px */

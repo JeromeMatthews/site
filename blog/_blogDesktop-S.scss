@@ -2,7 +2,101 @@
 @import "..//partials/navs/_nav-base-desktops-sm";
 @media (min-width: 1280px) {
 	body {
-		background-image: url("/img/img-desktop-sm-1280/desktop-sm-blog-bg.png");
+		// background-image: url("/img/img-desktop-sm-1280/desktop-sm-blog-bg.png");
+
+		//NOTE: UI/UX: ANIMATION & TRANSITIONS: 1 - Page Background Image - Reveal effect
+        background-image: none; // set the inital state of the property 	- for animation
+        opacity: 0; // set the inital state of the property - for animation
+        background-color: #000000;
+        animation: bg-reveal 0.5s ease-in forwards;
+
+        .page-container {
+            background-image: url("/img/img-desktop-sm-1280/desktop-sm-blog-bg.png");
+            @include pageContainer;
+
+            .page__surface{
+            
+                @include pageSurface;
+
+            }//end page__surface
+
+        }//end page-continer 
+
+
+        .page-flipped{
+            transform: translateX(0.5%) rotateY(90deg);
+        }
+
+
+		.mainnav__links {
+			//NOTE: Design variant
+			top: 32px;
+			left: 472px;
+		
+			a {
+				margin-top: 0px;
+				margin-bottom: 0px;
+				padding: 0px;
+			} //end mainnav__links a
+		
+		
+		
+		
+		
+		
+			//NOTE: MN-TOP-NAV-LINK - UI/UX: HOVER STATE
+			//===================================
+		
+			.mainnav__links-link-container {
+				@include mainnav__links-link-container;
+				height: 35px; // - reduced by 10% of 1440px variant
+				//NOTE: Top Nav links  UI/UX additions:
+				/*Hover state changes */
+				.mainnav__links-link__href {
+					@include mainnav__links-link__href;
+
+					/*Using the padding section of the content box and not margin. This is so the puesdo element doesn't take that into account for the overall distance to travel across the link and ends up looking werid.*/
+
+					margin-left: 0px;
+					margin-right: 0px;
+					padding: 10px 10px; //-reduced by 30% of 1440px variant space added to anchor so they look nicer and have larger surface area to click on by users.
+				} //end mainnav__links-link__href
+		
+		
+				.mainnav__links-link__href:after {
+					@include mainnav__links-link__href-after;
+				} //end mainnav__links-link__href:after
+		
+				.mainnav__links-link__href:hover {
+					@include mainnav__links-link__href-hover;
+				} //end mainnav__links-link__href:hover
+		
+				
+		
+				.mainnav__links-link__href:hover:after {
+					@include mainnav__links-link__href-hover-after;
+				} //end mainnav__links-link__href
+		
+				.mainnav__links-link__text {
+					@include mainnav__links-link__text;
+				} //end mainnav__links-link__text
+		
+				
+			} //end mainnav__links-link-container
+		
+			.mainnav__links-link-container:hover {
+				position: relative;
+				top: -28px; // 2px offset upwards to give a look of the link being raised once hovered over. the adjustment on the link is -26px so adding 2px more when hovered.
+		
+				filter: drop-shadow(0px 2.5px rgba(0, 0, 0, 0.221));
+				/* Two length values and a color */
+				/* drop-shadow( <length> <length> <color> ) */
+			} //end mainnav__links-link-container:hover
+		
+		
+			
+				
+		} //end mainnav__links
 
 		.main-container {
 			position: relative;
@@ -11,20 +105,51 @@
 				top: 0px; //resetting the position of the
 				.blog-collection__title {
 					//NOTE: design variant
-					font-size: $text3x-75; //60px - 25% of the dimensions of the 1920px variant. ;
+					font-size: $text3x-75; //60px - 25% of the dimensions of the 1920px variant.
+
+
+					 //NOTE: UI/UX ANIMATIONS & TRANSITIONS: 2 - Blog title reveal 
+					 opacity:0; //set the initial state of the text visibility - for animation
+					 animation: blog-title-reveal 1s linear 1s forwards;
 				} //end blog-collection__title
 			} //end blog-collection
 
-			//     .blog-collection__divide{
 
-			//     }//end blog-collection-divide
+			
+			.blog-collection__divide{
+
+				//NOTE: UI/UX ANIMATIONS & TRANSITIONS: 3 - Blog divider reveal 
+				opacity:0; //set the initial state of the divier visibility - for animation
+				
+				animation: top-divider-reveal 1s linear 2s forwards;
+            }//end blog-collection-divide
+
+
 
 			.blog-box-group {
 				//NOTE: design variant: Using the relative position declaration from the 768px design variant as base.
 				top: 0px;
-			} //end blog-box-group
+			
 
 			.blog-box__link {
+
+				 //NOTE: UI/UX ANIMATION & TRANSITIONS: 4 - Blog box reveals 
+
+				 #blog-box-1{
+					opacity: 0;// set the inital state of the text visibility - for animation
+					animation: blog-card-reveal 0.3s linear 2.5s forwards;
+				}//end blog-box-1
+
+				#blog-box-2{
+					opacity: 0;// set the inital state of the text visibility - for animation
+					animation: blog-card-reveal 0.3s linear 2.8s forwards;
+				}//end blog-box-2
+
+				#blog-box-3{
+					opacity: 0;// set the inital state of the text visibility - for animation
+					animation: blog-card-reveal 0.3s linear 3s forwards;
+				}//end blog-box-3
+
 				.blog-box {
 					//NOTE: design variant
 					width: 276px; //275.625 = 276px - 25% of the dimensions of the 1440px variant.
@@ -57,7 +182,60 @@
 					} //end blog-box__text-container
 				} //end blog-box
 			} //end blog-box__link
-		} //end main-container
+
+
+		} //end blog-box-group
+	} //end main-container
+
+
+		/*SECTION  ANIMATIONS & TRANSITIONS 
+		ABOVE MOBILE PHONES - TABLET RANGE  - LANDSCAPE -   >1920px */
+		/*ANIMATIONS: */
+		//==========================
+		//Playback Master sequence:
+		//1 - page bg-image:
+		//2 - Blog-title-reveal:
+		//3 - top-section-divider-reveal:
+		//4 - blog-card-reveal:
+		//==========================
+
+		//1 - page bg-image:
+
+		@keyframes bg-reveal {
+			@include basicReveal;
+		} //end bg-reveal
+
+		//--------------------------
+
+		//2 - blog-title-reveal:
+
+		@keyframes blog-title-reveal {
+			@include basicReveal;
+		} //end blog-title-reveal
+
+
+		//--------------------------
+
+		//3 - top-section-divider-reveal:
+
+		@keyframes top-divider-reveal {
+			@include basicReveal;
+		} //end top-divider-reveal
+
+
+		//--------------------------
+	
+		//4 - blog-card-reveal:
+
+		@keyframes blog-card-reveal{
+			@include basicReveal;
+			from{transform: translateY(-10px)} to{transform: translateY(inital)}
+		}//end blog-card-reveal
+
+
+		//--------------------------
+		/*END ANIMATIONS*/
+		/*!SECTION END ANIMATIONS & TRANSITIONS */
 	} //end body
 } //end media query
 /*!SECTION ABOVE MOBILE PHONES - TABLET RANGE  - DESKTOP-SMALL -   >1280px */

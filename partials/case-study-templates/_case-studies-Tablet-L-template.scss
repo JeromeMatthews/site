@@ -35,6 +35,13 @@
 		z-index: 1;
 	}
 	body {
+
+		//NOTE: UI/UX: ANIMATION & TRANSITIONS: 1 - Page Background Image - Reveal effect
+		background-image: none; // set the inital state of the property 	- for animation
+		opacity: 0; // set the inital state of the property - for animation
+		background-color: #000000;
+		animation: bg-reveal 0.5s ease-in forwards;
+
 		.atf-1 {
 			// background-image: url("/img/img-tablet-l/tablet-landscape-ps-ng-bg.png");
 			background-repeat: no-repeat;
@@ -389,7 +396,314 @@
 
 				}//end hero-text
 			}//end mobile-cta-footer__button
-		} // mobile-cta-footer
+
+			.mobile-cta-footer__button:hover {
+				background: #ffcf15 no-repeat padding-box;
+				
+				text-shadow: 0px 2px .5px #4a45459e;
+
+				.hero-text{
+					//NOTE: Design variant overiding the span tag color assignment from the tablet and mobile variants.
+					color: #f8f2f2 !important;
+				}//end hero-text
+			} //end .mobile-cta-footer__button:hover state
+		
+
+		.mobile-cta-footer__sm-links {
+			//NOTE: Design variant
+			li {
+				#smi-yt,
+				#smi-b,
+				#smi-fb,
+				#smi-ig,
+				#smi-lk {
+					position: relative;
+				} //end img
+
+				#smi-yt {
+				} //end smi-yt
+
+				#smi-yt:hover {
+					@include about-lowerNav-hoverstate;
+				} //end #smi-yt:hover
+
+				//======================================================
+
+				#smi-b {
+				} //end smi-b
+
+				#smi-b:hover {
+					@include about-lowerNav-hoverstate;
+				} //end #smi-b:hover
+
+				//======================================================
+
+				#smi-fb {
+				} // end smi-fb
+
+				#smi-fb:hover {
+					@include about-lowerNav-hoverstate;
+				} //end #smi-fb:hover
+
+				//======================================================
+
+				#smi-ig {
+				} //end smi-ig
+
+				#smi-ig:hover {
+					@include about-lowerNav-hoverstate;
+				} //end #smi-ig:hover
+				//======================================================
+
+				#smi-lk {
+				} //end smi-lk
+
+				#smi-lk:hover {
+					@include about-lowerNav-hoverstate;
+				} //end #smi-lk:hover
+				//======================================================
+
+				position: relative;
+				margin-right: 10px;
+				cursor: pointer;
+			} //end li
+		} //end mobile-cta-footer__sm-links
+	} // mobile-cta-footer
+
+		/*SECTION  ANIMATIONS & TRANSITIONS 
+		ABOVE MOBILE PHONES - TABLET RANGE  - LANDSCAPE -   >1920px */
+		/*ANIMATIONS: */
+		//==========================
+		//Playback Master sequence:
+		//1 - page bg-image:
+		//2: - social icons:
+		//3: chevron-down-animate:
+		//4:  chevron-down-reveal:
+		//5: atf-cs-project-reveal:
+		//6: atf-cs-client-reveal:
+		//7: btf-cs-project-desc-reveal:
+		//8: btf-cs-project-info-divider-reveal:
+		//9: btf-cs-project-sum-reveal:
+		//10: btf-project-container-box-reveal:
+		//11: info tooltip:
+		//12: info tooltip-pulse:
+		//13: info tool-tip-animate:
+		//==========================
+	//1 - page bg-image:
+
+	@keyframes bg-reveal {
+		@include basicReveal;
+		} //end bg-reveal
+	
+	//--------------------------
+	
+	
+			//2: - social icons:
+	
+			@keyframes social-icons-animate {
+				@include basicReveal;
+				0% {
+					top: 0px;
+				}
+	
+				50% {
+					top: -4px;
+				}
+	
+				100% {
+					top: 0px;
+				}
+			} //end social-icons-reveal
+			//--------------------------
+	
+			//3: chevron-down-animate
+			@keyframes chevron-down-animate {
+				0% {
+					top: 0px;
+				}
+	
+				50% {
+					top: 2.5px;
+				}
+	
+				100% {
+					top: 0px;
+				}
+			} //end chevron-down-animate
+			//--------------------------
+	
+			//4:  chevron-down-reveal
+			@keyframes chevron-down-reveal {
+				@include basicReveal;
+	
+				0%{
+					pointer-events: none;
+				}
+				100%{
+					pointer-events: all;
+	
+				}
+			} //end chevron-down-reveal
+			//--------------------------
+	
+	
+			//5: atf-cs-project-reveal
+			@keyframes atf-cs-project-reveal {
+				@include basicReveal;
+				0%{
+					
+					transform:  translateY(-10px) 
+				} 
+	
+				100%{
+					transform:  translateY(1px) 
+				}
+				
+			}//end atf-cs-project-reveal
+			//--------------------------
+	
+	
+			//6: atf-cs-client-reveal 
+			@keyframes atf-cs-client-reveal {
+				@include basicReveal;
+				0%{
+					
+					transform:  translateY(-10px) 
+				} 
+	
+				100%{
+					transform:  translateY(1px) 
+				}
+			}// end atf-cs-client-reveal
+			//--------------------------
+	
+			//7: btf-cs-project-desc-reveal
+			@keyframes btf-cs-project-desc-reveal{
+				@include basicReveal;
+				0%{
+					
+					transform:  translateY(-10px) 
+				} 
+	
+				100%{
+					transform:  translateY(1px) 
+				}
+			}//end btf-cs-project-desc-reveal
+	
+			//--------------------------
+	
+			//8: btf-cs-project-info-divider-reveal
+			@keyframes btf-cs-project-info-divider-reveal{
+			
+				@include basicReveal;
+				0%{
+					
+					transform:  translateY(-10px) 
+				} 
+	
+				100%{
+					transform:  translateY(1px) 
+				}
+			}//end btf-cs-project-info-divider-reveal
+			//--------------------------
+	
+			//9: btf-cs-project-sum-reveal
+			@keyframes btf-cs-project-sum-reveal{
+				
+				@include basicReveal;
+				0%{
+					
+					transform:  translateY(-10px) 
+				} 
+	
+				100%{
+					transform:  translateY(1px) 
+				}
+			}//end btf-cs-project-sum-reveal
+			//--------------------------
+	
+			//10: btf-project-container-box-reveal
+			@keyframes btf-project-container-box-reveal {
+	
+				@include basicReveal;
+				0%{
+					
+					transform:  translateY(-10px) 
+				} 
+	
+				100%{
+					transform:  translateY(1px) 
+				}
+			}//end btf-project-container-box-reveal
+	
+	
+		//11: info tooltip:
+		@keyframes info-tool-tip {
+			0% {
+				opacity: 0;
+				pointer-events: none;
+				transform: scale(0);
+			}
+	
+			50% {
+				opacity: 0.5;
+				pointer-events: none;
+				transform: scale(0.5);
+			}
+	
+			100% {
+				opacity: 1;
+				pointer-events: all;
+				transform: scale(1);
+			}
+		} //end info-tool-tip
+		//--------------------------
+	
+		//12: info tooltip-pulse:
+		@keyframes info-tt-pulse {
+			0% {
+				opacity: 1;
+				pointer-events: none;
+				transform: scale(1);
+			}
+	
+			50% {
+				opacity: 0.5;
+				pointer-events: none;
+				transform: scale(1.5);
+			}
+	
+			100% {
+				opacity: 0;
+				pointer-events: all;
+				transform: scale(2);
+			}
+		} //end info-tool-tip
+		//--------------------------
+	
+		//13: info tool-tip-animate:
+		@keyframes tooltip-animate {
+			0% {
+				opacity: 0;
+				transform: scale(0);
+			}
+	
+			50% {
+				opacity: 0.5;
+				transform: scale(0.5);
+			}
+	
+			100% {
+				opacity: 1;
+				transform: scale(1);
+			}
+		} //end info tool-tip-animate
+		//--------------------------
+	
+	
+	
+			/*END ANIMATIONS*/
+			/*!SECTION END ANIMATIONS & TRANSITIONS */
 
 	} //end body
 } // end media query
