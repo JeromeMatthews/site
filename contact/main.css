@@ -221,11 +221,11 @@ body .main-container .contact-container .contact-heroCopy .tw-fx-1 {
   width: 0;
   animation: type1 1.6s steps(21, end) 0.8s forwards, cursor-off 1 linear 0.2s 2.4s forwards;
   /*name -> 
-   iteration-count-> 
-   timing-function->
-   duration->
-   delay->
-   fill-mode*/
+  iteration-count-> 
+  timing-function->
+  duration->
+  delay->
+  fill-mode*/
 }
 body .main-container .contact-container .contact-heroCopy .tw-fx-2 {
   position: relative;
@@ -253,21 +253,13 @@ body .main-container .contact-container .contactheroimg {
   opacity: 0;
   animation: logo-reveal 1 ease-in 1s 5s forwards;
 }
-body .main-container .contact-form,
-body .main-container .contact-form__elements,
-body .main-container .contact-form__element,
-body .main-container .contact-form__label,
-body .main-container .contact-form__input {
-  margin: 0px;
-  padding: 0px;
-}
-body .main-container .contact-form {
+body .main-container .contact-container .contact-form {
   opacity: 0;
   animation: contact-form-animate 1 ease-out 1s 6.5s forwards;
   position: relative;
   top: 100px;
 }
-body .main-container .contact-form .contact-form__elements {
+body .main-container .contact-container .contact-form .contact-form__elements {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -276,12 +268,12 @@ body .main-container .contact-form .contact-form__elements {
   text-align: center;
   align-content: center;
 }
-body .main-container .contact-form .contact-form__elements .contact-form__element {
+body .main-container .contact-container .contact-form .contact-form__elements .contact-form__element {
   display: inline-block;
   margin: 6px auto;
   list-style: none;
 }
-body .main-container .contact-form .contact-form__elements .contact-form__element .contact-form__label {
+body .main-container .contact-container .contact-form .contact-form__elements .contact-form__element .contact-form__label {
   position: relative;
   background-color: #ffbf00;
   font-family: futura-pt, Helvetica, Arial, sans-serif;
@@ -292,14 +284,14 @@ body .main-container .contact-form .contact-form__elements .contact-form__elemen
   height: 30px;
   padding: 5px 15px 6px 15px;
 }
-body .main-container .contact-form .contact-form__elements .contact-form__element .contact-form__label .contact-form__input {
+body .main-container .contact-container .contact-form .contact-form__elements .contact-form__element .contact-form__label .contact-form__input {
   background-color: #ffbf00;
   font-family: futura-pt, Helvetica, Arial, sans-serif;
   font-size: 0.93rem;
   font-weight: 400;
   color: #000000;
 }
-body .main-container .contact-form .contact-form__elements .mobile-cta-footer__button {
+body .main-container .contact-container .contact-form .contact-form__elements .mobile-cta-footer__button {
   width: 196px;
   height: 41px;
   background: #f5b600 0% 0% no-repeat padding-box;
@@ -313,10 +305,18 @@ body .main-container .contact-form .contact-form__elements .mobile-cta-footer__b
   position: relative;
   cursor: pointer;
 }
-body .main-container .contact-form .contact-form__elements .mobile-cta-footer__button:hover {
+body .main-container .contact-container .contact-form .contact-form__elements .mobile-cta-footer__button:hover {
   background: #ffcf15 no-repeat padding-box;
   color: #f8f2f2;
   text-shadow: 0px 2px 0.5px rgba(74, 69, 69, 0.6196078431);
+}
+body .main-container .contact-form,
+body .main-container .contact-form__elements,
+body .main-container .contact-form__element,
+body .main-container .contact-form__label,
+body .main-container .contact-form__input {
+  margin: 0px;
+  padding: 0px;
 }
 body .main-container .tt-circle {
   position: absolute;
@@ -699,11 +699,11 @@ body .main-container .lower-nav-container .main-footer .main-footer__social-icon
     width: 0;
     animation: type1 1.6s steps(21, end) 0.8s forwards, cursor-off 1 linear 0.2s 2.4s forwards;
     /*name -> 
-     iteration-count-> 
-     timing-function->
-     duration->
-     delay->
-     fill-mode*/
+    iteration-count-> 
+    timing-function->
+    duration->
+    delay->
+    fill-mode*/
   }
   body .main-container .contact-container .contact-heroCopy .tw-fx-2 {
     position: relative;
@@ -724,21 +724,24 @@ body .main-container .lower-nav-container .main-footer .main-footer__social-icon
   body .main-container .contact-container .contactheroimg {
     margin: 25px auto;
     padding: 0px;
+    top: 39px;
     left: 0px;
     width: 150px;
     height: 80px;
     opacity: 0;
     animation: logo-reveal 1 ease-in 1s 5s forwards;
   }
-  body .main-container .contact-form {
+  body .main-container .contact-container .contact-form {
     opacity: 0;
     animation: contact-form-animate 1 ease-out 1s 6.5s forwards;
+    position: relative;
+    top: 100px;
   }
-  body .main-container .contact-form .contact-form__elements .contact-form__element input {
+  body .main-container .contact-container .contact-form .contact-form__elements .contact-form__element input {
     width: 299px;
     height: 37px;
   }
-  body .main-container .contact-form .contact-form__elements .contact-form__label {
+  body .main-container .contact-container .contact-form .contact-form__elements .contact-form__label {
     display: inline-block;
     top: 3px;
     left: 4px;
@@ -746,27 +749,27 @@ body .main-container .lower-nav-container .main-footer .main-footer__social-icon
     height: 49px;
     border-radius: 4px 0px 0px 4px;
   }
-  body .main-container .contact-form .contact-form__elements .contact-form__label .label-text {
+  body .main-container .contact-container .contact-form .contact-form__elements .contact-form__label .label-text {
     font-size: 1.12rem;
     position: relative;
     top: -8%;
     bottom: 25%;
   }
-  body .main-container .contact-form .contact-form__elements .mobile-cta-footer__button {
+  body .main-container .contact-container .contact-form .contact-form__elements .mobile-cta-footer__button {
     width: 173px;
     height: 34px;
     font-size: 0.93rem;
     right: -100px;
     cursor: pointer;
   }
-  body .main-container .contact-form .contact-form__elements .mobile-cta-footer__button:hover {
+  body .main-container .contact-container .contact-form .contact-form__elements .mobile-cta-footer__button:hover {
     background: #ffcf15 no-repeat padding-box;
     color: #f8f2f2;
     text-shadow: 0px 2px 0.5px rgba(74, 69, 69, 0.6196078431);
   }
   body .main-container .tt-circle {
     position: absolute;
-    top: 730px;
+    top: 865px;
     left: 40px;
     width: 20px;
     height: 20px;
@@ -806,8 +809,8 @@ body .main-container .lower-nav-container .main-footer .main-footer__social-icon
     font: 0.75rem futura-pt, Helvetica, Arial, sans-serif;
     color: #ffffff;
     position: absolute;
-    right: 1574px;
-    top: 736px;
+    top: 867px;
+    right: 419px;
     animation: info-tool-tip 1s ease-in 11.5s forwards;
   }
   body .main-container .author-info p .author-info__name {
@@ -827,8 +830,8 @@ body .main-container .lower-nav-container .main-footer .main-footer__social-icon
   }
   body .main-container .tt-bgimg-circle {
     position: fixed;
-    top: 664px;
-    left: 593px;
+    top: 703px;
+    left: 89px;
     width: 20px;
     height: 20px;
     background-color: #ffbf00;
@@ -856,10 +859,10 @@ body .main-container .lower-nav-container .main-footer .main-footer__social-icon
     white-space: pre-line;
     position: absolute;
     transition: 1s all ease;
-    top: -125px;
-    left: -581px;
-    width: 580px;
-    height: 80px;
+    top: -228px;
+    left: -85px;
+    width: 175px;
+    height: 212px;
     background-color: rgba(0, 0, 0, 0.3411764706);
     border: 1px solid rgba(255, 255, 255, 0.3294117647);
     border-radius: 1px;
@@ -873,8 +876,8 @@ body .main-container .lower-nav-container .main-footer .main-footer__social-icon
   body .main-container .tt-bgimg-circle-pulse {
     position: absolute;
     z-index: -10;
-    top: 554px;
-    left: 593px;
+    top: 593px;
+    left: 89px;
     width: 20px;
     height: 20px;
     background-color: transparent;
@@ -893,6 +896,7 @@ body .main-container .lower-nav-container .main-footer .main-footer__social-icon
     position: relative;
     top: -18px;
     right: 16px;
+    display: block !important;
   }
   body .main-container .lower-nav-container .nav-chevrons .left-chev {
     position: inherit;
@@ -918,7 +922,7 @@ body .main-container .lower-nav-container .main-footer .main-footer__social-icon
     text-decoration: none;
     justify-content: center;
     position: relative;
-    right: 5.2vw;
+    right: 8.7vw;
   }
   body .main-container .lower-nav-container .main-footer .main-footer__social-icons li {
     margin-right: 10px;
@@ -1048,13 +1052,10 @@ body .main-container .lower-nav-container .main-footer .main-footer__social-icon
       opacity: 100%;
     }
     0% {
-      top: -125px;
-    }
-    50% {
-      top: -110px;
+      top: -11px;
     }
     100% {
-      top: -105px;
+      top: 9px;
     }
   }
   @keyframes info-tool-tip {
@@ -1159,11 +1160,11 @@ body .main-container .lower-nav-container .main-footer .main-footer__social-icon
     width: 0;
     animation: type1 1.6s steps(21, end) 0.8s forwards, cursor-off 1 linear 0.2s 2.4s forwards;
     /*name -> 
-     iteration-count-> 
-     timing-function->
-     duration->
-     delay->
-     fill-mode*/
+    iteration-count-> 
+    timing-function->
+    duration->
+    delay->
+    fill-mode*/
   }
   body .main-container .contact-container .contact-heroCopy .tw-fx-2 {
     position: relative;
@@ -1185,23 +1186,23 @@ body .main-container .lower-nav-container .main-footer .main-footer__social-icon
     margin: 25px auto;
     padding: 0px;
     position: relative;
-    top: 51px;
+    top: 11px;
     left: 86px;
     width: 137px;
     height: 70px;
     opacity: 0;
     animation: logo-reveal 1 ease-in 1s 5s forwards;
   }
-  body .main-container .contact-form {
+  body .main-container .contact-container .contact-form {
     top: 40px;
     opacity: 0;
     animation: contact-form-animate 1 ease-out 1s 6.5s forwards;
   }
-  body .main-container .contact-form .contact-form__elements .contact-form__element input {
+  body .main-container .contact-container .contact-form .contact-form__elements .contact-form__element input {
     width: 299px;
     height: 37px;
   }
-  body .main-container .contact-form .contact-form__elements .contact-form__label {
+  body .main-container .contact-container .contact-form .contact-form__elements .contact-form__label {
     display: inline-block;
     top: 3px;
     left: 4px;
@@ -1209,25 +1210,25 @@ body .main-container .lower-nav-container .main-footer .main-footer__social-icon
     height: 49px;
     border-radius: 4px 0px 0px 4px;
   }
-  body .main-container .contact-form .contact-form__elements .contact-form__label .label-text {
+  body .main-container .contact-container .contact-form .contact-form__elements .contact-form__label .label-text {
     font-size: 1.12rem;
     position: relative;
     top: -8%;
     bottom: 25%;
   }
-  body .main-container .contact-form .contact-form__elements .mobile-cta-footer__button {
+  body .main-container .contact-container .contact-form .contact-form__elements .mobile-cta-footer__button {
     position: relative;
     right: -100px;
     cursor: pointer;
   }
-  body .main-container .contact-form .contact-form__elements .mobile-cta-footer__button:hover {
+  body .main-container .contact-container .contact-form .contact-form__elements .mobile-cta-footer__button:hover {
     background: #ffcf15 no-repeat padding-box;
     color: #f8f2f2;
     text-shadow: 0px 2px 0.5px rgba(74, 69, 69, 0.6196078431);
   }
   body .main-container .tt-circle {
     position: absolute;
-    top: 730px;
+    top: 610px;
     left: 40px;
     width: 20px;
     height: 20px;
@@ -1267,8 +1268,8 @@ body .main-container .lower-nav-container .main-footer .main-footer__social-icon
     font: 0.75rem futura-pt, Helvetica, Arial, sans-serif;
     color: #ffffff;
     position: absolute;
-    right: 1574px;
-    top: 736px;
+    top: 611px;
+    right: 675px;
     animation: info-tool-tip 1s ease-in 11.5s forwards;
   }
   body .main-container .author-info p .author-info__name {
@@ -1288,8 +1289,8 @@ body .main-container .lower-nav-container .main-footer .main-footer__social-icon
   }
   body .main-container .tt-bgimg-circle {
     position: fixed;
-    top: 664px;
-    left: 593px;
+    top: 543px;
+    left: 281px;
     width: 20px;
     height: 20px;
     background-color: #ffbf00;
@@ -1318,9 +1319,9 @@ body .main-container .lower-nav-container .main-footer .main-footer__social-icon
     position: absolute;
     transition: 1s all ease;
     top: -125px;
-    left: -581px;
-    width: 580px;
-    height: 80px;
+    left: -215px;
+    width: 405px;
+    height: 95px;
     background-color: rgba(0, 0, 0, 0.3411764706);
     border: 1px solid rgba(255, 255, 255, 0.3294117647);
     border-radius: 1px;
@@ -1334,8 +1335,8 @@ body .main-container .lower-nav-container .main-footer .main-footer__social-icon
   body .main-container .tt-bgimg-circle-pulse {
     position: absolute;
     z-index: -10;
-    top: 554px;
-    left: 593px;
+    top: 433px;
+    left: 281px;
     width: 20px;
     height: 20px;
     background-color: transparent;
@@ -1354,6 +1355,7 @@ body .main-container .lower-nav-container .main-footer .main-footer__social-icon
     position: relative;
     top: -18px;
     right: 16px;
+    display: block !important;
   }
   body .main-container .lower-nav-container .nav-chevrons .left-chev {
     position: inherit;
@@ -1379,7 +1381,7 @@ body .main-container .lower-nav-container .main-footer .main-footer__social-icon
     text-decoration: none;
     justify-content: center;
     position: relative;
-    right: 5.2vw;
+    right: 6.5vw;
   }
   body .main-container .lower-nav-container .main-footer .main-footer__social-icons li {
     margin-right: 10px;
@@ -1509,13 +1511,10 @@ body .main-container .lower-nav-container .main-footer .main-footer__social-icon
       opacity: 100%;
     }
     0% {
-      top: -125px;
-    }
-    50% {
-      top: -110px;
+      top: -20px;
     }
     100% {
-      top: -105px;
+      top: 0px;
     }
   }
   @keyframes info-tool-tip {
@@ -1722,11 +1721,11 @@ body .main-container .lower-nav-container .main-footer .main-footer__social-icon
     width: 0;
     animation: type1 1.6s steps(21, end) 0.8s forwards, cursor-off 1 linear 0.2s 2.4s forwards;
     /*name -> 
-     iteration-count-> 
-     timing-function->
-     duration->
-     delay->
-     fill-mode*/
+    iteration-count-> 
+    timing-function->
+    duration->
+    delay->
+    fill-mode*/
   }
   body .main-container .contact-container .contact-heroCopy .tw-fx-2 {
     position: relative;
@@ -1748,43 +1747,43 @@ body .main-container .lower-nav-container .main-footer .main-footer__social-icon
     margin: 25px auto;
     padding: 0px;
     position: relative;
-    top: 41px;
+    top: -2px;
     left: 107px;
     width: 163px;
     height: 77px;
     opacity: 0;
     animation: logo-reveal 1 ease-in 1s 5s forwards;
   }
-  body .main-container .contact-form {
+  body .main-container .contact-container .contact-form {
     opacity: 0;
     animation: contact-form-animate 1 ease-out 1s 6.5s forwards;
   }
-  body .main-container .contact-form .contact-form__elements .contact-form__element {
+  body .main-container .contact-container .contact-form .contact-form__elements .contact-form__element {
     margin: 0px auto;
   }
-  body .main-container .contact-form .contact-form__elements .contact-form__element input {
+  body .main-container .contact-container .contact-form .contact-form__elements .contact-form__element input {
     width: 398px;
     height: 49px !important;
   }
-  body .main-container .contact-form .contact-form__elements .contact-form__element .contact-form__label {
+  body .main-container .contact-container .contact-form .contact-form__elements .contact-form__element .contact-form__label {
     display: inline-block;
     top: -12px;
     width: 83px;
     height: 49px;
     border-radius: 8px 0px 0px 8px;
   }
-  body .main-container .contact-form .contact-form__elements .contact-form__element .contact-form__label .label-text {
+  body .main-container .contact-container .contact-form .contact-form__elements .contact-form__element .contact-form__label .label-text {
     font-size: 1.12rem;
     position: relative;
     top: 25%;
     bottom: 25%;
   }
-  body .main-container .contact-form .contact-form__elements .contact-form__element .contact-form__input {
+  body .main-container .contact-container .contact-form .contact-form__elements .contact-form__element .contact-form__input {
     top: -4.5px;
     font-size: 1.12rem;
     border-radius: 0px 8px 8px 0px;
   }
-  body .main-container .contact-form .contact-form__elements .contact-form__element .mobile-cta-footer__button {
+  body .main-container .contact-container .contact-form .contact-form__elements .contact-form__element .mobile-cta-footer__button {
     width: 223px;
     height: 42px;
     position: relative;
@@ -1793,12 +1792,12 @@ body .main-container .lower-nav-container .main-footer .main-footer__social-icon
     font-size: 1.12rem;
     cursor: pointer;
   }
-  body .main-container .contact-form .contact-form__elements .mobile-cta-footer__button:hover {
+  body .main-container .contact-container .contact-form .contact-form__elements .mobile-cta-footer__button:hover {
     background: #ffcf15 no-repeat padding-box;
     color: #f8f2f2;
     text-shadow: 0px 2px 0.5px rgba(74, 69, 69, 0.6196078431);
   }
-  body .main-container .contact-form textarea {
+  body .main-container .contact-container .contact-form textarea {
     height: 163px;
     border-radius: 8px;
     font-family: futura-pt, Helvetica, Arial, sans-serif;
@@ -1806,7 +1805,7 @@ body .main-container .lower-nav-container .main-footer .main-footer__social-icon
   }
   body .main-container .tt-circle {
     position: absolute;
-    top: 730px;
+    top: 561px;
     left: 40px;
     width: 20px;
     height: 20px;
@@ -1846,8 +1845,8 @@ body .main-container .lower-nav-container .main-footer .main-footer__social-icon
     font: 0.75rem futura-pt, Helvetica, Arial, sans-serif;
     color: #ffffff;
     position: absolute;
-    right: 1574px;
-    top: 736px;
+    right: 929px;
+    top: 563px;
     animation: info-tool-tip 1s ease-in 11.5s forwards;
   }
   body .main-container .author-info p .author-info__name {
@@ -1867,8 +1866,8 @@ body .main-container .lower-nav-container .main-footer .main-footer__social-icon
   }
   body .main-container .tt-bgimg-circle {
     position: fixed;
-    top: 664px;
-    left: 593px;
+    top: 518px;
+    left: 391px;
     width: 20px;
     height: 20px;
     background-color: #ffbf00;
@@ -1897,7 +1896,7 @@ body .main-container .lower-nav-container .main-footer .main-footer__social-icon
     position: absolute;
     transition: 1s all ease;
     top: -125px;
-    left: -581px;
+    left: -308px;
     width: 580px;
     height: 80px;
     background-color: rgba(0, 0, 0, 0.3411764706);
@@ -1913,8 +1912,8 @@ body .main-container .lower-nav-container .main-footer .main-footer__social-icon
   body .main-container .tt-bgimg-circle-pulse {
     position: absolute;
     z-index: -10;
-    top: 554px;
-    left: 593px;
+    top: 408px;
+    left: 391px;
     width: 20px;
     height: 20px;
     background-color: transparent;
@@ -1933,6 +1932,7 @@ body .main-container .lower-nav-container .main-footer .main-footer__social-icon
     position: relative;
     top: -18px;
     right: 16px;
+    display: block !important;
   }
   body .main-container .lower-nav-container .nav-chevrons .left-chev {
     position: inherit;
@@ -2088,13 +2088,10 @@ body .main-container .lower-nav-container .main-footer .main-footer__social-icon
       opacity: 100%;
     }
     0% {
-      top: -125px;
-    }
-    50% {
-      top: -110px;
+      top: -45px;
     }
     100% {
-      top: -105px;
+      top: -24px;
     }
   }
   @keyframes info-tool-tip {
@@ -2169,7 +2166,7 @@ body .main-container .lower-nav-container .main-footer .main-footer__social-icon
     width: 144px;
     height: 77px;
     top: 3px;
-    left: -1px;
+    left: 166px;
     pointer-events: none;
   }
   .sitenav__contactNum {
@@ -2311,11 +2308,11 @@ body .main-container .lower-nav-container .main-footer .main-footer__social-icon
     width: 0;
     animation: type1 1.6s steps(21, end) 0.8s forwards, cursor-off 1 linear 0.2s 2.4s forwards;
     /*name -> 
-     iteration-count-> 
-     timing-function->
-     duration->
-     delay->
-     fill-mode*/
+    iteration-count-> 
+    timing-function->
+    duration->
+    delay->
+    fill-mode*/
   }
   body .main-container .contact-container .contact-heroCopy .tw-fx-2 {
     position: relative;
@@ -2337,46 +2334,46 @@ body .main-container .lower-nav-container .main-footer .main-footer__social-icon
     margin: 25px auto;
     padding: 0px;
     position: relative;
-    top: 21px;
+    top: -26px;
     left: 145px;
     width: 218px;
     height: 103px;
     opacity: 0;
     animation: logo-reveal 1 ease-in 1s 5s forwards;
   }
-  body .main-container .contact-form {
+  body .main-container .contact-container .contact-form {
     position: relative;
     top: -5px;
     left: -52px;
     opacity: 0;
     animation: contact-form-animate 1 ease-out 1s 6.5s forwards;
   }
-  body .main-container .contact-form .contact-form__elements .contact-form__element {
+  body .main-container .contact-container .contact-form .contact-form__elements .contact-form__element {
     margin: 0px auto;
   }
-  body .main-container .contact-form .contact-form__elements .contact-form__element input {
+  body .main-container .contact-container .contact-form .contact-form__elements .contact-form__element input {
     width: 398px;
     height: 65px !important;
   }
-  body .main-container .contact-form .contact-form__elements .contact-form__element .contact-form__label {
+  body .main-container .contact-container .contact-form .contact-form__elements .contact-form__element .contact-form__label {
     display: inline-block;
     top: -12px;
     width: 110px;
     height: 64px;
     border-radius: 8px 0px 0px 8px;
   }
-  body .main-container .contact-form .contact-form__elements .contact-form__element .contact-form__label .label-text {
+  body .main-container .contact-container .contact-form .contact-form__elements .contact-form__element .contact-form__label .label-text {
     font-size: 1.25rem;
     position: relative;
     top: 25%;
     bottom: 25%;
   }
-  body .main-container .contact-form .contact-form__elements .contact-form__element .contact-form__input {
+  body .main-container .contact-container .contact-form .contact-form__elements .contact-form__element .contact-form__input {
     top: 3px;
     font-size: 1.25rem;
     border-radius: 0px 8px 8px 0px;
   }
-  body .main-container .contact-form .contact-form__elements .contact-form__element .mobile-cta-footer__button {
+  body .main-container .contact-container .contact-form .contact-form__elements .contact-form__element .mobile-cta-footer__button {
     width: 297px;
     height: 56px;
     position: relative;
@@ -2385,12 +2382,12 @@ body .main-container .lower-nav-container .main-footer .main-footer__social-icon
     font-size: 1.37rem;
     cursor: pointer;
   }
-  body .main-container .contact-form .contact-form__elements .mobile-cta-footer__button:hover {
+  body .main-container .contact-container .contact-form .contact-form__elements .mobile-cta-footer__button:hover {
     background: #ffcf15 no-repeat padding-box;
     color: #f8f2f2;
     text-shadow: 0px 2px 0.5px rgba(74, 69, 69, 0.6196078431);
   }
-  body .main-container .contact-form textarea {
+  body .main-container .contact-container .contact-form textarea {
     height: 218px;
     border-radius: 8px;
     font-family: futura-pt, Helvetica, Arial, sans-serif;
@@ -2398,7 +2395,7 @@ body .main-container .lower-nav-container .main-footer .main-footer__social-icon
   }
   body .main-container .tt-circle {
     position: absolute;
-    top: 730px;
+    top: 742px;
     left: 40px;
     width: 20px;
     height: 20px;
@@ -2438,8 +2435,8 @@ body .main-container .lower-nav-container .main-footer .main-footer__social-icon
     font: 0.75rem futura-pt, Helvetica, Arial, sans-serif;
     color: #ffffff;
     position: absolute;
-    right: 1574px;
-    top: 736px;
+    right: 1089px;
+    top: 743px;
     animation: info-tool-tip 1s ease-in 11.5s forwards;
   }
   body .main-container .author-info p .author-info__name {
@@ -2459,8 +2456,8 @@ body .main-container .lower-nav-container .main-footer .main-footer__social-icon
   }
   body .main-container .tt-bgimg-circle {
     position: fixed;
-    top: 664px;
-    left: 593px;
+    top: 650px;
+    left: 442px;
     width: 20px;
     height: 20px;
     background-color: #ffbf00;
@@ -2489,7 +2486,7 @@ body .main-container .lower-nav-container .main-footer .main-footer__social-icon
     position: absolute;
     transition: 1s all ease;
     top: -125px;
-    left: -581px;
+    left: -396px;
     width: 580px;
     height: 80px;
     background-color: rgba(0, 0, 0, 0.3411764706);
@@ -2505,8 +2502,8 @@ body .main-container .lower-nav-container .main-footer .main-footer__social-icon
   body .main-container .tt-bgimg-circle-pulse {
     position: absolute;
     z-index: -10;
-    top: 554px;
-    left: 593px;
+    top: 540px;
+    left: 442px;
     width: 20px;
     height: 20px;
     background-color: transparent;
@@ -2525,6 +2522,7 @@ body .main-container .lower-nav-container .main-footer .main-footer__social-icon
     position: relative;
     top: -18px;
     right: 16px;
+    display: block !important;
   }
   body .main-container .lower-nav-container .nav-chevrons .left-chev {
     position: inherit;
@@ -2680,13 +2678,10 @@ body .main-container .lower-nav-container .main-footer .main-footer__social-icon
       opacity: 100%;
     }
     0% {
-      top: -125px;
-    }
-    50% {
-      top: -110px;
+      top: -84px;
     }
     100% {
-      top: -105px;
+      top: -64px;
     }
   }
   @keyframes info-tool-tip {
@@ -2897,11 +2892,11 @@ body .main-container .lower-nav-container .main-footer .main-footer__social-icon
     width: 0;
     animation: type1 1.6s steps(21, end) 0.8s forwards, cursor-off 1 linear 0.2s 2.4s forwards;
     /*name -> 
-     iteration-count-> 
-     timing-function->
-     duration->
-     delay->
-     fill-mode*/
+    iteration-count-> 
+    timing-function->
+    duration->
+    delay->
+    fill-mode*/
   }
   body .main-container .contact-container .contact-heroCopy .tw-fx-2 {
     position: relative;
@@ -2930,38 +2925,38 @@ body .main-container .lower-nav-container .main-footer .main-footer__social-icon
     opacity: 0;
     animation: logo-reveal 1 ease-in 1s 5s forwards;
   }
-  body .main-container .contact-form {
+  body .main-container .contact-container .contact-form {
     top: -105px;
     left: 45px;
     opacity: 0;
     animation: contact-form-animate 1 ease-out 1s 6.5s forwards;
   }
-  body .main-container .contact-form .contact-form__elements .contact-form__element {
+  body .main-container .contact-container .contact-form .contact-form__elements .contact-form__element {
     margin: 0px auto;
   }
-  body .main-container .contact-form .contact-form__elements .contact-form__element input {
+  body .main-container .contact-container .contact-form .contact-form__elements .contact-form__element input {
     width: 530px;
     height: 65px !important;
   }
-  body .main-container .contact-form .contact-form__elements .contact-form__element .contact-form__label {
+  body .main-container .contact-container .contact-form .contact-form__elements .contact-form__element .contact-form__label {
     display: inline-block;
     top: -12px;
     width: 110px;
     height: 64px;
     border-radius: 8px 0px 0px 8px;
   }
-  body .main-container .contact-form .contact-form__elements .contact-form__element .contact-form__label .label-text {
+  body .main-container .contact-container .contact-form .contact-form__elements .contact-form__element .contact-form__label .label-text {
     font-size: 1.25rem;
     position: relative;
     top: 25%;
     bottom: 25%;
   }
-  body .main-container .contact-form .contact-form__elements .contact-form__element .contact-form__input {
+  body .main-container .contact-container .contact-form .contact-form__elements .contact-form__element .contact-form__input {
     top: 3px;
     font-size: 1.25rem;
     border-radius: 0px 8px 8px 0px;
   }
-  body .main-container .contact-form .contact-form__elements .contact-form__element .mobile-cta-footer__button {
+  body .main-container .contact-container .contact-form .contact-form__elements .contact-form__element .mobile-cta-footer__button {
     width: 396px;
     height: 74px;
     position: relative;
@@ -2971,12 +2966,12 @@ body .main-container .lower-nav-container .main-footer .main-footer__social-icon
     cursor: pointer;
     color: #644e0a;
   }
-  body .main-container .contact-form .contact-form__elements .mobile-cta-footer__button:hover {
+  body .main-container .contact-container .contact-form .contact-form__elements .mobile-cta-footer__button:hover {
     background: #ffcf15 no-repeat padding-box;
     color: #f8f2f2;
     text-shadow: 0px 2px 0.5px rgba(74, 69, 69, 0.6196078431);
   }
-  body .main-container .contact-form textarea {
+  body .main-container .contact-container .contact-form textarea {
     height: 230px;
     border-radius: 8px;
     font-family: futura-pt, Helvetica, Arial, sans-serif;

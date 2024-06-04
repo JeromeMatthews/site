@@ -34,128 +34,130 @@
 			//NOTE design varitant
 			position: relative;
 			top: 110px;
-			.contact-container {
-				@include flexMix-col;
+					.contact-container {
+						@include flexMix-col;
 
-				.contact-heroCopy {
-                   font-size: $text2x-18;//35px;
+						.contact-heroCopy {
+						font-size: $text2x-18;//35px;
 
 
-				   //NOTE: UI/UX: ANIMATION & TRANSITIONS: 2 - About Hero - Typewriter effect
-					.tw-fx-1 {
-						display: inline-block;
-						overflow: hidden;
+						//NOTE: UI/UX: ANIMATION & TRANSITIONS: 2 - About Hero - Typewriter effect
+							.tw-fx-1 {
+								display: inline-block;
+								overflow: hidden;
 
-						white-space: nowrap;
-						font-size: inherit; //take it from the original font-size, easier to scale.
-						width: 0;
-						animation: type1 1.6s steps(21, end) 0.8s forwards,
-							cursor-off 1 linear 0.2s 2.4s forwards;
-						/*name -> 
-						 iteration-count-> 
-						 timing-function->
-						 duration->
-						 delay->
-						 fill-mode*/
-					} //end tw-fx-1
+								white-space: nowrap;
+								font-size: inherit; //take it from the original font-size, easier to scale.
+								width: 0;
+								animation: type1 1.6s steps(21, end) 0.8s forwards,
+									cursor-off 1 linear 0.2s 2.4s forwards;
+								/*name -> 
+								iteration-count-> 
+								timing-function->
+								duration->
+								delay->
+								fill-mode*/
+							} //end tw-fx-1
 
-					.tw-fx-2 {
+							.tw-fx-2 {
+								position: relative;
+								top: -30px;
+								display: inline-block;
+								overflow: hidden;
+
+								white-space: nowrap;
+								font-size: inherit; //take it from the original font-size, easier to scale.
+								width: 0;
+
+								animation: type2 1.5s steps(20, end) 3s forwards,
+									cursor-off 1 linear 0.2s 4.4s forwards;
+								/*name -> 
+								iteration-count-> 
+								timing-function->
+								duration->
+								delay->
+								fill-mode*/
+							} //end tw-fx-2
+
+						} // end of contact-heroCopy
+
+						.contactheroimg {
+							//NOTE design varitant
+							margin: 25px auto;
+							padding: 0px;
+							// position: relative;
+							top: 39px;
+							left: 0px; //reseting left positioning from mobile settings.
+							width: 150px;
+							height: 80px;
+
+							opacity: 0; //set inital state for animation
+							animation: logo-reveal 1 ease-in 1s 5s forwards;
+						}//end of contactheroimg
+					
+
+					.contact-form{
+						//NOTE: UI/UX: ANIMATION & TRANSITIONS:
+						opacity: 0; //set inital state for animation
+						animation: contact-form-animate 1 ease-out 1s 6.5s forwards;
+						.contact-form__elements {
+
+							.contact-form__element {
+
+								input{
+									//NOTE: design variant: 25% of dimensions in 1280px variant. Width: 298.5px and Height: 36.563px
+									width: 299px ;
+									height: 37px ;
+
+								}//end input
+							}//contact-form__element
+
+							.contact-form__label {
+								//NOTE: design variant: 25% of dimensions in 1440px variant. Width: 82.5px and Height: 48.75px
+								display: inline-block;
+								top: 3px;
+								left: 4px;
+								width: 83px;
+								height: 49px;
+								border-radius: 4px 0px 0px 4px;
+				
+
+								.label-text {
+									font-size: $text1x-12; //18px
+									position: relative;
+									top: -8%;
+									bottom: 25%;
+								} //end label-text
+							} //end contact-form-label
+
+
+
+							.mobile-cta-footer__button{
+								//NOTE: design variant
+								width: 173px;
+								height: 34px;
+							font-size: $textSmall-93; //15px;
+							right: -100px;
+
+							cursor: pointer;
+							}//end mobile-cta-footer__button
+
+							.mobile-cta-footer__button:hover {
+								background: #ffcf15 no-repeat padding-box;
+								color: #f8f2f2;
+								text-shadow: 0px 2px .5px #4a45459e;
+							} //end .mobile-cta-footer__button:hover state
+
+
+						}// end contact-form__elements
+
 						position: relative;
-						top: -30px;
-						display: inline-block;
-						overflow: hidden;
-
-						white-space: nowrap;
-						font-size: inherit; //take it from the original font-size, easier to scale.
-						width: 0;
-
-						animation: type2 1.5s steps(20, end) 3s forwards,
-							cursor-off 1 linear 0.2s 4.4s forwards;
-						/*name -> 
-						iteration-count-> 
-						timing-function->
-						duration->
-						delay->
-						fill-mode*/
-					} //end tw-fx-2
-
-				} // end of contact-heroCopy
-
-				.contactheroimg {
-					//NOTE design varitant
-					margin: 25px auto;
-					padding: 0px;
-					// position: relative;
-					// top: 110px;
-					left: 0px; //reseting left positioning from mobile settings.
-					width: 150px;
-					height: 80px;
-
-					opacity: 0; //set inital state for animation
-					animation: logo-reveal 1 ease-in 1s 5s forwards;
-				}//end of contactheroimg
-			} //end of contact-container
-
-			.contact-form{
-				 //NOTE: UI/UX: ANIMATION & TRANSITIONS:
-				opacity: 0; //set inital state for animation
-				animation: contact-form-animate 1 ease-out 1s 6.5s forwards;
-				.contact-form__elements {
-
-					.contact-form__element {
-
-						input{
-							//NOTE: design variant: 25% of dimensions in 1280px variant. Width: 298.5px and Height: 36.563px
-							width: 299px ;
-							height: 37px ;
-
-						}//end input
-					}//contact-form__element
-
-					.contact-form__label {
-						//NOTE: design variant: 25% of dimensions in 1440px variant. Width: 82.5px and Height: 48.75px
-						display: inline-block;
-						top: 3px;
-						left: 4px;
-						width: 83px;
-						height: 49px;
-						border-radius: 4px 0px 0px 4px;
-		
-
-						.label-text {
-							font-size: $text1x-12; //18px
-							position: relative;
-							top: -8%;
-							bottom: 25%;
-						} //end label-text
-					} //end contact-form-label
-
-
-
-					.mobile-cta-footer__button{
-						//NOTE: design variant
-						width: 173px;
-						height: 34px;
-					   font-size: $textSmall-93; //15px;
-					   right: -100px;
-
-					   cursor: pointer;
-					}//end mobile-cta-footer__button
-
-					.mobile-cta-footer__button:hover {
-						background: #ffcf15 no-repeat padding-box;
-						color: #f8f2f2;
-						text-shadow: 0px 2px .5px #4a45459e;
-					} //end .mobile-cta-footer__button:hover state
-
-
-				}// end contact-form__elements
-			}//end contact-form
-
-
+						top: 100px
+					}//end contact-form
+				} //end of contact-container
 			.tt-circle {
 				position: absolute;
-				top: 730px;
+				top: 865px;
 				left: 40px;
 				width: 20px;
 				height: 20px;
@@ -249,8 +251,9 @@
 				} //end p
 	
 				position: absolute;
-				right: 1574px;
-				top: 736px;
+				top: 867px;
+    			right: 419px;
+
 	
 				animation: info-tool-tip 1s ease-in 11.5s forwards;
 			} //end-author-info
@@ -261,8 +264,9 @@
 
 		.tt-bgimg-circle {
 			position: fixed;
-			top: 664px;
-			left: 593px;
+			top: 703px;
+			left: 89px;
+
 			width: 20px;
 			height: 20px;
 			background-color: $brandColor;
@@ -294,10 +298,10 @@
 			white-space: pre-line; // to allow for inserting line breaks into the content propety
 			position: absolute;
 			transition: 1s all ease;
-			top: -125px;
-			left: -581px;
-			width: 580px;
-			height: 80px;
+			top: -228px;
+    		left: -85px;
+    		width: 175px;
+    		height: 212px;
 			background-color: #00000057;
 			border: 1px solid #ffffff54;
 			border-radius: 1px;
@@ -314,9 +318,8 @@
 		.tt-bgimg-circle-pulse {
 			position: absolute;
 			z-index: -10; //brings the pulse effect forwards to make it look like its coming from the info button.
-
-			top: 554px;
-			left: 593px;
+			top: 593px;
+			left: 89px;
 			width: 20px;
 			height: 20px;
 			background-color: transparent;
@@ -338,6 +341,7 @@
 					position: relative; // NOTE: Relative to the parent lower-nav-container div.
 					top: -18px;
 					right: 16px;
+					display: block !important;
 					.left-chev {
 
 						.dtlink.low-nav-a-left{
@@ -379,7 +383,7 @@
 						justify-content: center;
 						//NOTE: Design vaieant: The outer container creates an offset, so this corrects for it. Centering the social media icons.
 						position: relative;
-						right:  5.2vw;
+						right: 8.7vw;
 
 						li {
 							margin-right: 10px;
@@ -562,15 +566,12 @@
 
 			//NOTE: the top position values based on the top-position value given on contact form. top: -105px
 			0% {
-				top: -125px;
+				top: -11px;
 			}
 
-			50% {
-				top: -110px;
-			}
 
 			100% {
-				top: -105px;
+				top: 9px;
 			}
 		}//end contact-form-animate
 		//--------------------------

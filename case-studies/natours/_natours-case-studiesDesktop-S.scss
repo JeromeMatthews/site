@@ -3,12 +3,102 @@
 @media (min-width: 1280px) {
     body{
     
-
+            //NOTE: UI/UX: ANIMATION & TRANSITIONS: 1 - Page Background Image - Reveal effect
+        background-image: none; // set the inital state of the property 	- for animation
+        opacity: 0; // set the inital state of the property - for animation
+        background-color: #000000;
+        animation: bg-reveal 0.5s ease-in forwards;
         //NOTE: Background image generated specfic to case study instance of the base template for design variant: Desktop-Small-1280px. Platforming off of the template pointer to the main refereence in case-studies sub folder in the paritals folder. 
         .atf-1 {
          //NOTE: only needs to add the single background image change below.    All other page styles imported from design template in partial folder:
-            background-image: url("/img/img-desktop-sm-1280/desktop-sm-ps-ng-bg.PNG");
+         background-image: url("/img/img-desktop-sm-1280/desktop-sm-natours-page-bg.png");
+
+         .cs-project{
+
+            .cs-project__title {
+                //NOTE: Design variant:
+                font-size: 1.56rem;
+                margin: 10px;  
+            }//end .cs-project__title
+
+            .cs-project__services {
+               //NOTE: Design variant:
+                padding: 2%;
+                position: relative;
+                top: -20px;
+            
+                .cs-project__service {
+                    //NOTE: design variant:
+                    font-size: 1.1rem;
+                    padding: 2px 0px;
+                } //end .cs-project__service
+            }
+        }//end cs-project
+
+        //NOTE: Project Details = Client details
+            .cs-client-details {
+                
+
+                .cs-client-details__title {
+                    //NOTE: Design variant: Change for 1440 variant
+                    // font-size: $text2X-81; //45px;
+                }
+
+                .cs-client-details__status {
+                    //NOTE: Design variant: Change for 1440 variant
+                    // font-size: $text2x-18; //35px;
+                }
+                .status-flag {
+                    //NOTE: Design variant: Change for 1440 variant
+                    // font-size: $text2x-18; //35px;
+                }
+                .cs-client-details__text {
+                    //NOTE: Design variant: Change for 1440 variant
+                    // font-size: $text1x-12; //18px;
+                }
+
+                .tt-circle:hover ::after {
+                    //NOTE: design variant: tool-tip info for Natours Project Details copy.
+                    content: "I needed to understand by trying to build for myself a basic application that could carry out typical backend tasks while also providing a platform to learn and make use of APIs – (Application Programming Interfaces). \a Since, up until that point I only had a very broad, elementary sense of the terms and concepts associated with it. Jonas’s course was a brilliant solution to this.";
+                    
+                } //end tt-circle:hover
+
+                .tt-circle{
+                    top:84px;
+                    left:175px;
+                }//end tt-circle
+        
+                .tt-circle:hover ::after {
+                    top: -35px;
+                    left: -173px;
+                    width: 317px;
+                    height: 179px;
+                
+                }//end tt-circle:hover ::after
+        }//end- Project Details = client details 
+  
+
+
         }//end atf-1
 
+        .btf-2{
+			.btf-2__project-container-box{
+				//NOTE: Design variant:
+                height: 628.5px;
+                top: -319px;
+            
+				.cs-project-sum {
+					//NOTE: Design variant:
+					top: -9px;
+
+                    .cs-project-sum__text-1
+                    .cs-project-sum__text__body {
+                        //NOTE: Design variant:
+                        font-size: 1.1rem;
+                    }//end .cs-project-sum__text__body
+
+				}//end cs-project-sum
+			}//end btf-2__project-container-box
+        }//end btf-2
     }//end body
 }//end media-query 1280px 

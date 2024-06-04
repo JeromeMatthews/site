@@ -2312,7 +2312,7 @@ body .lower-nav-container .main-footer__social-icons li #smi-lk:hover {
   }
   body .tt-circle {
     position: absolute;
-    top: 459px;
+    top: 452px;
     left: 40px;
     width: 20px;
     height: 20px;
@@ -2353,7 +2353,7 @@ body .lower-nav-container .main-footer__social-icons li #smi-lk:hover {
     color: #ffffff;
     position: absolute;
     right: 927px;
-    top: 465px;
+    top: 454px;
     animation: info-tool-tip 1s ease-in 28.5s forwards;
   }
   body .author-info p .author-info__name {
@@ -2772,7 +2772,7 @@ body .lower-nav-container .main-footer__social-icons li #smi-lk:hover {
     width: 144px;
     height: 77px;
     top: 3px;
-    left: -1px;
+    left: 166px;
     pointer-events: none;
   }
   .sitenav__contactNum {
@@ -3046,7 +3046,7 @@ body .lower-nav-container .main-footer__social-icons li #smi-lk:hover {
   }
   body .tt-circle {
     position: absolute;
-    top: 637px;
+    top: 631px;
     left: 40px;
     width: 20px;
     height: 20px;
@@ -3087,7 +3087,7 @@ body .lower-nav-container .main-footer__social-icons li #smi-lk:hover {
     color: #ffffff;
     position: absolute;
     right: 1087px;
-    top: 642px;
+    top: 634px;
     animation: info-tool-tip 1s ease-in 28.5s forwards;
   }
   body .author-info p .author-info__name {
@@ -3798,7 +3798,7 @@ body .lower-nav-container .main-footer__social-icons li #smi-lk:hover {
 @media (min-width: 1920px) {
   body .tt-circle {
     position: absolute;
-    top: 620px;
+    top: 650px;
     left: 40px;
     width: 20px;
     height: 20px;
@@ -3839,7 +3839,7 @@ body .lower-nav-container .main-footer__social-icons li #smi-lk:hover {
     color: #ffffff;
     position: absolute;
     right: 1569px;
-    top: 626px;
+    top: 656px;
     animation: info-tool-tip 1s ease-in 28.5s forwards;
   }
   body .author-info p .author-info__name {

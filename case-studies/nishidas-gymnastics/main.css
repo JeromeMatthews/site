@@ -511,6 +511,8 @@ body .mobile-cta-footer .mobile-cta-footer__sm-links {
     background-repeat: no-repeat;
     background-position: left 0px top 0px;
     background-attachment: scroll;
+    opacity: 0;
+    animation: atf-cs-client-reveal 0.5s linear 2s forwards;
   }
   body .atf-1 .cs-project,
   body .atf-1 .cs-project__title,
@@ -596,6 +598,49 @@ body .mobile-cta-footer .mobile-cta-footer__sm-links {
     margin-left: 10px;
     margin-right: 10px;
   }
+  body .atf-1 .tt-circle {
+    position: absolute;
+    top: 12px;
+    left: 463px;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(138, 138, 138, 0.5960784314);
+    border: 1px solid white;
+    border-radius: 55%;
+    box-shadow: 0.1px 0.7px #000;
+    opacity: 0;
+    pointer-events: none;
+    cursor: pointer;
+    animation: info-tool-tip 1s ease-in 5.5s forwards;
+  }
+  body .atf-1 .tt-circle .tt-circle__icon {
+    margin: 0 auto;
+    position: absolute;
+    left: 7px;
+    top: -8px;
+    text-align: center;
+    font: 1.437rem futura-pt, Helvetica, Arial, sans-serif;
+    color: #fff;
+    cursor: pointer;
+  }
+  body .atf-1 .tt-circle:hover ::after {
+    content: "PLACEHOLDER TEXT: REPLACE WITH CASE STUDY VARIANT SPECIFIC AUXILLARY INFO";
+    white-space: pre-wrap;
+    position: absolute;
+    transition: 1s all ease;
+    padding: 20px 20px;
+    top: 152px;
+    left: -586px;
+    width: 500px;
+    height: 150px;
+    background-color: rgba(255, 255, 242, 0.9294117647);
+    border: 1px solid #ffffff;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    color: #000000;
+    font-size: 1rem;
+    animation: tooltip-animate 0.3s ease forwards;
+  }
   body .btf-2 {
     height: 0px;
     background-image: none;
@@ -612,6 +657,8 @@ body .mobile-cta-footer .mobile-cta-footer__sm-links {
     z-index: 1;
     color: #fff;
     text-align: center;
+    opacity: 0;
+    animation: btf-cs-project-sum-reveal 0.5s linear 3.7s forwards;
   }
   body .btf-2 .btf-2__project-container-box .cs-project-desc__title,
   body .btf-2 .btf-2__project-container-box .cs-project-sum__title {
@@ -633,6 +680,49 @@ body .mobile-cta-footer .mobile-cta-footer__sm-links {
     font-weight: 400;
     font-style: normal;
     font-size: 1rem;
+  }
+  body .btf-2 .btf-2__project-container-box .cs-project-desc .tt-circle {
+    position: absolute;
+    top: -8px;
+    left: 415px;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(138, 138, 138, 0.5960784314);
+    border: 1px solid white;
+    border-radius: 55%;
+    box-shadow: 0.1px 0.7px #000;
+    opacity: 0;
+    pointer-events: none;
+    cursor: pointer;
+    animation: info-tool-tip 1s ease-in 5.5s forwards;
+  }
+  body .btf-2 .btf-2__project-container-box .cs-project-desc .tt-circle .tt-circle__icon {
+    margin: 0 auto;
+    position: absolute;
+    left: 7px;
+    top: -8px;
+    text-align: center;
+    font: 1.437rem futura-pt, Helvetica, Arial, sans-serif;
+    color: #fff;
+    cursor: pointer;
+  }
+  body .btf-2 .btf-2__project-container-box .cs-project-desc .tt-circle:hover ::after {
+    content: "PLACEHOLDER TEXT: REPLACE WITH CASE STUDY VARIANT SPECIFIC AUXILLARY INFO";
+    white-space: pre-wrap;
+    position: absolute;
+    transition: 1s all ease;
+    padding: 20px 20px;
+    top: 44px;
+    left: -457px;
+    width: 399px;
+    height: 167px;
+    background-color: rgba(255, 255, 242, 0.9294117647);
+    border: 1px solid #ffffff;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    color: #000000;
+    font-size: 1rem;
+    animation: tooltip-animate 0.3s ease forwards;
   }
   body .btf-2 .btf-2__project-container-box .project-info-divider {
     display: inline-block !important;
@@ -662,6 +752,17 @@ body .mobile-cta-footer .mobile-cta-footer__sm-links {
     font-weight: 400;
     font-style: normal;
     font-size: 1rem;
+  }
+  body .nav-chevrons {
+    position: absolute;
+    z-index: 13;
+    right: 51px;
+    top: 635px;
+  }
+  body .nav-chevrons .chevron-down {
+    position: relative;
+    opacity: 0;
+    animation: chevron-down-reveal 2s linear 3s forwards, chevron-down-animate 1s ease 4s infinite;
   }
   body .btl {
     display: flex;
@@ -1035,6 +1136,28 @@ body .mobile-cta-footer .mobile-cta-footer__sm-links {
   body .atf-1 {
     background-image: url("/img/img-tablet-p/tablet-ps-ng-bg.png");
   }
+  body .atf-1 .tt-circle {
+    top: 67px;
+    left: 87px;
+  }
+  body .atf-1 .tt-circle:hover ::after {
+    content: "Nishida’s Gymnastics recreational and competitive boys and girls gymnastics clubs. \a\aThe group of clubs provides recreational and competitive level gymnastics in both Men’s and Women’s Artistic Gymnastics training.";
+    top: -25px;
+    left: -147px;
+    width: 259px;
+    height: 208px;
+  }
+  body .btf-2 .btf-2__project-container-box .cs-project-desc .tt-circle {
+    top: 209px;
+    left: 108px;
+  }
+  body .btf-2 .btf-2__project-container-box .cs-project-desc .tt-circle:hover ::after {
+    content: "We achieved success in an increase of foot traffic to the various gym branches as well as the improvement to brand recognition and marketability from additional work done to improve the company’s branding across social media channels.\a\a Following that result we’ve continued the working relationship with the Nishida’s gymnastics group ever since and regularly check in for content and security updates";
+    top: -180px;
+    left: -154px;
+    width: 297px;
+    height: 233px;
+  }
 }
 /*SECTION ABOVE MOBILE PHONES - TABLET RANGE  - LANDSCAPE -   >1024px */
 @media (min-width: 1024px) {
@@ -1054,6 +1177,8 @@ body .mobile-cta-footer .mobile-cta-footer__sm-links {
     background-position: left 0px top 0px;
     background-attachment: scroll;
     height: 800px;
+    opacity: 0;
+    animation: atf-cs-client-reveal 0.5s linear 2s forwards;
   }
   body .atf-1 .cs-project {
     position: relative;
@@ -1072,6 +1197,10 @@ body .mobile-cta-footer .mobile-cta-footer__sm-links {
   body .atf-1 .cs-project .cs-project__title {
     margin-top: 40px;
     font-size: 1.25rem;
+  }
+  body .atf-1 .cs-project .cs-project__services {
+    opacity: 0;
+    animation: atf-cs-project-reveal 0.5s linear 1.5s forwards;
   }
   body .atf-1 .cs-project .cs-project__services .cs-project__service {
     font-size: 1.12rem;
@@ -1099,6 +1228,49 @@ body .mobile-cta-footer .mobile-cta-footer__sm-links {
   body .atf-1 .cs-client-details .cs-client-details__text {
     font-size: 1.12rem;
   }
+  body .atf-1 .tt-circle {
+    position: absolute;
+    top: 12px;
+    left: 463px;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(138, 138, 138, 0.5960784314);
+    border: 1px solid white;
+    border-radius: 55%;
+    box-shadow: 0.1px 0.7px #000;
+    opacity: 0;
+    pointer-events: none;
+    cursor: pointer;
+    animation: info-tool-tip 1s ease-in 5.5s forwards;
+  }
+  body .atf-1 .tt-circle .tt-circle__icon {
+    margin: 0 auto;
+    position: absolute;
+    left: 7px;
+    top: -8px;
+    text-align: center;
+    font: 1.437rem futura-pt, Helvetica, Arial, sans-serif;
+    color: #fff;
+    cursor: pointer;
+  }
+  body .atf-1 .tt-circle:hover ::after {
+    content: "PLACEHOLDER TEXT: REPLACE WITH CASE STUDY VARIANT SPECIFIC AUXILLARY INFO";
+    white-space: pre-wrap;
+    position: absolute;
+    transition: 1s all ease;
+    padding: 20px 20px;
+    top: 152px;
+    left: -586px;
+    width: 500px;
+    height: 150px;
+    background-color: rgba(255, 255, 242, 0.9294117647);
+    border: 1px solid #ffffff;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    color: #000000;
+    font-size: 1rem;
+    animation: tooltip-animate 0.3s ease forwards;
+  }
   body .btf-2 .btf-2__project-container-box {
     position: relative;
     width: 450px;
@@ -1109,6 +1281,8 @@ body .mobile-cta-footer .mobile-cta-footer__sm-links {
     border-radius: 4%;
     margin: 0px;
     z-index: 1;
+    opacity: 0;
+    animation: btf-cs-project-sum-reveal 0.5s linear 3.7s forwards;
   }
   body .btf-2 .btf-2__project-container-box .cs-project-desc__title,
   body .btf-2 .btf-2__project-container-box .cs-project-sum__title {
@@ -1125,9 +1299,54 @@ body .mobile-cta-footer .mobile-cta-footer__sm-links {
     margin: 0px;
     top: 31px;
     left: 25px;
+    opacity: 0;
+    animation: btf-cs-project-desc-reveal 0.5s linear 2.5s forwards;
   }
   body .btf-2 .btf-2__project-container-box .cs-project-desc .cs-project-desc__text {
     font-size: 1.12rem;
+  }
+  body .btf-2 .btf-2__project-container-box .cs-project-desc .tt-circle {
+    position: absolute;
+    top: -8px;
+    left: 415px;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(138, 138, 138, 0.5960784314);
+    border: 1px solid white;
+    border-radius: 55%;
+    box-shadow: 0.1px 0.7px #000;
+    opacity: 0;
+    pointer-events: none;
+    cursor: pointer;
+    animation: info-tool-tip 1s ease-in 5.5s forwards;
+  }
+  body .btf-2 .btf-2__project-container-box .cs-project-desc .tt-circle .tt-circle__icon {
+    margin: 0 auto;
+    position: absolute;
+    left: 7px;
+    top: -8px;
+    text-align: center;
+    font: 1.437rem futura-pt, Helvetica, Arial, sans-serif;
+    color: #fff;
+    cursor: pointer;
+  }
+  body .btf-2 .btf-2__project-container-box .cs-project-desc .tt-circle:hover ::after {
+    content: "PLACEHOLDER TEXT: REPLACE WITH CASE STUDY VARIANT SPECIFIC AUXILLARY INFO";
+    white-space: pre-wrap;
+    position: absolute;
+    transition: 1s all ease;
+    padding: 20px 20px;
+    top: 44px;
+    left: -457px;
+    width: 399px;
+    height: 167px;
+    background-color: rgba(255, 255, 242, 0.9294117647);
+    border: 1px solid #ffffff;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    color: #000000;
+    font-size: 1rem;
+    animation: tooltip-animate 0.3s ease forwards;
   }
   body .btf-2 .btf-2__project-container-box .project-info-divider {
     display: inline-block !important;
@@ -1138,6 +1357,8 @@ body .mobile-cta-footer .mobile-cta-footer__sm-links {
     width: 350px;
     border-width: 1px;
     color: #fff;
+    opacity: 0;
+    animation: btf-cs-project-info-divider-reveal 0.5s linear 3s forwards;
   }
   body .btf-2 .btf-2__project-container-box .cs-project-sum {
     position: relative;
@@ -1158,6 +1379,17 @@ body .mobile-cta-footer .mobile-cta-footer__sm-links {
   }
   body .btf-2 .btf-2__project-container-box .cs-project-sum .cs-project-sum__text-1 .cs-project-sum__text__body {
     font-size: 1.12rem;
+  }
+  body .nav-chevrons {
+    position: absolute;
+    z-index: 13;
+    right: 51px;
+    top: 635px;
+  }
+  body .nav-chevrons .chevron-down {
+    position: relative;
+    opacity: 0;
+    animation: chevron-down-reveal 2s linear 3s forwards, chevron-down-animate 1s ease 4s infinite;
   }
   body .btl {
     text-align: center;
@@ -1541,6 +1773,27 @@ body .mobile-cta-footer .mobile-cta-footer__sm-links {
   body .atf-1 {
     background-image: url("/img/img-tablet-l/tablet-landscape-ps-ng-bg.png");
   }
+  body .atf-1 .tt-circle {
+    top: 69px;
+    left: 101px;
+  }
+  body .atf-1 .tt-circle:hover ::after {
+    content: "Nishida’s Gymnastics recreational and competitive boys and girls gymnastics clubs. \a\aThe group of clubs provides recreational and competitive level gymnastics in both Men’s and Women’s Artistic Gymnastics training.";
+    top: -17px;
+    left: -153px;
+    width: 270px;
+    height: 210px;
+  }
+  body .btf-2 .btf-2__project-container-box .cs-project-desc .tt-circle {
+    top: 7px;
+    left: 387px;
+  }
+  body .btf-2 .btf-2__project-container-box .cs-project-desc .tt-circle:hover ::after {
+    content: "We achieved success in an increase of foot traffic to the various gym branches as well as the improvement to brand recognition and marketability from additional work done to improve the company’s branding across social media channels.\a\a Following that result we’ve continued the working relationship with the Nishida’s gymnastics group ever since and regularly check in for content and security updates";
+    top: 44px;
+    left: -417px;
+    width: 399px;
+  }
 }
 /*SECTION ABOVE MOBILE PHONES - TABLET RANGE  - DESKTOP-SMALL -   >1280px */
 @media (min-width: 1280px) {
@@ -1598,8 +1851,8 @@ body .mobile-cta-footer .mobile-cta-footer__sm-links {
     /*!SECTION END ANIMATIONS & TRANSITIONS */
   }
   body .mainnav__links {
-    top: 26px;
-    left: 698px;
+    top: 32px;
+    left: 472px;
   }
   body .mainnav__links .mainnav__links-link-container {
     overflow: hidden;
@@ -1607,6 +1860,7 @@ body .mobile-cta-footer .mobile-cta-footer__sm-links {
     top: -26px;
     height: 50px;
     border: 0.5px solid #fff;
+    height: 35px;
     /*Hover state changes */
   }
   body .mainnav__links .mainnav__links-link-container .mainnav__links-link__href {
@@ -1615,6 +1869,10 @@ body .mobile-cta-footer .mobile-cta-footer__sm-links {
     margin-left: 0px;
     margin-right: 0px;
     padding: 25px 25px;
+    /*Using the padding section of the content box and not margin. This is so the puesdo element doesn't take that into account for the overall distance to travel across the link and ends up looking werid.*/
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 10px 10px;
   }
   body .mainnav__links .mainnav__links-link-container .mainnav__links-link__href:after {
     content: " ";
@@ -1642,11 +1900,20 @@ body .mobile-cta-footer .mobile-cta-footer__sm-links {
     position: relative;
     pointer-events: none;
   }
+  body .mainnav__links .mainnav__links-link-container:hover {
+    position: relative;
+    top: -28px;
+    filter: drop-shadow(0px 2.5px rgba(0, 0, 0, 0.221));
+    /* Two length values and a color */
+    /* drop-shadow( <length> <length> <color> ) */
+  }
   body .atf-1 {
     height: 720px;
     background-repeat: no-repeat;
     background-position: left 0px top 0px;
     background-attachment: scroll;
+    opacity: 0;
+    animation: atf-cs-client-reveal 0.5s linear 2s forwards;
   }
   body .atf-1 .cs-project {
     position: relative;
@@ -1686,6 +1953,49 @@ body .mobile-cta-footer .mobile-cta-footer__sm-links {
   body .atf-1 .cs-client-details .cs-client-details__text {
     font-size: 1.12rem;
   }
+  body .atf-1 .tt-circle {
+    position: absolute;
+    top: 84px;
+    left: 175px;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(138, 138, 138, 0.5960784314);
+    border: 1px solid white;
+    border-radius: 55%;
+    box-shadow: 0.1px 0.7px #000;
+    opacity: 0;
+    pointer-events: none;
+    cursor: pointer;
+    animation: info-tool-tip 1s ease-in 5.5s forwards;
+  }
+  body .atf-1 .tt-circle .tt-circle__icon {
+    margin: 0 auto;
+    position: absolute;
+    left: 7px;
+    top: -8px;
+    text-align: center;
+    font: 1.437rem futura-pt, Helvetica, Arial, sans-serif;
+    color: #fff;
+    cursor: pointer;
+  }
+  body .atf-1 .tt-circle:hover ::after {
+    content: "PLACEHOLDER TEXT: REPLACE WITH CASE STUDY VARIANT SPECIFIC AUXILLARY INFO";
+    white-space: pre-wrap;
+    position: absolute;
+    transition: 1s all ease;
+    padding: 20px 20px;
+    top: -35px;
+    left: -173px;
+    width: 317px;
+    height: 179px;
+    background-color: rgba(255, 255, 242, 0.9294117647);
+    border: 1px solid #ffffff;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    color: #000000;
+    font-size: 1rem;
+    animation: tooltip-animate 0.3s ease forwards;
+  }
   body .btf-2 .btf-2__project-container-box {
     position: relative;
     width: 454.95px;
@@ -1699,6 +2009,8 @@ body .mobile-cta-footer .mobile-cta-footer__sm-links {
     padding-right: 45px;
     margin-left: auto;
     margin-right: auto;
+    opacity: 0;
+    animation: btf-project-container-box-reveal 0.5s linear 2s forwards;
   }
   body .btf-2 .btf-2__project-container-box .cs-project-desc__title {
     font-size: 1.56rem;
@@ -1733,7 +2045,7 @@ body .mobile-cta-footer .mobile-cta-footer__sm-links {
     position: absolute;
     z-index: 13;
     right: 110px;
-    top: 750px;
+    top: 587px;
   }
   body .nav-chevrons .chevron-down {
     position: relative;
@@ -2103,6 +2415,76 @@ body .mobile-cta-footer .mobile-cta-footer__sm-links {
   body .atf-1 {
     background-image: url("/img/img-desktop-sm-1280/desktop-sm-ps-ng-bg.PNG");
   }
+  body .atf-1 .cs-project .cs-project__title {
+    font-size: 1.56rem;
+    margin: 10px;
+  }
+  body .atf-1 .cs-project .cs-project__services {
+    padding: 2%;
+    position: relative;
+    top: -20px;
+  }
+  body .atf-1 .cs-project .cs-project__services .cs-project__service {
+    font-size: 1.1rem;
+    padding: 2px 0px;
+  }
+  body .atf-1 .cs-client-details .tt-circle:hover ::after {
+    content: "Nishida’s Gymnastics recreational and competitive boys and girls gymnastics clubs. \a\aThe group of clubs provides recreational and competitive level gymnastics in both Men’s and Women’s Artistic Gymnastics training.";
+  }
+  body .btf-2 .btf-2__project-container-box .cs-project-desc {
+    opacity: 0;
+    animation: btf-cs-project-desc-reveal 0.5s linear 2.5s forwards;
+  }
+  body .btf-2 .btf-2__project-container-box .cs-project-desc .tt-circle {
+    position: absolute;
+    top: 170px;
+    left: 187px;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(138, 138, 138, 0.5960784314);
+    border: 1px solid white;
+    border-radius: 55%;
+    box-shadow: 0.1px 0.7px #000;
+    opacity: 0;
+    pointer-events: none;
+    cursor: pointer;
+    animation: info-tool-tip 1s ease-in 5.5s forwards;
+  }
+  body .btf-2 .btf-2__project-container-box .cs-project-desc .tt-circle .tt-circle__icon {
+    margin: 0 auto;
+    position: absolute;
+    left: 7px;
+    top: -8px;
+    text-align: center;
+    font: 1.437rem futura-pt, Helvetica, Arial, sans-serif;
+    color: #fff;
+    cursor: pointer;
+  }
+  body .btf-2 .btf-2__project-container-box .cs-project-desc .tt-circle:hover ::after {
+    content: "We achieved success in an increase of foot traffic to the various gym branches as well as the improvement to brand recognition and marketability from additional work done to improve the company’s branding across social media channels.\a\a Following that result we’ve continued the working relationship with the Nishida’s gymnastics group ever since and regularly check in for content and security updates";
+    white-space: pre-wrap;
+    position: absolute;
+    transition: 1s all ease;
+    padding: 20px 20px;
+    top: -153px;
+    left: -220px;
+    width: 404px;
+    height: 165px;
+    background-color: rgba(255, 255, 242, 0.9294117647);
+    border: 1px solid #ffffff;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    color: #000000;
+    font-size: 1rem;
+    animation: tooltip-animate 0.3s ease forwards;
+  }
+  body .btf-2 .btf-2__project-container-box .cs-project-sum {
+    opacity: 0;
+    animation: btf-cs-project-sum-reveal 0.5s linear 3.7s forwards;
+  }
+  body .btf-2 .btf-2__project-container-box .cs-project-sum .cs-project-sum__text-1 .cs-project-sum__text__body {
+    font-size: 1.1rem;
+  }
 }
 @media (min-width: 1920px) {
   .sitenav__hamburger {
@@ -2172,7 +2554,7 @@ body .mobile-cta-footer .mobile-cta-footer__sm-links {
     width: 144px;
     height: 77px;
     top: 3px;
-    left: -1px;
+    left: 166px;
     pointer-events: none;
   }
   .sitenav__contactNum {
@@ -2216,8 +2598,8 @@ body .mobile-cta-footer .mobile-cta-footer__sm-links {
     /*!SECTION END ANIMATIONS & TRANSITIONS */
   }
   body .mainnav__links {
-    top: 26px;
-    left: 698px;
+    top: 32px;
+    left: 522px;
   }
   body .mainnav__links .mainnav__links-link-container {
     overflow: hidden;
@@ -2225,6 +2607,7 @@ body .mobile-cta-footer .mobile-cta-footer__sm-links {
     top: -26px;
     height: 50px;
     border: 0.5px solid #fff;
+    height: 45px;
     /*Hover state changes */
   }
   body .mainnav__links .mainnav__links-link-container .mainnav__links-link__href {
@@ -2233,6 +2616,11 @@ body .mobile-cta-footer .mobile-cta-footer__sm-links {
     margin-left: 0px;
     margin-right: 0px;
     padding: 25px 25px;
+    /*Some asthetic adjustments to have the link fill the same area as in the original desgin draft. */
+    /*Using the padding section of the content box and not margin. This is so the puesdo element doesn't take that into account for the overall distance to travel across the link and ends up looking werid.*/
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 15px 15px;
   }
   body .mainnav__links .mainnav__links-link-container .mainnav__links-link__href:after {
     content: " ";
@@ -2259,6 +2647,13 @@ body .mobile-cta-footer .mobile-cta-footer__sm-links {
     top: 3px;
     position: relative;
     pointer-events: none;
+  }
+  body .mainnav__links .mainnav__links-link-container:hover {
+    position: relative;
+    top: -28px;
+    filter: drop-shadow(0px 2.5px rgba(0, 0, 0, 0.221));
+    /* Two length values and a color */
+    /* drop-shadow( <length> <length> <color> ) */
   }
   body .atf-1 {
     height: 900px;
@@ -2311,7 +2706,7 @@ body .mobile-cta-footer .mobile-cta-footer__sm-links {
   body .atf-1 .tt-circle {
     position: absolute;
     top: 12px;
-    left: 636px;
+    left: 463px;
     width: 20px;
     height: 20px;
     background-color: rgba(138, 138, 138, 0.5960784314);
@@ -2384,8 +2779,8 @@ body .mobile-cta-footer .mobile-cta-footer__sm-links {
   }
   body .btf-2 .btf-2__project-container-box .cs-project-desc .tt-circle {
     position: absolute;
-    top: -15px;
-    left: 492px;
+    top: -8px;
+    left: 415px;
     width: 20px;
     height: 20px;
     background-color: rgba(138, 138, 138, 0.5960784314);
@@ -2408,15 +2803,15 @@ body .mobile-cta-footer .mobile-cta-footer__sm-links {
     cursor: pointer;
   }
   body .btf-2 .btf-2__project-container-box .cs-project-desc .tt-circle:hover ::after {
-    content: "We achieved success in an increase of foot traffic to the various gym branches as well as the improvement to brand recognition and marketability from additional work done to improve the company’s branding across social media channels.\a\a Following that result we’ve continued the working relationship with the Nishida’s gymnastics group ever since and regularly check in for content and security updates";
+    content: "PLACEHOLDER TEXT: REPLACE WITH CASE STUDY VARIANT SPECIFIC AUXILLARY INFO";
     white-space: pre-wrap;
     position: absolute;
     transition: 1s all ease;
     padding: 20px 20px;
-    top: 152px;
-    left: -586px;
-    width: 500px;
-    height: 150px;
+    top: 44px;
+    left: -457px;
+    width: 399px;
+    height: 167px;
     background-color: rgba(255, 255, 242, 0.9294117647);
     border: 1px solid #ffffff;
     border-radius: 3px;
@@ -2788,6 +3183,18 @@ body .mobile-cta-footer .mobile-cta-footer__sm-links {
 @media (min-width: 1440px) {
   body .atf-1 {
     background-image: url("/img/img-desktop-cm-1440/desktop-cm-ps-ng-bg.PNG");
+  }
+  body .atf-1 .cs-client-details .tt-circle:hover ::after {
+    content: "Nishida’s Gymnastics recreational and competitive boys and girls gymnastics clubs. \a\aThe group of clubs provides recreational and competitive level gymnastics in both Men’s and Women’s Artistic Gymnastics training.";
+  }
+  body .atf-1 .tt-circle:hover ::after {
+    top: 112px;
+    left: -445px;
+    width: 409px;
+    height: 150px;
+  }
+  body .btf-2 .btf-2__project-container-box .cs-project-desc .tt-circle:hover ::after {
+    content: "We achieved success in an increase of foot traffic to the various gym branches as well as the improvement to brand recognition and marketability from additional work done to improve the company’s branding across social media channels.\a\a Following that result we’ve continued the working relationship with the Nishida’s gymnastics group ever since and regularly check in for content and security updates";
   }
 }
 @media (min-width: 1920px) {

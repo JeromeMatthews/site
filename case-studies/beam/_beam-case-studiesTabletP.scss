@@ -8,6 +8,23 @@
         .atf-1 {
          //NOTE: only needs to add the single background image change below.    All other page styles imported from design template in partial folder:
             background-image: url("/img/img-tablet-p/tablet-ps-beam-bg.png");
+            
+            
+            .tt-circle {
+                top: 67px;
+                left: 87px;
+            
+            }//end tt-circle
+
+            .tt-circle:hover ::after {
+                //NOTE: design variant: tool-tip info.
+                content: "Ms. Browne had long set the goal of creating one of the first full-service performance arts and professional dance companies in Jamaica. In 2014 She had the opportunity to begin this venture and required an accompanying web presence to match the launch of the company. \a\a nomad got shortlisted among some possible options of local web developers as Ms. Browne had the experience of working with nomad prior; with multiple projects, primarily in print and digital graphic art.";
+                top: -25px;
+                left: -147px;
+                width: 259px;
+                height: 295px;
+            }//end tt-circle:hover ::after 
+
         }//end atf-1
 
     }//end body

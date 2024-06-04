@@ -37,68 +37,139 @@ body {
 		.contact-container {
           
 
-			.contact-heroCopy {
-                margin: 0px;
-                padding: 0px;
-				position: relative;
-				top: 130px;
-				font-family: $font-list-h;
-				font-size: $text1x-56; //25px;
-				font-weight: nth($f-weights, 1);
-				color: #fff;
-				text-align: center;
+				.contact-heroCopy {
+							margin: 0px;
+							padding: 0px;
+							position: relative;
+							top: 130px;
+							font-family: $font-list-h;
+							font-size: $text1x-56; //25px;
+							font-weight: nth($f-weights, 1);
+							color: #fff;
+							text-align: center;
 
-				 //NOTE: UI/UX: ANIMATION & TRANSITIONS: 2 - About Hero - Typewriter effect
-					.tw-fx-1 {
-						display: inline-block;
-						overflow: hidden;
+							//NOTE: UI/UX: ANIMATION & TRANSITIONS: 2 - About Hero - Typewriter effect
+								.tw-fx-1 {
+									display: inline-block;
+									overflow: hidden;
 
-						white-space: nowrap;
-						font-size: inherit; //take it from the original font-size, easier to scale.
-						width: 0;
-						animation: type1 1.6s steps(21, end) 0.8s forwards,
-							cursor-off 1 linear 0.2s 2.4s forwards;
-						/*name -> 
-						 iteration-count-> 
-						 timing-function->
-						 duration->
-						 delay->
-						 fill-mode*/
-					} //end tw-fx-1
+									white-space: nowrap;
+									font-size: inherit; //take it from the original font-size, easier to scale.
+									width: 0;
+									animation: type1 1.6s steps(21, end) 0.8s forwards,
+										cursor-off 1 linear 0.2s 2.4s forwards;
+									/*name -> 
+									iteration-count-> 
+									timing-function->
+									duration->
+									delay->
+									fill-mode*/
+								} //end tw-fx-1
 
-					.tw-fx-2 {
-						position: relative;
-						top: -30px;
-						display: inline-block;
-						overflow: hidden;
+								.tw-fx-2 {
+									position: relative;
+									top: -30px;
+									display: inline-block;
+									overflow: hidden;
 
-						white-space: nowrap;
-						font-size: inherit; //take it from the original font-size, easier to scale.
-						width: 0;
+									white-space: nowrap;
+									font-size: inherit; //take it from the original font-size, easier to scale.
+									width: 0;
 
-						animation: type2 1.5s steps(20, end) 3s forwards,
-							cursor-off 1 linear 0.2s 4.4s forwards;
-						/*name -> 
-						iteration-count-> 
-						timing-function->
-						duration->
-						delay->
-						fill-mode*/
-					} //end tw-fx-2
-			} //end contact-heroCopy
+									animation: type2 1.5s steps(20, end) 3s forwards,
+										cursor-off 1 linear 0.2s 4.4s forwards;
+									/*name -> 
+									iteration-count-> 
+									timing-function->
+									duration->
+									delay->
+									fill-mode*/
+								} //end tw-fx-2
+				} //end contact-heroCopy
 
-			.contactheroimg {
-                margin: 0px;
-                padding: 0px;
-				position: relative;
-				top: 110px;
-				left: 88px;
-				height: 95px;
+				.contactheroimg {
+							margin: 0px;
+							padding: 0px;
+							position: relative;
+							top: 110px;
+							left: 88px;
+							height: 95px;
 
-				//NOTE: UI/UX: ANIMATION & TRANSITIONS:
-				opacity: 0; //set inital state for animation
-				animation: logo-reveal 1 ease-in 1s 5s forwards;
-			}
+							//NOTE: UI/UX: ANIMATION & TRANSITIONS:
+							opacity: 0; //set inital state for animation
+							animation: logo-reveal 1 ease-in 1s 5s forwards;
+				}//end contact-heroimg
+
+				.contact-form {
+
+							//NOTE: UI/UX: ANIMATION & TRANSITIONS:
+						opacity: 0; //set inital state for animation
+						animation: contact-form-animate 1 ease-out 1s 6.5s forwards;
+
+					position: relative;
+					top: 100px;
+					.contact-form__elements {
+						@include flexMix-col;
+						text-align: center;
+						align-content: center;
+
+						.contact-form__element {
+							display: inline-block;
+							margin: 6px auto;
+
+							list-style: none;
+
+							.contact-form__label {
+								position: relative;
+								//to align the labels with the inputs.
+								background-color: #ffbf00;
+								font-family: $font-list-b;
+								font-size: $textSmall-93; //15px;
+								font-weight: nth($f-weights, 3);
+								color: #000000;
+
+								width: 69px;
+								height: 30px;
+								padding: 5px 15px 6px 15px;
+
+								
+
+								.contact-form__input {
+									background-color: #ffbf00;
+									font-family: $font-list-b;
+									font-size: $textSmall-93; //15px;
+									font-weight: nth($f-weights, 3);
+									color: #000000;
+								}
+							} //end contact-form__label
+						} //end contact-form__element
+
+						.mobile-cta-footer__button {
+							width: 196px;
+							height: 41px;
+							background: #f5b600 0% 0% no-repeat padding-box;
+							box-shadow: 0px 2px 0px #000000;
+							border: 1px solid var(--unnamed-color-707070);
+							border-radius: 5px;
+
+							font-family: $font-list-h;
+							font-weight: nth($f-weights, 1);
+							font-style: normal;
+							font-size: $text1X-25; //20px;
+							position: relative;
+
+							cursor: pointer;
+						}//end mobile-cta-footer__button
+
+						.mobile-cta-footer__button:hover {
+							background: #ffcf15 no-repeat padding-box;
+							color: #f8f2f2;
+							text-shadow: 0px 2px .5px #4a45459e;
+						} //end .mobile-cta-footer__button:hover state
+
+
+					} //end contact-form__elements
+				} //end contact-form
 		} //end contact-container
 
 		.contact-form,
@@ -110,76 +181,7 @@ body {
 			padding: 0px;
 		} //end contact-form elements grouping
 
-		.contact-form {
-
-				 //NOTE: UI/UX: ANIMATION & TRANSITIONS:
-				opacity: 0; //set inital state for animation
-				animation: contact-form-animate 1 ease-out 1s 6.5s forwards;
-
-			position: relative;
-			top: 100px;
-			.contact-form__elements {
-				@include flexMix-col;
-				text-align: center;
-				align-content: center;
-
-				.contact-form__element {
-					display: inline-block;
-					margin: 6px auto;
-
-					list-style: none;
-
-					.contact-form__label {
-						position: relative;
-						//to align the labels with the inputs.
-						background-color: #ffbf00;
-						font-family: $font-list-b;
-						font-size: $textSmall-93; //15px;
-						font-weight: nth($f-weights, 3);
-						color: #000000;
-
-						width: 69px;
-						height: 30px;
-						padding: 5px 15px 6px 15px;
-
-						
-
-						.contact-form__input {
-							background-color: #ffbf00;
-							font-family: $font-list-b;
-							font-size: $textSmall-93; //15px;
-							font-weight: nth($f-weights, 3);
-							color: #000000;
-						}
-					} //end contact-form__label
-				} //end contact-form__element
-
-				.mobile-cta-footer__button {
-					width: 196px;
-					height: 41px;
-					background: #f5b600 0% 0% no-repeat padding-box;
-					box-shadow: 0px 2px 0px #000000;
-					border: 1px solid var(--unnamed-color-707070);
-					border-radius: 5px;
-
-					font-family: $font-list-h;
-					font-weight: nth($f-weights, 1);
-					font-style: normal;
-					font-size: $text1X-25; //20px;
-					position: relative;
-
-					cursor: pointer;
-				}//end mobile-cta-footer__button
-
-				.mobile-cta-footer__button:hover {
-					background: #ffcf15 no-repeat padding-box;
-					color: #f8f2f2;
-					text-shadow: 0px 2px .5px #4a45459e;
-				} //end .mobile-cta-footer__button:hover state
-
-
-			} //end contact-form__elements
-		} //end contact-form
+		
 
 		
 		.tt-circle {

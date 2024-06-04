@@ -29,8 +29,8 @@
 
 
     .mainnav__links{
-			top: 26px;
-			left: 698px;
+			top: 32px;
+			left: 522px;
 
 
 
@@ -42,10 +42,19 @@
 			.mainnav__links-link-container {
 			
 				@include mainnav__links-link-container;
+        height: 45px; // - reduced by 10% of 1920px variant
 				//NOTE: Top Nav links  UI/UX additions:
 				/*Hover state changes */
 				.mainnav__links-link__href {
 					@include mainnav__links-link__href;
+          /*Some asthetic adjustments to have the link fill the same area as in the original desgin draft. */
+
+					/*Using the padding section of the content box and not margin. This is so the puesdo element doesn't take that into account for the overall distance to travel across the link and ends up looking werid.*/
+
+					margin-left: 0px;
+					margin-right: 0px;
+					padding: 15px 15px; //-reduced by 60% of 1920px variant space added to anchor so they look nicer and have larger surface area to click on by users.
+
 				} //end mainnav__links-link__href
 
 
@@ -69,6 +78,16 @@
 
 				
 			} //end mainnav__links-link-container
+
+      .mainnav__links-link-container:hover {
+				position: relative;
+				top: -28px; // 2px offset upwards to give a look of the link being raised once hovered over. the adjustment on the link is -26px so adding 2px more when hovered.
+
+				filter: drop-shadow(0px 2.5px rgba(0, 0, 0, 0.221));
+				/* Two length values and a color */
+				/* drop-shadow( <length> <length> <color> ) */
+			} //end mainnav__links-link-container:hover
+
 
 		}//end mainnav__links 
 

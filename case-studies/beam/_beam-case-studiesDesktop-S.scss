@@ -8,7 +8,87 @@
         .atf-1 {
          //NOTE: only needs to add the single background image change below.    All other page styles imported from design template in partial folder:
             background-image: url("/img/img-desktop-sm-1280/desktop-sm-ps-beam-bg.png");
+
+            .cs-client-details {
+                    .tt-circle{
+                        top:84px;
+                        left:175px;
+                    }//end tt-circle
+
+                    .tt-circle:hover ::after {
+                    content: "Ms. Browne had long set the goal of creating one of the first full-service performance arts and professional dance companies in Jamaica. In 2014 She had the opportunity to begin this venture and required an accompanying web presence to match the launch of the company. \a\a nomad got shortlisted among some possible options of local web developers as Ms. Browne had the experience of working with nomad prior; with multiple projects, primarily in print and digital graphic art.";
+                    top: -75px;
+                    left: -179px;
+                    width: 328px;
+                    height: 236px;
+                
+                 }//end tt-circle:hover ::after
+            }//end cs-client-details
+
+
         }//end atf-1
+
+        .btf-2{
+            .btf-2__project-container-box{
+                //NOTE: Design variant:
+                // height: 628.5px;
+                // top: -319px;
+
+
+                .cs-project-desc__title {
+                  
+                } //end .cs-project-desc__title
+
+                .cs-project-sum__title {
+                   
+                } // end cs-project-sum title
+
+                .cs-project-desc {
+                    //NOTE: design variant:
+
+                    .cs-project-desc__text {
+                     
+                    } //end cs-project__text
+                  
+
+                    //NOTE: UI/UX: ANIMATION & TRANSITIONS: Case Studies project description section
+                    opacity: 0;
+                    animation: btf-cs-project-desc-reveal 0.5s linear 2.5s forwards;
+
+                    //===================================================
+
+                    //NOTE: ADDITIONAL INFORMATION TOOL TIP SECTION
+                    .tt-circle {
+                        display: none;
+                    } //end tt-circle
+
+
+                  
+
+
+                } //end cs-project-desc
+
+            
+                .cs-project-sum {
+                    //NOTE: Design variant:
+                  
+                    .cs-project-sum__text-1{
+
+                        position: relative;
+                        top: -16px;
+                    }//end cs-project-sum__text-1
+                    .cs-project-sum__text-1
+                    .cs-project-sum__text__body {
+                        //NOTE: Design variant:
+                        font-size: 1.1rem;
+                    }//end .cs-project-sum__text__body
+
+                    //NOTE: UI/UX: ANIMATION & TRANSITIONS: Case Studies project summary section
+                opacity: 0;
+                animation: btf-cs-project-sum-reveal 0.5s linear 3.7s forwards;
+                }//end cs-project-sum
+            }//end btf-2__project-container-box
+        }//end btf-2
 
     }//end body
 }//end media-query 1280px 

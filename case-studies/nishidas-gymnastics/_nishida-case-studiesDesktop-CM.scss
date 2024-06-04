@@ -8,7 +8,98 @@
         .atf-1 {
          //NOTE: only needs to add the single background image change below.    All other page styles imported from design template in partial folder:
             background-image: url("/img/img-desktop-cm-1440/desktop-cm-ps-ng-bg.PNG");
+       
+            .cs-project{
+
+                .cs-project__title {
+					//NOTE: Design variant:
+					
+				}//end .cs-project__title
+
+				.cs-project__services {
+					//NOTE: design variant:
+					
+					.cs-project__service {
+						//NOTE: design variant:
+						
+
+					} //end .cs-project__service
+				}
+            }//end cs-project
+
+            //NOTE: Project Details = Client details
+				.cs-client-details {
+					
+	
+					.cs-client-details__title {
+						//NOTE: Design variant: Change for 1440 variant
+						// font-size: $text2X-81; //45px;
+					}
+	
+					.cs-client-details__status {
+						//NOTE: Design variant: Change for 1440 variant
+						// font-size: $text2x-18; //35px;
+					}
+					.status-flag {
+						//NOTE: Design variant: Change for 1440 variant
+						// font-size: $text2x-18; //35px;
+					}
+					.cs-client-details__text {
+						//NOTE: Design variant: Change for 1440 variant
+						// font-size: $text1x-12; //18px;
+					}
+
+					.tt-circle:hover ::after {
+						//NOTE: design variant: tool-tip info for Natours Project Details copy.
+						content: "Nishida’s Gymnastics recreational and competitive boys and girls gymnastics clubs. \a\a The group of clubs provides recreational and competitive level gymnastics in both Men’s and Women’s Artistic Gymnastics training.";
+						
+					} //end tt-circle:hover
+			}//end- Project Details = client details 
+			.tt-circle{
+				
+			}//end tt-circle
+
+			.tt-circle:hover ::after {
+
+                top: 112px;
+                left: -445px;
+                width: 409px;
+                height: 150px;
+            
+			
+			}//end tt-circle:hover ::after
+			
         }//end atf-1
+
+		.btf-2{
+			.btf-2__project-container-box{
+				//NOTE: Design variant:
+				
+			
+
+				.cs-project-desc {
+					//===================================================
+
+					//NOTE: ADDITIONAL INFORMATION TOOL TIP SECTION
+					.tt-circle {
+						
+						} //end tt-circle__icon
+			
+
+					.tt-circle:hover ::after {
+						content: "We achieved success in an increase of foot traffic to the various gym branches as well as the improvement to brand recognition and marketability from additional work done to improve the company’s branding across social media channels.\a \a Following that result we’ve continued the working relationship with the Nishida’s gymnastics group ever since and regularly check in for content and security updates";
+						
+					} //end tt-circle:hover
+				}//end cs-project-desc
+
+				.cs-project-sum {
+					//NOTE: Design variant:
+					
+				}//end cs-project-sum
+			}//end btf-2__project-container-box
+
+
+		}//end btf-2
 
     }//end body
 }//end media-query 1440px 

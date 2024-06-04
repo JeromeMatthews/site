@@ -8,7 +8,40 @@
         .atf-1 {
          //NOTE: only needs to add the single background image change below.    All other page styles imported from design template in partial folder:
             background-image: url("/img/img-tablet-l/tablet-landscape-ps-beam-bg.png");
+
+            .tt-circle {
+                top: 69px;
+                left: 101px;
+            }//end tt-circle 
+            
+            
+            .tt-circle:hover ::after {
+                //NOTE: design variant: tool-tip info.
+                content: "Ms. Browne had long set the goal of creating one of the first full-service performance arts and professional dance companies in Jamaica. In 2014 She had the opportunity to begin this venture and required an accompanying web presence to match the launch of the company. \a\a nomad got shortlisted among some possible options of local web developers as Ms. Browne had the experience of working with nomad prior; with multiple projects, primarily in print and digital graphic art.";
+
+                top: -26px;
+                left: -153px;
+                width: 270px;
+                height: 284px;
+              }//end tt-circle:hover ::after
         }//end atf-1
+
+        .btf-2{
+            .btf-2__project-container-box {
+                    
+                .cs-project-desc{
+                    
+                   //NOTE: ADDITIONAL INFORMATION TOOL TIP SECTION
+                   .tt-circle {
+                    display: none;
+                } //end tt-circle
+
+                }//end  cs-project-desc
+                .cs-project-sum {
+                    top: -65px;
+                }
+            }//end btf-2__project-container-box  
+        }//end btf-2
 
     }//end body
 }//end media-query 1024px 

@@ -8,7 +8,51 @@
         .atf-1 {
          //NOTE: only needs to add the single background image change below.    All other page styles imported from design template in partial folder:
             background-image: url("/img/img-tablet-p/tablet-ps-ng-bg.png");
+
+            .tt-circle {
+                top: 67px;
+                left: 87px;
+            
+            }//end tt-circle
+
+            .tt-circle:hover ::after {
+                //NOTE: design variant: tool-tip info Details copy.
+                content: "Nishida’s Gymnastics recreational and competitive boys and girls gymnastics clubs. \a\a The group of clubs provides recreational and competitive level gymnastics in both Men’s and Women’s Artistic Gymnastics training.";
+                top: -25px;
+                left: -147px;
+                width: 259px;
+                height: 208px;
+            
+            }//end tt-circle:hover ::after 
+
+                
         }//end atf-1
+
+
+        .btf-2{
+            .btf-2__project-container-box {
+                    
+                .cs-project-desc{
+                    
+                    .tt-circle {
+                        top: 209px;
+                        left: 108px;
+                    
+                    }//end tt-circle
+
+                    .tt-circle:hover ::after {
+                        content: "We achieved success in an increase of foot traffic to the various gym branches as well as the improvement to brand recognition and marketability from additional work done to improve the company’s branding across social media channels.\a \a Following that result we’ve continued the working relationship with the Nishida’s gymnastics group ever since and regularly check in for content and security updates";
+
+
+                        top: -180px;
+                        left: -154px;
+                        width: 297px;
+                        height: 233px;
+                     
+                     }//end tt-circle :hover ::after
+                }//end  cs-project-desc
+            }//end btf-2__project-container-box  
+        }//end btf-2
 
     }//end body
 }//end media-query 768px 

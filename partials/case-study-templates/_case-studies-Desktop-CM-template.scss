@@ -59,8 +59,8 @@
 		animation: bg-reveal 0.5s ease-in forwards;
 
 		.mainnav__links{
-			top: 26px;
-			left: 698px;
+			top: 32px;
+			left: 522px;
 
 
 
@@ -70,10 +70,19 @@
 			.mainnav__links-link-container {
 			
 				@include mainnav__links-link-container;
+				height: 45px; // - reduced by 10% of 1920px variant
 				//NOTE: Top Nav links  UI/UX additions:
 				/*Hover state changes */
 				.mainnav__links-link__href {
 					@include mainnav__links-link__href;
+
+				/*Some asthetic adjustments to have the link fill the same area as in the original desgin draft. */
+
+					/*Using the padding section of the content box and not margin. This is so the puesdo element doesn't take that into account for the overall distance to travel across the link and ends up looking werid.*/
+
+					margin-left: 0px;
+					margin-right: 0px;
+					padding: 15px 15px; //-reduced by 60% of 1920px variant space added to anchor so they look nicer and have larger surface area to click on by users.
 				} //end mainnav__links-link__href
 
 
@@ -97,6 +106,15 @@
 
 				
 			} //end mainnav__links-link-container
+			.mainnav__links-link-container:hover {
+				position: relative;
+				top: -28px; // 2px offset upwards to give a look of the link being raised once hovered over. the adjustment on the link is -26px so adding 2px more when hovered.
+
+				filter: drop-shadow(0px 2.5px rgba(0, 0, 0, 0.221));
+				/* Two length values and a color */
+				/* drop-shadow( <length> <length> <color> ) */
+			} //end mainnav__links-link-container:hover
+
 
 		}//end mainnav__links
 
@@ -162,7 +180,7 @@
 					.tt-circle {
 						position: absolute;
 						top: 12px;
-						left: 636px;
+						left: 463px;
 						width: 20px;
 						height: 20px;
 						background-color: #8a8a8a98;
@@ -244,8 +262,9 @@
 					//NOTE: ADDITIONAL INFORMATION TOOL TIP SECTION
 					.tt-circle {
 						position: absolute;
-						top: -15px;
-    					left: 492px;
+						top: -8px;
+    					left: 415px;
+
 						width: 20px;
 						height: 20px;
 						background-color: #8a8a8a98;
@@ -271,15 +290,16 @@
 
 
 					.tt-circle:hover ::after {
-						content: "We achieved success in an increase of foot traffic to the various gym branches as well as the improvement to brand recognition and marketability from additional work done to improve the company’s branding across social media channels.\a \a Following that result we’ve continued the working relationship with the Nishida’s gymnastics group ever since and regularly check in for content and security updates";
+						content: "PLACEHOLDER TEXT: REPLACE WITH CASE STUDY VARIANT SPECIFIC AUXILLARY INFO";
 						white-space: pre-wrap; // to allow for inserting line breaks into the content propety
 						position: absolute;
 						transition: 1s all ease;
 						padding: 20px 20px;
-						top: 152px;
-    					left: -586px;
-    					width: 500px;
-    					height: 150px;
+						top: 44px;
+    					left: -457px;
+    					width: 399px;
+    					height: 167px;
+
 						background-color: #fffff2ed;
 						border: 1px solid #ffffff;
 						border-radius: 3px;

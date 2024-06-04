@@ -794,8 +794,8 @@ body .main-container .article-container .article-sm-bottom .article-sm-bottom-li
     transform: translateX(0.5%) rotateY(90deg);
   }
   body .mainnav__links {
-    top: 26px;
-    left: 698px;
+    top: 32px;
+    left: 472px;
   }
   body .mainnav__links .mainnav__links-link-container {
     overflow: hidden;
@@ -803,6 +803,7 @@ body .main-container .article-container .article-sm-bottom .article-sm-bottom-li
     top: -26px;
     height: 50px;
     border: 0.5px solid #fff;
+    height: 35px;
     /*Hover state changes */
   }
   body .mainnav__links .mainnav__links-link-container .mainnav__links-link__href {
@@ -811,6 +812,10 @@ body .main-container .article-container .article-sm-bottom .article-sm-bottom-li
     margin-left: 0px;
     margin-right: 0px;
     padding: 25px 25px;
+    /*Using the padding section of the content box and not margin. This is so the puesdo element doesn't take that into account for the overall distance to travel across the link and ends up looking werid.*/
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 10px 10px;
   }
   body .mainnav__links .mainnav__links-link-container .mainnav__links-link__href:after {
     content: " ";
@@ -1070,7 +1075,7 @@ body .main-container .article-container .article-sm-bottom .article-sm-bottom-li
     width: 144px;
     height: 77px;
     top: 3px;
-    left: -1px;
+    left: 166px;
     pointer-events: none;
   }
   .sitenav__contactNum {
@@ -1131,8 +1136,8 @@ body .main-container .article-container .article-sm-bottom .article-sm-bottom-li
     transform: translateX(0.5%) rotateY(90deg);
   }
   body .mainnav__links {
-    top: 26px;
-    left: 698px;
+    top: 32px;
+    left: 522px;
   }
   body .mainnav__links .mainnav__links-link-container {
     overflow: hidden;
@@ -1140,6 +1145,7 @@ body .main-container .article-container .article-sm-bottom .article-sm-bottom-li
     top: -26px;
     height: 50px;
     border: 0.5px solid #fff;
+    height: 45px;
     /*Hover state changes */
   }
   body .mainnav__links .mainnav__links-link-container .mainnav__links-link__href {
@@ -1148,6 +1154,11 @@ body .main-container .article-container .article-sm-bottom .article-sm-bottom-li
     margin-left: 0px;
     margin-right: 0px;
     padding: 25px 25px;
+    /*Some asthetic adjustments to have the link fill the same area as in the original desgin draft. */
+    /*Using the padding section of the content box and not margin. This is so the puesdo element doesn't take that into account for the overall distance to travel across the link and ends up looking werid.*/
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 15px 15px;
   }
   body .mainnav__links .mainnav__links-link-container .mainnav__links-link__href:after {
     content: " ";
@@ -1174,6 +1185,13 @@ body .main-container .article-container .article-sm-bottom .article-sm-bottom-li
     top: 3px;
     position: relative;
     pointer-events: none;
+  }
+  body .mainnav__links .mainnav__links-link-container:hover {
+    position: relative;
+    top: -28px;
+    filter: drop-shadow(0px 2.5px rgba(0, 0, 0, 0.221));
+    /* Two length values and a color */
+    /* drop-shadow( <length> <length> <color> ) */
   }
   body .main-container {
     top: 0px;

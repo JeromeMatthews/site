@@ -7,8 +7,65 @@
         //NOTE: Background image generated specfic to case study instance of the base template for design variant: Tablet-Portrait-768px. Platforming off of the template pointer to the main refereence in case-studies sub folder in the paritals folder. 
         .atf-1 {
          //NOTE: only needs to add the single background image change below.    All other page styles imported from design template in partial folder:
-            background-image: url("/img/img-tablet-p/tablet-ps-ng-bg.png");
+            background-image: url("/img/img-tablet-p/tablet-ps-natours-bg.png");
+            .cs-project {
+                top: -226px;
+                height: 400px;
+                .cs-project__services{ 
+                
+                        .cs-project__service{
+                            font-size: 0.93rem;
+                        }//end cs-project__service                 
+                    }//end cs-project__services
+                }//end cs-project 
+            .cs-client-details { 
+                top: 179px;
+            }//end cs-client-details
+            
+            .cs-client-details {
+            
+            .cs-client-details__text {
+                font-size: 0.93rem;
+              }//end cs-client-details__text
+
+              .tt-circle {
+                top: 69px;
+                left: 99px;
+            }//end .tt-circle 
+
+            .tt-circle:hover ::after {
+                //NOTE: design variant: tool-tip info for Natours Project Details copy.
+                content: "I needed to understand by trying to build for myself a basic application that could carry out typical backend tasks while also providing a platform to learn and make use of APIs – (Application Programming Interfaces). \a Since, up until that point I only had a very broad, elementary sense of the terms and concepts associated with it. Jonas’s course was a brilliant solution to this.";
+                top: -31px;
+                left: -162px;
+                width: 284px;
+                height: 201px;
+            }//end tt-circle:hover ::after
+            
+            
+            }//end .cs-client-details
+        
+        
         }//end atf-1
+        .btf-2{
+            .btf-2__project-container-box {
+                height: 836px;
+                top: -508px;
+                    .cs-project-sum {
+                    top: 1px;
+
+                    .cs-project-sum__text-1 {
+                        .cs-project-sum__text__body{
+
+                        font-size: 1rem;
+                        }//end cs-project-sum__text__body 
+                    }//end cs-project-sum__text-1
+                }//end cs-project-sum
+           }//end btf-2__project-container-box
+
+
+         }//end btf-2 
+
 
     }//end body
 }//end media-query 768px 

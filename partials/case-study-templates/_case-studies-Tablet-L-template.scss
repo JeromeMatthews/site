@@ -69,6 +69,10 @@
 						//NOTE: design variant:
 						font-size: $text1x-12; //18px;
 					} //endccs-project__service
+
+					//NOTE: UI/UX: ANIMATION & TRANSITIONS: Case Studies project section
+				opacity: 0;
+				animation: atf-cs-project-reveal 0.5s linear 1.5s forwards;
 				} //end cs-project__services
 
 				top: -130px;
@@ -103,6 +107,61 @@
 				top: 175px;
 				left: -315px;
 			} //end cs-client-details
+
+				//NOTE: UI/UX: ANIMATION & TRANSITIONS: Case Studies Client details section
+				opacity: 0;
+				animation: atf-cs-client-reveal 0.5s linear 2.0s forwards;
+	
+				//===================================================
+	
+						//NOTE: ADDITIONAL INFORMATION TOOL TIP SECTION
+						.tt-circle {
+							position: absolute;
+							top: 12px;
+							left: 463px;
+							width: 20px;
+							height: 20px;
+							background-color: #8a8a8a98;
+							border: 1px solid #ffff;
+							border-radius: 55%;
+							box-shadow: 0.1px 0.7px #000;
+							.tt-circle__icon {
+								margin: 0 auto;
+								position: absolute;
+								left: 7px;
+								top: -8px;
+								text-align: center;
+								font: $text1x-43 $font-list-b;
+								color: #fff;
+								cursor: pointer;
+							} //end tt-circle__icon
+				
+							opacity: 0; //initializing the opacity of the tooltip.
+							pointer-events: none;
+							cursor: pointer;
+							animation: info-tool-tip 1s ease-in 5.5s forwards;
+						} //end tt-circle
+					
+						.tt-circle:hover ::after {
+							content: "PLACEHOLDER TEXT: REPLACE WITH CASE STUDY VARIANT SPECIFIC AUXILLARY INFO";
+							white-space: pre-wrap; // to allow for inserting line breaks into the content propety
+							position: absolute;
+							transition: 1s all ease;
+							padding: 20px 20px;
+							top: 152px;
+							left: -586px;
+							width: 500px;
+							height: 150px;
+							background-color: #fffff2ed;
+							border: 1px solid #ffffff;
+							border-radius: 3px;
+							box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+							color: #000000;
+							font-size: $textBase;
+				
+							// //NOTE: Tooltip animation:
+							animation: tooltip-animate 0.3s ease forwards;
+						} //end tt-circle:hover
 		} //end atf-1
 
 		.btf-2 {
@@ -128,6 +187,63 @@
 					} //end cs-project__text
 
 					left: 25px;
+
+					//NOTE: UI/UX: ANIMATION & TRANSITIONS: Case Studies project description section
+					opacity: 0;
+					animation: btf-cs-project-desc-reveal 0.5s linear 2.5s forwards;
+
+
+						//NOTE: ADDITIONAL INFORMATION TOOL TIP SECTION
+						.tt-circle {
+							position: absolute;
+							top: -8px;
+							left: 415px;
+	
+							width: 20px;
+							height: 20px;
+							background-color: #8a8a8a98;
+							border: 1px solid #ffff;
+							border-radius: 55%;
+							box-shadow: 0.1px 0.7px #000;
+							.tt-circle__icon {
+								margin: 0 auto;
+								position: absolute;
+								left: 7px;
+								top: -8px;
+								text-align: center;
+								font: $text1x-43 $font-list-b;
+								color: #fff;
+								cursor: pointer;
+							} //end tt-circle__icon
+				
+							opacity: 0; //initializing the opacity of the tooltip.
+							pointer-events: none;
+							cursor: pointer;
+							animation: info-tool-tip 1s ease-in 5.5s forwards;
+						} //end tt-circle
+	
+	
+						.tt-circle:hover ::after {
+							content: "PLACEHOLDER TEXT: REPLACE WITH CASE STUDY VARIANT SPECIFIC AUXILLARY INFO";
+							white-space: pre-wrap; // to allow for inserting line breaks into the content propety
+							position: absolute;
+							transition: 1s all ease;
+							padding: 20px 20px;
+							top: 44px;
+							left: -457px;
+							width: 399px;
+							height: 167px;
+	
+							background-color: #fffff2ed;
+							border: 1px solid #ffffff;
+							border-radius: 3px;
+							box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+							color: #000000;
+							font-size: $textBase;
+				
+							// //NOTE: Tooltip animation:
+							animation: tooltip-animate 0.3s ease forwards;
+						} //end tt-circle:hover
 				} //end cs-project-desc
 
 				//divider
@@ -141,6 +257,10 @@
 					width: 350px;
 					border-width: 1px;
 					color: #fff;
+
+					//NOTE: UI/UX: ANIMATION & TRANSITIONS: Case Studies project information divider
+					opacity: 0;
+					animation: btf-cs-project-info-divider-reveal 0.5s linear 3.0s forwards;
 				} //end project-info-divider
 
 				//divider
@@ -168,8 +288,24 @@
 					top: -45px;
 					left: 24px;
 				} //end cs-project-sum
+				//NOTE: UI/UX: ANIMATION & TRANSITIONS: Case Studies project summary section
+				opacity: 0;
+				animation: btf-cs-project-sum-reveal 0.5s linear 3.7s forwards;
 			} //end btf-2__project-container-box
 		} //end btf-2
+
+		.nav-chevrons{
+			position: absolute;
+			z-index: 13;
+			right: 51px;
+			top: 635px;
+
+			.chevron-down{
+				position: relative;
+				opacity: 0; //NOTE: initializing the starting state for the reveal of chevron.
+					animation: chevron-down-reveal 2s linear 3s forwards,chevron-down-animate 1s ease 4s infinite;
+			}//end chevron-down
+		}//end nav-chevrons
 
 		.btl {
 			text-align: center;

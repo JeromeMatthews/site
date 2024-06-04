@@ -28,8 +28,9 @@
           }
 
     .mainnav__links{
-			top: 26px;
-			left: 698px;
+		//NOTE: Design variant
+    top: 32px;
+    left: 472px;
 
 			//NOTE: MN-TOP-NAV-LINK - UI/UX: HOVER STATE
 			//===================================
@@ -37,10 +38,18 @@
 			.mainnav__links-link-container {
 			
 				@include mainnav__links-link-container;
+				height: 35px; // - reduced by 10% of 1440px variant
 				//NOTE: Top Nav links  UI/UX additions:
 				/*Hover state changes */
 				.mainnav__links-link__href {
 					@include mainnav__links-link__href;
+
+          /*Using the padding section of the content box and not margin. This is so the puesdo element doesn't take that into account for the overall distance to travel across the link and ends up looking werid.*/
+
+					margin-left: 0px;
+					margin-right: 0px;
+					padding: 10px 10px; //-reduced by 30% of 1440px variant space added to anchor so they look nicer and have larger surface area to click on by users.
+
 				} //end mainnav__links-link__href
 
 

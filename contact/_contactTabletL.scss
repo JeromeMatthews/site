@@ -26,133 +26,133 @@
 
 		.main-container {
 			
-			.contact-container {
-				//NOTE design varitant
-				//NOTE design varitant
-			position:absolute;// better fit for the arrangement as relative is shifting the width of the container.
-			top: -145px;
-			right: 136px;
+					.contact-container {
+						//NOTE design varitant
+						//NOTE design varitant
+					position:absolute;// better fit for the arrangement as relative is shifting the width of the container.
+					top: -145px;
+					right: 136px;
 
-				.contact-heroCopy {
-					//NOTE design varitant
-					font-size: $text1x-74; //27px;
-					text-align: left;
+						.contact-heroCopy {
+							//NOTE design varitant
+							font-size: $text1x-74; //27px;
+							text-align: left;
 
-					//NOTE: UI/UX: ANIMATION & TRANSITIONS: 2 - About Hero - Typewriter effect
-					.tw-fx-1 {
-						display: inline-block;
-						overflow: hidden;
+							//NOTE: UI/UX: ANIMATION & TRANSITIONS: 2 - About Hero - Typewriter effect
+							.tw-fx-1 {
+								display: inline-block;
+								overflow: hidden;
 
-						white-space: nowrap;
-						font-size: inherit; //take it from the original font-size, easier to scale.
-						width: 0;
-						animation: type1 1.6s steps(21, end) 0.8s forwards,
-							cursor-off 1 linear 0.2s 2.4s forwards;
-						/*name -> 
-						 iteration-count-> 
-						 timing-function->
-						 duration->
-						 delay->
-						 fill-mode*/
-					} //end tw-fx-1
+								white-space: nowrap;
+								font-size: inherit; //take it from the original font-size, easier to scale.
+								width: 0;
+								animation: type1 1.6s steps(21, end) 0.8s forwards,
+									cursor-off 1 linear 0.2s 2.4s forwards;
+								/*name -> 
+								iteration-count-> 
+								timing-function->
+								duration->
+								delay->
+								fill-mode*/
+							} //end tw-fx-1
 
-					.tw-fx-2 {
-						position: relative;
-						top: -30px;
-						display: inline-block;
-						overflow: hidden;
+							.tw-fx-2 {
+								position: relative;
+								top: -30px;
+								display: inline-block;
+								overflow: hidden;
 
-						white-space: nowrap;
-						font-size: inherit; //take it from the original font-size, easier to scale.
-						width: 0;
+								white-space: nowrap;
+								font-size: inherit; //take it from the original font-size, easier to scale.
+								width: 0;
 
-						animation: type2 1.5s steps(20, end) 3s forwards,
-							cursor-off 1 linear 0.2s 4.4s forwards;
-						/*name -> 
-						iteration-count-> 
-						timing-function->
-						duration->
-						delay->
-						fill-mode*/
-					} //end tw-fx-2
+								animation: type2 1.5s steps(20, end) 3s forwards,
+									cursor-off 1 linear 0.2s 4.4s forwards;
+								/*name -> 
+								iteration-count-> 
+								timing-function->
+								duration->
+								delay->
+								fill-mode*/
+							} //end tw-fx-2
 
-				} // end of contact-heroCopy
+						} // end of contact-heroCopy
 
-				.contactheroimg {
-					//NOTE design varitant
-					margin: 25px auto;
-					padding: 0px;
-					position: relative;
-					top: 51px;
-					left: 86px; //reseting left positioning from mobile settings.
-					width: 137px;//137.5px
-					height: 70px;//71.25px
-
-					opacity: 0; //set inital state for animation
-					animation: logo-reveal 1 ease-in 1s 5s forwards;
-				}//end of contactheroimg
-			} //end of contact-container
-
-			.contact-form {
-				//NOTE: design variant: using the previous position relative declaration in the base scss cile on mobile, then just adjusting the position for subsequent device viewports.
-				top: 40px;
-				opacity: 0; //set inital state for animation
-				animation: contact-form-animate 1 ease-out 1s 6.5s forwards;
-
-				.contact-form__elements {
-
-					
-					.contact-form__element {
-
-						input{
-							//NOTE: design variant: 25% of dimensions in 1280px variant. Width: 298.5px and Height: 36.563px
-							width: 299px ;
-							height: 37px ;
-
-						}//end input
-					}//contact-form__element
-
-					.contact-form__label {
-						//NOTE: design variant: 25% of dimensions in 1440px variant. Width: 82.5px and Height: 48.75px
-						display: inline-block;
-						top: 3px;
-						left: 4px;
-						width: 83px;
-						height: 49px;
-						border-radius: 4px 0px 0px 4px;
-		
-
-						.label-text {
-							font-size: $text1x-12; //18px
+						.contactheroimg {
+							//NOTE design varitant
+							margin: 25px auto;
+							padding: 0px;
 							position: relative;
-							top: -8%;
-							bottom: 25%;
-						} //end label-text
-					} //end contact-form-label
+							top: 11px;
+							left: 86px; //reseting left positioning from mobile settings.
+							width: 137px;//137.5px
+							height: 70px;//71.25px
+
+							opacity: 0; //set inital state for animation
+							animation: logo-reveal 1 ease-in 1s 5s forwards;
+						}//end of contactheroimg
+					
+
+					.contact-form {
+						//NOTE: design variant: using the previous position relative declaration in the base scss cile on mobile, then just adjusting the position for subsequent device viewports.
+						top: 40px;
+						opacity: 0; //set inital state for animation
+						animation: contact-form-animate 1 ease-out 1s 6.5s forwards;
+
+						.contact-form__elements {
+
+							
+							.contact-form__element {
+
+								input{
+									//NOTE: design variant: 25% of dimensions in 1280px variant. Width: 298.5px and Height: 36.563px
+									width: 299px ;
+									height: 37px ;
+
+								}//end input
+							}//contact-form__element
+
+							.contact-form__label {
+								//NOTE: design variant: 25% of dimensions in 1440px variant. Width: 82.5px and Height: 48.75px
+								display: inline-block;
+								top: 3px;
+								left: 4px;
+								width: 83px;
+								height: 49px;
+								border-radius: 4px 0px 0px 4px;
+				
+
+								.label-text {
+									font-size: $text1x-12; //18px
+									position: relative;
+									top: -8%;
+									bottom: 25%;
+								} //end label-text
+							} //end contact-form-label
 
 
-					.mobile-cta-footer__button {
-						//NOTE: design variant:
-						position: relative;
-						right: -100px;
+							.mobile-cta-footer__button {
+								//NOTE: design variant:
+								position: relative;
+								right: -100px;
 
-						cursor: pointer;
-					} //end mobile-cta-footer__button
+								cursor: pointer;
+							} //end mobile-cta-footer__button
 
-					.mobile-cta-footer__button:hover {
-						background: #ffcf15 no-repeat padding-box;
-						color: #f8f2f2;
-						text-shadow: 0px 2px .5px #4a45459e;
-					} //end .mobile-cta-footer__button:hover state
-				} // end contact-form__elements
+							.mobile-cta-footer__button:hover {
+								background: #ffcf15 no-repeat padding-box;
+								color: #f8f2f2;
+								text-shadow: 0px 2px .5px #4a45459e;
+							} //end .mobile-cta-footer__button:hover state
+						} // end contact-form__elements
 
 
-			} //end contact-form
-
+					} //end contact-form
+				} //end of contact-container
 
 			.tt-circle {
 				position: absolute;
-				top: 730px;
+				top: 610px;
 				left: 40px;
 				width: 20px;
 				height: 20px;
@@ -246,8 +246,9 @@
 				} //end p
 	
 				position: absolute;
-				right: 1574px;
-				top: 736px;
+				top: 611px;
+    			right: 675px;
+
 	
 				animation: info-tool-tip 1s ease-in 11.5s forwards;
 			} //end-author-info
@@ -258,8 +259,9 @@
 
 		.tt-bgimg-circle {
 			position: fixed;
-			top: 664px;
-			left: 593px;
+			top: 543px;
+			left: 281px;
+
 			width: 20px;
 			height: 20px;
 			background-color: $brandColor;
@@ -292,9 +294,9 @@
 			position: absolute;
 			transition: 1s all ease;
 			top: -125px;
-			left: -581px;
-			width: 580px;
-			height: 80px;
+  			left: -215px;
+   			width: 405px;
+   			height: 95px;
 			background-color: #00000057;
 			border: 1px solid #ffffff54;
 			border-radius: 1px;
@@ -311,9 +313,8 @@
 		.tt-bgimg-circle-pulse {
 			position: absolute;
 			z-index: -10; //brings the pulse effect forwards to make it look like its coming from the info button.
-
-			top: 554px;
-			left: 593px;
+			top: 433px;
+    		left: 281px;
 			width: 20px;
 			height: 20px;
 			background-color: transparent;
@@ -335,6 +336,7 @@
 					position: relative; // NOTE: Relative to the parent lower-nav-container div.
 					top: -18px;
 					right: 16px;
+					display: block !important;
 					.left-chev {
 
 						.dtlink.low-nav-a-left{
@@ -376,7 +378,7 @@
 						justify-content: center;
 						//NOTE: Design vaieant: The outer container creates an offset, so this corrects for it. Centering the social media icons.
 						position: relative;
-						right:  5.2vw;
+						right: 6.5vw;
 
 						li {
 							margin-right: 10px;
@@ -555,15 +557,12 @@
 
 			//NOTE: the top position values based on the top-position value given on contact form. top: -105px
 			0% {
-				top: -125px;
+				top: -20px;
 			}
 
-			50% {
-				top: -110px;
-			}
 
 			100% {
-				top: -105px;
+				top: 0px;
 			}
 		}//end contact-form-animate
 		//--------------------------
